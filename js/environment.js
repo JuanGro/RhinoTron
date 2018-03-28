@@ -4,7 +4,11 @@
 function buildWall(x_position, y_position, z_position, width_wall, height_wall, depth_wall, wall_texture_path) {
     var geometry = new THREE.BoxGeometry(width_wall, height_wall, depth_wall);
     var material = new THREE.MeshLambertMaterial({
-      map: new THREE.TextureLoader().load(wall_texture_path)
+      map: new THREE.TextureLoader().load(wall_texture_path, function ( texture ) {
+        texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+        texture.offset.set( 0, 0 );
+        texture.repeat.set( 10, 10 ); // repeat image ten times to cover the 1000px
+      })
     });
     var mesh = new THREE.Mesh(geometry, material);
     mesh.position.x = x_position;
@@ -19,7 +23,7 @@ function buildWall(x_position, y_position, z_position, width_wall, height_wall, 
 function buildFloor(environment_size, floor_texture_path) {
     var geometry = new THREE.BoxGeometry(environment_size, 1, environment_size); // plane of 1000px in x and y
     var material = new THREE.MeshLambertMaterial({
-      map: new THREE.TextureLoader().load(floor_texture_path ,function ( texture ) {
+      map: new THREE.TextureLoader().load(floor_texture_path, function ( texture ) {
         texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
         texture.offset.set( 0, 0 );
         texture.repeat.set( 10, 10 ); // repeat image ten times to cover the 1000px
@@ -51,7 +55,7 @@ function buildLimits(environment_size, wall_texture_path) {
 }
 
 /*------------- Configuring the environment ----------------------- */
-var wall_texture_path = 'img/wall.jpg';
+var wall_texture_path = 'img/wall.png';
 var floor_texture_path = 'img/floor.png';
 
 // Build environment
