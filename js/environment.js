@@ -16,7 +16,7 @@ function buildWall(x_position, y_position, z_position, width_wall, height_wall, 
     mesh.position.z = z_position;
     scene.add(mesh);
 }
-  
+
 /**
  * Function to build the floor with a texture given the size for the plane
  */
@@ -55,8 +55,8 @@ function buildLimits(environment_size, wall_texture_path) {
 }
 
 /*------------- Configuring the environment ----------------------- */
-var wall_texture_path = 'img/wall.png';
-var floor_texture_path = 'img/floor.png';
+var wall_texture_path = '../img/wall.png';
+var floor_texture_path = '../img/floor.png';
 
 // Build environment
 buildLimits(environment_size, wall_texture_path);
