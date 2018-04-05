@@ -14,7 +14,7 @@ loader.load(
     object.position.x = Math.floor(Math.random() * (201 - (-201))) + (-201);
     object.position.z = Math.floor(Math.random() * (201 - (-201))) + (-201);
     // increment the size of the object
-    object.scale.set(10,10,10);
+    object.scale.set(15, 10, 10);
 		scene.add( object );
 	},
 
