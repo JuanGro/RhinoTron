@@ -1,6 +1,6 @@
 // instantiate a loader
 var loader = new THREE.ObjectLoader();
 
-var motoJsonPath = '../models/classic-1982-tron-light-cycle-green.json';
+var moto_json_path = '../models/classic-1982-tron-light-cycle-green.json';
 
-buildMoto(motoJsonPath, "moto2", scene);
+buildMoto(moto_json_path, "moto2", scene, -environment_size / 4, 0);

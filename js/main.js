@@ -8,8 +8,8 @@ var renderer
 var scene = new THREE.Scene();
 
 // add lighting to the environment
-var ambientLigth = new THREE.AmbientLight(0x207c99, 4);
-scene.add(ambientLigth);
+var ambient_light = new THREE.AmbientLight(0x207c99, 4);
+scene.add(ambient_light);
 
 // Plane size
 var environment_size = 750;
