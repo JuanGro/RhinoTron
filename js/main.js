@@ -20,6 +20,12 @@ var renderer_main_camera = new THREE.WebGLRenderer();
 var renderer_player_1_camera = new THREE.WebGLRenderer();
 var renderer_player_2_camera = new THREE.WebGLRenderer();
 
+// instantiate a loader
+var loader = new THREE.ObjectLoader();
+
+var orientation = 1;
+var speed = 10;
+
 // Draw scene
 function render() {
     renderer_main_camera.render(scene, main_camera);
