@@ -10,11 +10,15 @@ loader.load(
 	// called when resource is loaded
 	function ( object ){
     // Add motorcycle in a random position
-    object.position.y = 1;
-    object.position.x = Math.floor(Math.random() * (201 - (-201))) + (-201);
-    object.position.z = Math.floor(Math.random() * (201 - (-201))) + (-201);
-    // increment the size of the object
-    object.scale.set(15, 10, 10);
+    // object.position.x = Math.floor(Math.random() * (201 - (-201))) + (-201);
+    // object.position.y = Math.floor(Math.random() * (201 - (-201))) + (-201);
+	// object.position.z = 0;
+	// increment the size of the object
+	object.scale.set(15, 10, 10);
+	
+	object.rotation.x = 1.6;
+	object.rotation.y = 0;
+	object.rotation.z = 0;
 		scene.add( object );
 	},
 
