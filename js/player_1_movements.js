@@ -6,7 +6,7 @@ window.onload=function(){
 function init(){
     //LINEA IMPORTANTE PARA OBTENER EVENTO DEL TECLADO , ESTA TIENE QUE ESTAR AL INICIO DE TODOS LOS DOCUMENTOS, ES UN LISTENER
     document.body.addEventListener('keydown', keyPressed);
-    var moto1 = scene.getObjectByName("Moto1");
+    var moto1 = scene.getObjectByName("moto1");
     var orientation = 1;
     var speed = 10;
 
