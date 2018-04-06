@@ -19,7 +19,7 @@ loader.load(
 		object.rotation.y = 0;
 		object.rotation.z = 0;
 
-		object.name = "Moto";
+		object.name = "Moto1";
 		
 		scene.add(object);
 	},
