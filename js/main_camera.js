@@ -1,9 +1,11 @@
-var main_camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+var main_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 // display crafted scenes using WebGL
-renderer = new THREE.WebGLRenderer();
+var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+var container = document.getElementById('main_camera');
+document.body.appendChild(container);
+container.appendChild(renderer.domElement);
 
 // detect when window resize
 window.addEventListener('resize', function() {
@@ -15,19 +17,7 @@ window.addEventListener('resize', function() {
 // inital position of main_camera to can resize window
 main_camera.position.x = 0;
 main_camera.position.y = 0;
-main_camera.position.z = environment_size / 2 + environment_size / 6;
+main_camera.position.z = environment_size / 2;
 
 // create a orbit control over the geometry
 // var controls = new THREE.OrbitControls(main_camera, renderer.domElement);
-
-// Draw scene
-var render = function(){
-    renderer.render(scene, main_camera);
-};
-  
-var Loop = function(){
-    requestAnimationFrame(Loop);
-    render();
-};
-
-Loop();

@@ -13,3 +13,17 @@ scene.add(ambient_light);
 
 // Plane size
 var environment_size = 300;
+
+// Draw scene
+function render() {
+    renderer.render(scene, main_camera);
+    renderer_2.render(scene, player_1_camera);
+    renderer_3.render(scene, player_2_camera);
+}
+  
+var animate = function(){
+    requestAnimationFrame(animate);
+    render();
+};
+
+animate();

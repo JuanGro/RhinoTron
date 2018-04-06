@@ -144,3 +144,23 @@ a:hover {
   min-width: 49%;
   text-align: center;
 }
+
+#main_camera {
+  z-index: -1;
+}
+
+#player_1_camera {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  border: 8px solid blue;
+}
+
+#player_2_camera {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  border: 8px solid blue;
+}
