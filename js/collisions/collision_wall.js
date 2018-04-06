@@ -1,11 +1,7 @@
-// Moto 1
-var motorcycle_1 = scene.getObjectByName("motorcycle_1");
-if(motorcycle_1.position.y>150 || motorcycle_1.position.y< -150 ){
-    console.log("Te saliste alv");
+function collision_wall(motorcycle) {
+    if(motorcycle.position.y > environment_size / 2 || motorcycle.position.y < -environment_size / 2 || motorcycle.position.x > environment_size / 2 || motorcycle.position.x < -environment_size / 2) {
+        console.log("Te saliste alv");
+    } else {
+        console.log(motorcycle.position.x, motorcycle.position.y);
+    }
 }
-
-if(motorcycle_1.position.x>pisoAncho/2 ){
-    console.log("Te saliste alv");
-}
-
-console.log(motorcycle_1.position.x,motorcycle_1.position.y);
