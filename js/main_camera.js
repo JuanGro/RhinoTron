@@ -15,10 +15,10 @@ window.addEventListener('resize', function() {
 // inital position of main_camera to can resize window
 main_camera.position.x = 0;
 main_camera.position.y = 0;
-main_camera.position.z = environment_size;
+main_camera.position.z = environment_size / 2 + environment_size / 6;
 
 // create a orbit control over the geometry
-var controls = new THREE.OrbitControls(main_camera, renderer.domElement);
+// var controls = new THREE.OrbitControls(main_camera, renderer.domElement);
 
 // Draw scene
 var render = function(){

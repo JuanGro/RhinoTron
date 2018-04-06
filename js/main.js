@@ -12,4 +12,4 @@ var ambientLigth = new THREE.AmbientLight(0x207c99, 4);
 scene.add(ambientLigth);
 
 // Plane size
-var environment_size = 1000;
+var environment_size = 750;
