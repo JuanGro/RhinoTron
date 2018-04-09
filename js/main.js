@@ -31,10 +31,13 @@ function render() {
     renderer_main_camera.render(scene, main_camera);
     renderer_player_1_camera.render(scene, player_1_camera);
     renderer_player_2_camera.render(scene, player_2_camera);
+
 }
   
 var animate = function(){
     requestAnimationFrame(animate);
+    //movPerpetuoDelante();
+
     render();
 };
 
