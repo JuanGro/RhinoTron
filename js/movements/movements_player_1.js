@@ -2,7 +2,7 @@ window.onload=function() {
     var motorcycle_1 = scene.getObjectByName("motorcycle_1");
     init(motorcycle_1);
 }
-  
+
 function init(motorcycle_1){
     //LINEA IMPORTANTE PARA OBTENER EVENTO DEL TECLADO , ESTA TIENE QUE ESTAR AL INICIO DE TODOS LOS DOCUMENTOS, ES UN LISTENER
     document.body.addEventListener('keydown', keyPressed);
