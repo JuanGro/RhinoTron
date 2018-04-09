@@ -3,27 +3,59 @@ window.onload=function() {
     init(motorcycle_1);
 }
   
-function init(motorcycle){
+function init(motorcycle_1){
     //LINEA IMPORTANTE PARA OBTENER EVENTO DEL TECLADO , ESTA TIENE QUE ESTAR AL INICIO DE TODOS LOS DOCUMENTOS, ES UN LISTENER
     document.body.addEventListener('keydown', keyPressed);
 
+
+    // BUENA INICIALIZACION DE LAS VARIABLES 
+    player_1_camera.position.x = motorcycle_1.position.x;
+    player_1_camera.position.y = motorcycle_1.position.y -20;
+    player_1_camera.position.z = 25;
+    player_1_camera.rotation.x = Math.PI / 2;
+
+function movPerpetuoDelante(){
+
+    if(orientation == 1) {
+                    motorcycle_1.position.y += speed;
+                    player_1_camera.position.y =motorcycle_1.position.y -20;
+                } else if(orientation == 2) {
+                    motorcycle_1.position.x += speed;
+                    player_1_camera.position.x= motorcycle_1.position.x - 20;
+                } else if(orientation == 3) {
+                    motorcycle_1.position.y+= -speed;
+                    player_1_camera.position.y= motorcycle_1.position.y + 20;
+                } else if(orientation == 4) {
+                    motorcycle_1.position.x += -speed;
+                    player_1_camera.position.x= motorcycle_1.position.x + 20;
+                }
+
+}
+
+
+
+
+    
+
     function keyPressed(keyboardEvent) {
         switch(keyboardEvent.key) {
+            
             case 'ArrowUp':
                 if(orientation == 1) {
-                    motorcycle.position.y += speed;
-                    // camera.position.y = motorcycle.position.y - 15;
+                    motorcycle_1.position.y += speed;
+                    player_1_camera.position.y =motorcycle_1.position.y -20;
                 } else if(orientation == 2) {
-                    motorcycle.position.x += speed;
-                    // camera.position.x = motorcycle.position.x - 15;
+                    motorcycle_1.position.x += speed;
+                    player_1_camera.position.x= motorcycle_1.position.x - 20;
                 } else if(orientation == 3) {
-                    motorcycle.position.y+= -speed;
-                    // camera.position.y = motorcycle.position.y + 15;
+                    motorcycle_1.position.y+= -speed;
+                    player_1_camera.position.y= motorcycle_1.position.y + 20;
                 } else if(orientation == 4) {
-                    motorcycle.position.x += -speed;
-                    // camera.position.x = motorcycle.position.x + 15;
+                    motorcycle_1.position.x += -speed;
+                    player_1_camera.position.x= motorcycle_1.position.x + 20;
                 }
                 break;
+            
 
             case 'ArrowRight':
                 orientation++;
@@ -32,21 +64,21 @@ function init(motorcycle){
                     orientation = 1;
                 }
 
-                // camera.position.x = motorcycle.position.x;
-                // camera.position.y = motorcycle.position.y;
+                    player_1_camera.position.x= motorcycle_1.position.x;
+                    player_1_camera.position.y = motorcycle_1.position.y;
 
                 if(orientation == 1) {
-                    // camera.position.y = motorcycle.position.y - 15;
+                    player_1_camera.position.y = motorcycle_1.position.y - 20;
                 } else if(orientation == 2){
-                    // camera.position.x = motorcycle.position.x - 15;
+                    player_1_camera.position.x = motorcycle_1.position.x - 20;
                 } else if(orientation == 3) {
-                    // camera.position.y = motorcycle.position.y + 15;
+                    player_1_camera.position.y= motorcycle_1.position.y + 20;
                 } else if(orientation == 4) {
-                    // camera.position.x = motorcycle.position.x + 15;
+                    player_1_camera.position.x = motorcycle_1.position.x + 20;
                 }
                 
-                motorcycle.rotation.y -= Math.PI / 2;
-                // camera.rotation.y += -Math.PI / 2;
+                motorcycle_1.rotation.y -= Math.PI / 2;
+                player_1_camera.rotation.y += -Math.PI / 2;
                 break;
             
             case 'ArrowLeft':
@@ -56,25 +88,25 @@ function init(motorcycle){
                     orientation = 4;
                 }
 
-                // camera.position.x = motorcycle.position.x;
-                // camera.position.y = motorcycle.position.y;
+                player_1_camera.position.x = motorcycle_1.position.x;
+                player_1_camera.position.y = motorcycle_1.position.y;
 
                 if(orientation == 1) {
-                    // camera.position.y = motorcycle.position.y - 15;
+                    player_1_camera.position.y = motorcycle_1.position.y - 20;
                 } else if(orientation == 2) {
-                    // camera.position.x = motorcycle.position.x - 15;
+                    player_1_camera.position.x = motorcycle_1.position.x - 20;
                 } else if(orientation == 3) {
-                    // camera.position.y = motorcycle.position.y + 15;
+                    player_1_camera.position.y = motorcycle_1.position.y + 20;
                 } else if(orientation == 4) {
-                    // camera.position.x = motorcycle.position.x + 15;
+                    player_1_camera.position.x = motorcycle_1.position.x + 20;
                 }
 
-                motorcycle.rotation.y += Math.PI / 2;
-                // camera.rotation.y += +Math.PI / 2;
+                motorcycle_1.rotation.y += Math.PI / 2;
+                player_1_camera.rotation.y += +Math.PI / 2;
                 break;
         }
         keyboardEvent.preventDefault();
-        collision_wall(motorcycle);
+        collision_wall(motorcycle_1);
         render();
     }
 }
