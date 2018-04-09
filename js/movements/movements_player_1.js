@@ -4,7 +4,7 @@ window.onload=function() {
 }
   
 function init(motorcycle){
-    //LINEA IMPORTANTE PARA OBTENER EVENTO DEL TECLADO , ESTA TIENE QUE ESTAR AL INICIO DE TODOS LOS DOCUMENTOS, ES UN LISTENER
+    // Listener
     document.body.addEventListener('keydown', keyPressed);
 
     function keyPressed(keyboardEvent) {
