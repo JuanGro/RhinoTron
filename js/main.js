@@ -9,11 +9,15 @@ var ambient_light = new THREE.AmbientLight(0x207c99, 4);
 scene.add(ambient_light);
 
 // Plane size
-var environment_size = 300;
+var environment_size = 400;
+
 
 var main_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 var player_1_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 var player_2_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+//c1helper = new THREE.CameraHelper( player_1_camera );
+//	scene.add( c1helper );
 
 // display crafted scenes using WebGL
 var renderer_main_camera = new THREE.WebGLRenderer();
@@ -26,6 +30,16 @@ var loader = new THREE.ObjectLoader();
 var orientation = 1;
 var speed = 10;
 
+console.log("paso");
+
+
+// VIDAS Y MARCADORES inicializador
+var lifes=3;
+
+document.getElementById("Marcador_player1").innerHTML = lifes;
+document.getElementById("Marcador_player2").innerHTML = 3;
+
+
 // Draw scene
 function render() {
     renderer_main_camera.render(scene, main_camera);
@@ -36,7 +50,7 @@ function render() {
   
 var animate = function(){
     requestAnimationFrame(animate);
-    //movPerpetuoDelante();
+  
 
     render();
 };
