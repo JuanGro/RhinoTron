@@ -4,12 +4,35 @@ window.onload = function() {
     init(motorcycle_1, motorcycle_2);
 }
 
+function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z, orientation) {
+    if (orientation == 1 || orientation == 3) var geometry = new THREE.BoxGeometry(tail_width, tail_length, tail_height);
+    if (orientation == 2 || orientation == 4) var geometry = new THREE.BoxGeometry(tail_length, tail_width, tail_height);
+    
+    material = new THREE.MeshBasicMaterial({color: player_1_color});
+    cube = new THREE.Mesh(geometry, material);
+
+    cube.position.x = motorcycle_position_x;
+    cube.position.y = motorcycle_position_y;
+    cube.position.z = motorcycle_position_z;
+    
+    if (orientation == 1) cube.position.y -= tail_distance;
+    if (orientation == 2) cube.position.x -= tail_distance;
+    if (orientation == 3) cube.position.y += tail_distance;
+    if (orientation == 4) cube.position.x += tail_distance;
+
+    tail_player_1_x.push(motorcycle_position_x);
+    tail_player_1_y.push(motorcycle_position_y);
+    tail_player_1_z.push(motorcycle_position_z);
+    
+    scene.add(cube);
+}
+
 function init(motorcycle_1, motorcycle_2){
     //LINEA IMPORTANTE PARA OBTENER EVENTO DEL TECLADO , ESTA TIENE QUE ESTAR AL INICIO DE TODOS LOS DOCUMENTOS, ES UN LISTENER
     document.body.addEventListener('keydown', keyPressed);
         player_1_camera.position.x = motorcycle_1.position.x;
         player_1_camera.position.y = motorcycle_1.position.y - camera_remoteness;
-        player_1_camera.position.z = 25;
+        player_1_camera.position.z = camera_position_in_z;
         player_1_camera.rotation.x = Math.PI / 2;
         
     function keyPressed(keyboardEvent) {
@@ -30,21 +53,10 @@ function init(motorcycle_1, motorcycle_2){
                     player_1_camera.position.x = motorcycle_1.position.x + camera_remoteness;
                 }
 
-                if (orientation == 1 || orientation == 3) var geometry = new THREE.BoxGeometry(5, 10, 20);
-                if (orientation == 2 || orientation == 4) var geometry = new THREE.BoxGeometry(10, 5, 20);
-                var material = new THREE.MeshBasicMaterial({color: player_1_color});
-                var cube = new THREE.Mesh(geometry, material);
-                
-                cube.position.x = motorcycle_1.position.x;
-                cube.position.y = motorcycle_1.position.y;
-                cube.position.z = motorcycle_1.position.z;
-                
-                if (orientation == 1) cube.position.y -= camera_remoteness;
-                if (orientation == 2) cube.position.x -= camera_remoteness;
-                if (orientation == 3) cube.position.y += camera_remoteness;
-                if (orientation == 4) cube.position.x += camera_remoteness;
-                
-                scene.add(cube);
+                drawTail(motorcycle_1.position.x,
+                         motorcycle_1.position.y,
+                         motorcycle_1.position.z,
+                         orientation);
                 break;
 
             case 'ArrowRight':
@@ -97,7 +109,7 @@ function init(motorcycle_1, motorcycle_2){
         }
 
         keyboardEvent.preventDefault();
-        collision_wall(motorcycle_1, motorcycle_2,orientation);
+        collision_wall(motorcycle_1, motorcycle_2, orientation, 'player_1');
         render();
     }
 }

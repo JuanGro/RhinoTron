@@ -28,7 +28,18 @@ var loader = new THREE.ObjectLoader();
 
 var orientation = 1;
 var speed = 10;
+
 var camera_remoteness = 20;
+var camera_position_in_z = 25;
+
+var tail_distance = 7.5;
+var tail_width = 5;
+var tail_length = 10;
+var tail_height = 20;
+
+var tail_player_1_x = [];
+var tail_player_1_y = [];
+var tail_player_1_z = [];
 
 // VIDAS Y MARCADORES inicializador
 var player_1_lifes = 3;

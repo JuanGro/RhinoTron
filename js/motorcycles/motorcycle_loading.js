@@ -55,6 +55,6 @@ function randomPosition(moto1,moto2,min_position, max_position,orientation){
             player_1_camera.position.x = moto1.position.x + camera_remoteness;
         }
         
-        player_1_camera.position.z = 25;
+        player_1_camera.position.z = camera_position_in_z;
         player_1_camera.rotation.x = Math.PI / 2;
 }
