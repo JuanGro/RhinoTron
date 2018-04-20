@@ -1,35 +1,6 @@
 /* Import fontext */
 @import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
 
-#player_1_scoreboard, #player_2_scoreboard {
-  font-family: tron;
-  color: #18CAE6;
-  background: #000000;
-  width: 120px;
-
-  position: absolute;
-  bottom: 300px;
-  z-index: 99;
-
-  border-style: double;
-  border-width: 10px;
-  border-color: #0174DF;
-
-  font-size: 150px;
-  padding-left: 10px;
-  padding-right: 10px;
-
-  text-align: center;
-}
-
-#player_1_scoreboard {
-  left: 80px;
-}
-
-#player_2_scoreboard {
-  right: 80px;
-}
-
 @font-face {
   font-family: tron;
   src: url('./../fonts/Tr2n.ttf');
@@ -37,10 +8,15 @@
 
 body {
   background-color: black;
-  margin: 0;
   background-image: url('../img/menu1.gif');
+  margin: 0;
   background-size: cover;
   background-position: 50% 40%;
+}
+
+#song-page {
+  background-image: url('../img/menu10.gif');
+  background-position: 100% 0%;
 }
 
 canvas {
@@ -63,19 +39,17 @@ canvas {
 }
 
 #menu > div {
-  color: #45d9f4;
+  color: #18CAE6;
   font-family: tron;
-  /*font-weight: 2000;*/
 }
 
 /* Side bars around the game menu */
 #left, #right {
-  background: #2AD5E5;
+  background: #18CAE6;
   border-top: 1px solid white;
   height: 100px;
   position: absolute;
 }
-
 
 #left {
   right: -100px;
@@ -85,7 +59,6 @@ canvas {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
 #right {
   left: -56px;
   top: -229px;
@@ -95,10 +68,8 @@ canvas {
   z-index: 7;
 }
 
-
 /* Option in menu */
 #play, #custom, #controls, #credits,#customSong {
-  /*background: #006680;*/
   cursor: pointer;
   font-family: shadows into light;
   font-size: 50px;
@@ -173,7 +144,6 @@ canvas {
 
 /* Add styles when user pass mouse on links */
 #play:hover, #custom:hover, #credits:hover, #controls:hover,#customSong:hover {
-  /*background: #0174DF;*/
   color: white;
   -webkit-transform: rotate(-2deg);
   transform: rotate(-2deg);
@@ -201,18 +171,48 @@ a:hover {
   z-index: -1;
 }
 
-#player_1_camera {
+#player_1_camera, #player_2_camera {
+  border-style: double;
+  border-width: 10px;
+  border-color: #0174DF;
   position: absolute;
   bottom: 0;
-  left: 0;
   z-index: 99;
-  border: 8px solid blue;
+}
+
+#player_1_camera {
+  left: 0;
 }
 
 #player_2_camera {
-  position: absolute;
-  bottom: 0;
   right: 0;
+}
+
+#player_1_scoreboard, #player_2_scoreboard {
+  font-family: tron;
+  color: #18CAE6;
+  background: #000000;
+  width: 120px;
+
+  position: absolute;
+  bottom: 300px;
   z-index: 99;
-  border: 8px solid blue;
+
+  border-style: double;
+  border-width: 10px;
+  border-color: #0174DF;
+
+  font-size: 150px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  text-align: center;
+}
+
+#player_1_scoreboard {
+  left: 50px;
+}
+
+#player_2_scoreboard {
+  right: 50px;
 }
