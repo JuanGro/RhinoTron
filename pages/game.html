@@ -1,129 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../styles/styles.css">
- 
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./../styles/styles.css">
+    <title>RhinoGame</title>
+  </head>
 
-  <title>RhinoGame</title>
-</head>
-<body>
-
-
-<style >
-
-  @font-face {
-    font-family: tron;
-    src: url(../fonts/tr2n.ttf);
-  }
-
-  #Marcador_player1{
-   font-family: tron;
-   color: #18CAE6;
-   background: #000000;
-   width: 120px;
-
-   position: absolute;
-   bottom: 300px;
-   left: 80px;
-   z-index: 99;
-
-   border-style: double;
-   border-width: 10px;
-   border-color: #0174DF;
-
-   font-size: 150px;
-   padding-left: 10px;
-   padding-right: 10px;
-
-   text-align: center;
-}
-
-#Marcador_player2{
-   font-family: tron;
-   color: #18CAE6;
-   background: #000000;
-   width: 120px;
-
-   position: absolute;
-   bottom: 300px;
-   right: 80px;
-   z-index: 99;
-
-   border-style: double;
-   border-width: 10px;
-   border-color: #0174DF;
-
-   font-size: 150px;
-   padding-left: 10px;
-   padding-right: 10px;
-
-   text-align: center;
-}
-
-</style>
+  <body>
+    <audio autoplay loop>
+      <source id="selectedSong"  src="../music/TronLegacy.mp3"   type="audio/mpeg">
+    </audio>
 
 
+    <script >
+      
+      //window.onload = alert(localStorage.getItem("storageName"));
 
+      var pathSong=localStorage.getItem("storageName");
 
-
-
-  <audio autoplay loop>
-    <source id="selectedSong"  src="../music/TronLegacy.mp3"   type="audio/mpeg">
-  </audio>
-
-
-  <script >
+      console.log(pathSong);
     
-    //window.onload = alert(localStorage.getItem("storageName"));
+      var defaultSong = document.getElementById('selectedSong');
 
-    var pathSong=localStorage.getItem("storageName");
+      console.log(defaultSong.src); 
 
-    console.log(pathSong);
-   
-    var defaultSong = document.getElementById('selectedSong');
+      defaultSong.src=pathSong;
 
-    console.log(defaultSong.src); 
-
-    defaultSong.src=pathSong;
-
-  </script>
+    </script>
 
 
 
-  <div id="main_camera"></div>
-  <div id="player_1_camera"></div>
-  <div id="player_2_camera"></div>
-  <div id="Marcador_player1"></div>
-  <div id="Marcador_player2"></div>
-  <div id="Marcador_player3"></div>
+    <div id="main_camera"></div>
+    <div id="player_1_camera"></div>
+    <div id="player_2_camera"></div>
+    <div id="Marcador_player1"></div>
+    <div id="Marcador_player2"></div>
+    <div id="Marcador_player3"></div>
 
-  <script type="text/javascript" src="../threejs/build/three.js"></script>
-  <script type="text/javascript" src="../threejs/examples/js/controls/OrbitControls.js"></script>
-  <script type="text/javascript" src="../threejs/examples/js/loaders/OBJLoader.js"></script>
-  <!-- MAIN -->
+    <script type="text/javascript" src="../threejs/build/three.js"></script>
+    <script type="text/javascript" src="../threejs/examples/js/controls/OrbitControls.js"></script>
+    <script type="text/javascript" src="../threejs/examples/js/loaders/OBJLoader.js"></script>
+    <!-- MAIN -->
 
-  <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
 
-  <!-- GENERAL METHODS -->
-  <script type="text/javascript" src="../js/utils.js"></script>
-  <!-- ENVIRONMENT -->
-  <script type="text/javascript" src="../js/environment/floor.js"></script>
-  <script type="text/javascript" src="../js/environment/walls.js"></script>
-  <!-- CAMERAS -->
-  <script type="text/javascript" src="../js/cameras/main_camera.js"></script>
-  <script type="text/javascript" src="../js/cameras/camera_player_1.js"></script>
-  <script type="text/javascript" src="../js/cameras/camera_player_2.js"></script>
-  <!-- MOTORCYCLE -->
-  <script type="text/javascript" src="../js/motorcycles/motorcycle_loading.js"></script>
-  <script type="text/javascript" src="../js/motorcycles/motorcycle_1.js"></script>
-  <script type="text/javascript" src="../js/motorcycles/motorcycle_2.js"></script>
-  <!-- MOVEMENTS -->
-  <script type="text/javascript" src="../js/movements/movements_player_1.js"></script>
-  <!--<script type="text/javascript" src="../js/movements/movements_player_2.js"></script>              NO FUNCIONAN AL MISMO TIEMPO-->
-  <!-- COLLISIONS -->
-  <script type="text/javascript" src="../js/collisions/collision_wall.js"></script>
-</body>
+    <!-- GENERAL METHODS -->
+    <script type="text/javascript" src="../js/utils.js"></script>
+    <!-- ENVIRONMENT -->
+    <script type="text/javascript" src="../js/environment/floor.js"></script>
+    <script type="text/javascript" src="../js/environment/walls.js"></script>
+    <!-- CAMERAS -->
+    <script type="text/javascript" src="../js/cameras/main_camera.js"></script>
+    <script type="text/javascript" src="../js/cameras/camera_player_1.js"></script>
+    <script type="text/javascript" src="../js/cameras/camera_player_2.js"></script>
+    <!-- MOTORCYCLE -->
+    <script type="text/javascript" src="../js/motorcycles/motorcycle_loading.js"></script>
+    <script type="text/javascript" src="../js/motorcycles/motorcycle_1.js"></script>
+    <script type="text/javascript" src="../js/motorcycles/motorcycle_2.js"></script>
+    <!-- MOVEMENTS -->
+    <script type="text/javascript" src="../js/movements/movements_player_1.js"></script>
+    <!--<script type="text/javascript" src="../js/movements/movements_player_2.js"></script>              NO FUNCIONAN AL MISMO TIEMPO-->
+    <!-- COLLISIONS -->
+    <script type="text/javascript" src="../js/collisions/collision_wall.js"></script>
+  </body>
 </html>

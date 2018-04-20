@@ -1,6 +1,28 @@
 /* Import fontext */
 @import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
 
+#Marcador_player1 #Marcador_player2 {
+  font-family: tron;
+  color: #18CAE6;
+  background: #000000;
+  width: 120px;
+
+  position: absolute;
+  bottom: 300px;
+  left: 80px;
+  z-index: 99;
+
+  border-style: double;
+  border-width: 10px;
+  border-color: #0174DF;
+
+  font-size: 150px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  text-align: center;
+}
+
 @font-face {
     font-family: tron;
     src: url('./../fonts/Tr2n.ttf');
