@@ -36,6 +36,8 @@ var player_2_lifes = 3;
 
 var motorcycle_1_json_path = '../models/classic-1982-tron-light-cycle-red.json';
 var motorcycle_2_json_path = '../models/classic-1982-tron-light-cycle-green.json';
+var player_1_color = 0xff0000;
+var player_2_color = 0xff0000;
 
 document.getElementById("player_1_scoreboard").innerHTML = player_1_lifes;
 document.getElementById("player_2_scoreboard").innerHTML = player_2_lifes;

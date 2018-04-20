@@ -32,7 +32,7 @@ function init(motorcycle_1, motorcycle_2){
 
                 if (orientation == 1 || orientation == 3) var geometry = new THREE.BoxGeometry(5, 10, 20);
                 if (orientation == 2 || orientation == 4) var geometry = new THREE.BoxGeometry(10, 5, 20);
-                var material = new THREE.MeshBasicMaterial({color: 0xff0000});
+                var material = new THREE.MeshBasicMaterial({color: player_1_color});
                 var cube = new THREE.Mesh(geometry, material);
                 
                 cube.position.x = motorcycle_1.position.x;
