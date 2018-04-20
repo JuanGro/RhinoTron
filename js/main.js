@@ -40,6 +40,7 @@ var tail_width = 5;
 var tail_length = 10;
 var tail_height = 20;
 
+var tail_objects = [];
 var tail_player_1 = [];
 
 // VIDAS Y MARCADORES inicializador

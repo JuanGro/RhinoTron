@@ -15,14 +15,31 @@ function removeLife(player) {
   }
 }
 
+function removeTails(scene, tails_array) {
+  while(tails_array.length > 0) {
+    scene.remove(tails_array.pop());
+  }
+}
+
+function initializeScene(player, current_motorcycle, opponent_motorcycle, environment_size, orientation, scene, tail_objects) {
+  removeLife(player);
+  removeTails(scene, tail_objects);
+  randomPosition(current_motorcycle, opponent_motorcycle, 0, environment_size / 4, orientation);
+}
+
 function collisions(current_motorcycle, opponent_motorcycle, orientation, player) {
     /* Wall collisions */
     if(current_motorcycle.position.x > environment_size / 2 ||
       current_motorcycle.position.x < -environment_size / 2 ||
       current_motorcycle.position.y >  environment_size / 2 ||
       current_motorcycle.position.y < -environment_size / 2 ) {
-        removeLife(player);
-        randomPosition(current_motorcycle , opponent_motorcycle, 0, environment_size / 4, orientation);
+      initializeScene(player,
+                      current_motorcycle,
+                      opponent_motorcycle,
+                      environment_size,
+                      orientation,
+                      scene,
+                      tail_objects);
     }
 
     /* Tail collisions */
@@ -34,7 +51,12 @@ function collisions(current_motorcycle, opponent_motorcycle, orientation, player
       current_motorcycle.position.z.toFixed(decimals_to_check).toString(),
       "z"
     ))) {
-        removeLife(player);
-        randomPosition(current_motorcycle , opponent_motorcycle, 0, environment_size / 4, orientation);
+      initializeScene(player,
+        current_motorcycle,
+        opponent_motorcycle,
+        environment_size,
+        orientation,
+        scene,
+        tail_objects);
   }
 }
