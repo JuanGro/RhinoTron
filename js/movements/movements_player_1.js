@@ -14,14 +14,12 @@ function init(motorcycle_1, motorcycle_2){
     document.body.addEventListener('keydown', keyPressed);
 
 
-         player_1_camera.position.x = motorcycle_1.position.x;
-         player_1_camera.position.y = motorcycle_1.position.y -20;
-         player_1_camera.position.z = 25;
-         player_1_camera.rotation.x = Math.PI / 2;
-
-
-
-
+        player_1_camera.position.x = motorcycle_1.position.x;
+        player_1_camera.position.y = motorcycle_1.position.y -20;
+        player_1_camera.position.z = 25;
+        player_1_camera.rotation.x = Math.PI / 2;
+        
+        
    
 
 
@@ -44,6 +42,21 @@ function init(motorcycle_1, motorcycle_2){
                     motorcycle_1.position.x += -speed;
                     player_1_camera.position.x= motorcycle_1.position.x + 20;
                 }
+                if (orientation == 1 || orientation == 3) var geometry = new THREE.BoxGeometry(5, 10, 20);
+                if (orientation == 2 || orientation == 4) var geometry = new THREE.BoxGeometry(10, 5, 20);
+                var material = new THREE.MeshBasicMaterial({color: 0xff0000});
+                var cube = new THREE.Mesh(geometry, material);
+                
+                cube.position.x = motorcycle_1.position.x;
+                cube.position.y = motorcycle_1.position.y;
+                cube.position.z = motorcycle_1.position.z;
+                
+                if (orientation == 1) cube.position.y -= 20;
+                if (orientation == 2) cube.position.x -= 20;
+                if (orientation == 3) cube.position.y += 20;
+                if (orientation == 4) cube.position.x += 20;
+                
+                scene.add( cube );
                 break;
                 
             
