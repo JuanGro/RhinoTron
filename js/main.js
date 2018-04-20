@@ -58,6 +58,7 @@ document.getElementById("player_2_scoreboard").innerHTML = player_2_lifes;
 window.onload = function() {
     var motorcycle_1 = scene.getObjectByName("motorcycle_1");
     var motorcycle_2 = scene.getObjectByName("motorcycle_2");
+    randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
     initMotorcycle1(motorcycle_1, motorcycle_2);
 }
 

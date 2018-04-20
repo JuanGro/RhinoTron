@@ -120,4 +120,3 @@ function initMotorcycle1(motorcycle_1, motorcycle_2) {
         render();
     }
 }
-

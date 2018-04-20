@@ -1,14 +1,15 @@
-function buildMoto(moto_json_path, moto_name, scene, min_position, max_position) {
+function loadMotorcycles(motorcycle_1_json_path, motorcycle_2_json_path, motorcycle_1_name, motorcycle_2_name, scene) {
+    buildMoto(motorcycle_1_json_path, motorcycle_1_name, scene); // Set in a positive location
+    buildMoto(motorcycle_2_json_path, motorcycle_2_name, scene); // Set in a negative location
+}
+
+function buildMoto(motorcycle_json_path, motorcycle_name, scene) {
     // load a resource
     loader.load(
         // resource URL
-        moto_json_path,
+        motorcycle_json_path,
         // called when resource is loaded
         function(motorcycle) {
-            // Add motorcycle in a random position between min_position and max_position
-            motorcycle.position.x = getRandomArbitrary(min_position, max_position);
-            motorcycle.position.y = getRandomArbitrary(min_position, max_position);
-            motorcycle.position.z = 0;
             // Size of the motorcycle
             motorcycle.scale.set(15, 10, 10);
             // Rotation to place it
@@ -16,7 +17,7 @@ function buildMoto(moto_json_path, moto_name, scene, min_position, max_position)
             motorcycle.rotation.y = 0;
             motorcycle.rotation.z = 0;
             // Name for the motorcycle
-            motorcycle.name = moto_name;
+            motorcycle.name = motorcycle_name;
             // Add motorcycle to the environment
             scene.add(motorcycle);
         },
@@ -31,6 +32,24 @@ function buildMoto(moto_json_path, moto_name, scene, min_position, max_position)
     );
 }
 
+function setCamerasPosition(player_camera, motorcycle, orientation) {
+    player_camera.position.x = motorcycle.position.x;
+    player_camera.position.y = motorcycle.position.y;
+
+    if(orientation == 1) {
+        player_camera.position.y = motorcycle.position.y - camera_remoteness;
+    } else if(orientation == 2) {
+        player_camera.position.x = motorcycle.position.x - camera_remoteness;
+    } else if(orientation == 3) {
+        player_camera.position.y = motorcycle.position.y + camera_remoteness;
+    } else if(orientation == 4) {
+        player_camera.position.x = motorcycle.position.x + camera_remoteness;
+    }
+    
+    player_camera.position.z = camera_position_in_z;
+    player_camera.rotation.x = Math.PI / 2;
+}
+
 function randomPosition(current_motorcycle, opponent_motorcycle, min_position, max_position, orientation) {
         current_motorcycle.position.x = getRandomArbitrary(min_position, max_position);
         current_motorcycle.position.y = getRandomArbitrary(min_position, max_position);
@@ -41,20 +60,8 @@ function randomPosition(current_motorcycle, opponent_motorcycle, min_position, m
         opponent_motorcycle.position.y = -current_motorcycle.position.y;
         opponent_motorcycle.position.z = 0;
 
-        //POSITION MATCH CAMERA CADA VEZ QUE SE PIERDA
-        player_1_camera.position.x = current_motorcycle.position.x;
-        player_1_camera.position.y = current_motorcycle.position.y;
-
-        if(orientation == 1) {
-            player_1_camera.position.y = current_motorcycle.position.y - camera_remoteness;
-        } else if(orientation == 2) {
-            player_1_camera.position.x = current_motorcycle.position.x - camera_remoteness;
-        } else if(orientation == 3) {
-            player_1_camera.position.y = current_motorcycle.position.y + camera_remoteness;
-        } else if(orientation == 4) {
-            player_1_camera.position.x = current_motorcycle.position.x + camera_remoteness;
-        }
-        
-        player_1_camera.position.z = camera_position_in_z;
-        player_1_camera.rotation.x = Math.PI / 2;
+        setCamerasPosition(player_1_camera, current_motorcycle, orientation);
+        setCamerasPosition(player_2_camera, opponent_motorcycle, orientation);
 }
+
+loadMotorcycles(motorcycle_1_json_path, motorcycle_2_json_path, "motorcycle_1", "motorcycle_2", scene); // Set in a positive location
