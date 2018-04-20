@@ -1,7 +1,7 @@
 /* Import fontext */
 @import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
 
-#Marcador_player1 #Marcador_player2 {
+#player_1_scoreboard, #player_2_scoreboard {
   font-family: tron;
   color: #18CAE6;
   background: #000000;
@@ -9,7 +9,6 @@
 
   position: absolute;
   bottom: 300px;
-  left: 80px;
   z-index: 99;
 
   border-style: double;
@@ -21,6 +20,14 @@
   padding-right: 10px;
 
   text-align: center;
+}
+
+#player_1_scoreboard {
+  left: 80px;
+}
+
+#player_2_scoreboard {
+  right: 80px;
 }
 
 @font-face {
@@ -208,68 +215,4 @@ a:hover {
   right: 0;
   z-index: 99;
   border: 8px solid blue;
-}
-
-
-
-  #Marcador_player1{
-   font-family: tron;
-   color: #18CAE6;
-   background: #000000;
-   width: 120px;
-
-   position: absolute;
-   bottom: 300px;
-   left: 80px;
-   z-index: 99;
-
-   border-style: double;
-   border-width: 10px;
-   border-color: #0174DF;
-
-   font-size: 150px;
-   padding-left: 10px;
-   padding-right: 10px;
-}
-
-#Marcador_player2{
-   font-family: tron;
-   color: #18CAE6;
-   background: #000000;
-   width: 120px;
-   
-   position: absolute;
-   bottom: 300px;
-   right: 80px;
-   z-index: 99;
-
-   border-style: double;
-   border-width: 10px;
-   border-color: #0174DF;
-
-   font-size: 150px;
-   padding-left: 10px;
-   padding-right: 10px;
-}
-
-#Marcador_player3{
-   /*background-image: url('../img/daft1.gif');*/
-
-   font-family: tron;
-   color: #18CAE6;
-   background: #000000;
-   width: 120px;
-   
-   position: absolute;
-   bottom: 100px;
-   right: 400px;
-   z-index: 99;
-
-   border-style: double;
-   border-width: 10px;
-   border-color: #0174DF;
-
-   font-size: 150px;
-   padding-left: 10px;
-   padding-right: 10px;
 }

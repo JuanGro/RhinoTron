@@ -17,8 +17,8 @@ function collision_wall(current_motorcycle, opponent_motorcycle,orientation) {
         if (player_1_lifes < 0) {
           window.location.replace("./../index.html");
         } else {
-          document.getElementById("Marcador_player1").innerHTML = player_1_lifes;
-          document.getElementById("Marcador_player2").innerHTML = player_2_lifes;
+          document.getElementById("player_1_scoreboard").innerHTML = player_1_lifes;
+          document.getElementById("player_2_scoreboard").innerHTML = player_2_lifes;
         }
     }
 }
