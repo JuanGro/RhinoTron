@@ -35,33 +35,23 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene) {
 function setCamerasPosition(player_camera, motorcycle, orientation) {
     player_camera.position.x = motorcycle.position.x;
     player_camera.position.y = motorcycle.position.y;
-
-    if(orientation == 1) {
-        player_camera.position.y = motorcycle.position.y - camera_remoteness;
-    } else if(orientation == 2) {
-        player_camera.position.x = motorcycle.position.x - camera_remoteness;
-    } else if(orientation == 3) {
-        player_camera.position.y = motorcycle.position.y + camera_remoteness;
-    } else if(orientation == 4) {
-        player_camera.position.x = motorcycle.position.x + camera_remoteness;
-    }
-    
     player_camera.position.z = camera_position_in_z;
+
     player_camera.rotation.x = Math.PI / 2;
 }
 
 function randomPosition(current_motorcycle, opponent_motorcycle, min_position, max_position, orientation) {
-        current_motorcycle.position.x = getRandomArbitrary(min_position, max_position);
-        current_motorcycle.position.y = getRandomArbitrary(min_position, max_position);
-        current_motorcycle.position.z = 0;
-        //current_motorcycle.rotation.y= Math.PI;
+    current_motorcycle.position.x = getRandomArbitrary(min_position, max_position);
+    current_motorcycle.position.y = getRandomArbitrary(min_position, max_position);
+    current_motorcycle.position.z = 0;
+    //current_motorcycle.rotation.y= Math.PI;
 
-        opponent_motorcycle.position.x = -current_motorcycle.position.x;
-        opponent_motorcycle.position.y = -current_motorcycle.position.y;
-        opponent_motorcycle.position.z = 0;
+    opponent_motorcycle.position.x = -current_motorcycle.position.x;
+    opponent_motorcycle.position.y = -current_motorcycle.position.y;
+    opponent_motorcycle.position.z = 0;
 
-        setCamerasPosition(player_1_camera, current_motorcycle, orientation);
-        setCamerasPosition(player_2_camera, opponent_motorcycle, orientation);
+    setCamerasPosition(player_1_camera, current_motorcycle, orientation);
+    setCamerasPosition(player_2_camera, opponent_motorcycle, orientation);
 }
 
 loadMotorcycles(motorcycle_1_json_path, motorcycle_2_json_path, "motorcycle_1", "motorcycle_2", scene); // Set in a positive location
