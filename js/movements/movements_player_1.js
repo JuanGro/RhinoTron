@@ -1,6 +1,6 @@
 function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z, player_1_orientation) {
-    if (player_1_orientation == 1 || player_1_orientation == 3) var geometry = new THREE.BoxGeometry(tail_width, tail_length, tail_height);
-    if (player_1_orientation == 2 || player_1_orientation == 4) var geometry = new THREE.BoxGeometry(tail_length, tail_width, tail_height);
+    if (player_1_orientation == 1 || player_1_orientation == 3) geometry = new THREE.BoxGeometry(tail_width, tail_length, tail_height);
+    if (player_1_orientation == 2 || player_1_orientation == 4) geometry = new THREE.BoxGeometry(tail_length, tail_width, tail_height);
     
     material = new THREE.MeshBasicMaterial({color: player_1_color});
     cube = new THREE.Mesh(geometry, material);
@@ -14,6 +14,8 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
     if (player_1_orientation == 3) cube.position.y += tail_distance;
     if (player_1_orientation == 4) cube.position.x += tail_distance;
 
+    scene.add(cube);
+
     tail_player_1.push(
         motorcycle_position_x.toFixed(decimals_to_check).toString().concat(
         "x",
@@ -22,10 +24,6 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
         motorcycle_position_z.toFixed(decimals_to_check).toString(),
         "z"
     ));
-    
-    console.log(tail_player_1);
-    
-    scene.add(cube);
 }
 
 function continuosMovement(motorcycle_1, motorcycle_2) {
