@@ -13,24 +13,11 @@
       <source id="selectedSong"  src="../music/TronLegacy.mp3"   type="audio/mpeg">
     </audio>
 
-
-    <script >
-      
-      //window.onload = alert(localStorage.getItem("storageName"));
-
+    <script>
       var pathSong=localStorage.getItem("storageName");
-
-      console.log(pathSong);
-    
       var defaultSong = document.getElementById('selectedSong');
-
-      console.log(defaultSong.src); 
-
       defaultSong.src=pathSong;
-
     </script>
-
-
 
     <div id="main_camera"></div>
     <div id="player_1_camera"></div>
@@ -42,9 +29,7 @@
     <script type="text/javascript" src="../threejs/examples/js/controls/OrbitControls.js"></script>
     <script type="text/javascript" src="../threejs/examples/js/loaders/OBJLoader.js"></script>
     <!-- MAIN -->
-
     <script type="text/javascript" src="../js/main.js"></script>
-
     <!-- GENERAL METHODS -->
     <script type="text/javascript" src="../js/utils.js"></script>
     <!-- ENVIRONMENT -->
