@@ -28,12 +28,14 @@ var loader = new THREE.ObjectLoader();
 
 var orientation = 1;
 var speed = 10;
+var camera_remoteness = 20;
 
 // VIDAS Y MARCADORES inicializador
-var lifes = 3;
+var player_1_lifes = 3;
+var player_2_lifes = 3;
 
-document.getElementById("Marcador_player1").innerHTML = lifes;
-document.getElementById("Marcador_player2").innerHTML = 3;
+document.getElementById("Marcador_player1").innerHTML = player_1_lifes;
+document.getElementById("Marcador_player2").innerHTML = player_2_lifes;
 
 // Draw scene
 function render() {

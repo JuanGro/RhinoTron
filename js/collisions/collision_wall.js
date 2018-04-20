@@ -12,13 +12,13 @@ function collision_wall(current_motorcycle, opponent_motorcycle,orientation) {
 
       	randomPosition(current_motorcycle , opponent_motorcycle, 0, environment_size / 4,orientation);
 
-        lifes--;
+        player_1_lifes--;
 
-        if (lifes < 0) {
+        if (player_1_lifes < 0) {
           window.location.replace("./../index.html");
         } else {
-          document.getElementById("Marcador_player1").innerHTML = lifes;
-          document.getElementById("Marcador_player2").innerHTML = 3;
+          document.getElementById("Marcador_player1").innerHTML = player_1_lifes;
+          document.getElementById("Marcador_player2").innerHTML = player_2_lifes;
         }
     }
 }

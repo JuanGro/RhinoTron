@@ -24,9 +24,9 @@
 }
 
 @font-face {
-    font-family: tron;
-    src: url('./../fonts/Tr2n.ttf');
-  }
+  font-family: tron;
+  src: url('./../fonts/Tr2n.ttf');
+}
 
 body {
   background-color: black;

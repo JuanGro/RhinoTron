@@ -46,13 +46,13 @@ function randomPosition(moto1,moto2,min_position, max_position,orientation){
         player_1_camera.position.y = moto1.position.y;
 
         if(orientation == 1) {
-            player_1_camera.position.y = moto1.position.y - 20;
+            player_1_camera.position.y = moto1.position.y - camera_remoteness;
         } else if(orientation == 2) {
-            player_1_camera.position.x = moto1.position.x - 20;
+            player_1_camera.position.x = moto1.position.x - camera_remoteness;
         } else if(orientation == 3) {
-            player_1_camera.position.y = moto1.position.y + 20;
+            player_1_camera.position.y = moto1.position.y + camera_remoteness;
         } else if(orientation == 4) {
-            player_1_camera.position.x = moto1.position.x + 20;
+            player_1_camera.position.x = moto1.position.x + camera_remoteness;
         }
         
         player_1_camera.position.z = 25;
