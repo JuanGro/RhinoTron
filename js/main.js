@@ -59,6 +59,7 @@ window.onload = function() {
     var motorcycle_2 = scene.getObjectByName("motorcycle_2");
     randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
     initMotorcycle1(motorcycle_1, motorcycle_2);
+    initMotorcycle2(motorcycle_2, motorcycle_1);
 }
 
 // Draw scene
