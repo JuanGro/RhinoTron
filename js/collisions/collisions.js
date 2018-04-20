@@ -52,11 +52,11 @@ function collisions(current_motorcycle, opponent_motorcycle, orientation, player
       "z"
     ))) {
       initializeScene(player,
-        current_motorcycle,
-        opponent_motorcycle,
-        environment_size,
-        orientation,
-        scene,
-        tail_objects);
+                      current_motorcycle,
+                      opponent_motorcycle,
+                      environment_size,
+                      orientation,
+                      scene,
+                      tail_objects);
   }
 }

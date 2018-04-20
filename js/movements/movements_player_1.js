@@ -50,9 +50,9 @@ function continuosMovement(motorcycle_1, motorcycle_2) {
     collisions(motorcycle_1, motorcycle_2, player_1_orientation, 'player_1');
 
     drawTail(motorcycle_1.position.x,
-                motorcycle_1.position.y,
-                motorcycle_1.position.z,
-                player_1_orientation);
+             motorcycle_1.position.y,
+             motorcycle_1.position.z,
+             player_1_orientation);
 
     // render();
 }
