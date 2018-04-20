@@ -1,98 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../styles/stylesSong.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../styles/stylesSong.css">
+    <title>RhinoTron | Song`s</title>
+  </head>
 
+  <body>
+    <audio id="TronLegacy" >
+    <source src="../music/TronLegacy.mp3" value="aa" type="audio/mpeg">
+    </audio>
+    <audio id="EndOfLine">
+    <source src="../music/EndOfLine.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="Derezzed">
+    <source src="../music/Derezzed.mp3" type="audio/mpeg">
+    </audio>
 
-
-  <title> RhinoTron | Song`s</title>
-</head>
-<body>
-
-
-
-
-
-
-
-  <audio id="TronLegacy" >
-  <source src="../music/TronLegacy.mp3" value="aa" type="audio/mpeg">
-  </audio>
-
-  <audio id="EndOfLine">
-  <source src="../music/EndOfLine.mp3" type="audio/mpeg">
-  </audio>
-
-  <audio id="Derezzed">
-  <source src="../music/Derezzed.mp3" type="audio/mpeg">
-  </audio>
-
-  
-
-
-  <div id="menu">
-
-    <div id="play"><p><a href="#">Play List</a></p></div>
-
-    <div id="custom" value="1"><p><a href="#" onclick="pauseAudio();playAudio(1);valueSong('../music/TronLegacy.mp3')">1. TRON Legacy  <!--<input type="radio" name="song"  value="../music/TronLegacy.mp3" /> --></a></p></div>
-
-    <div id="customSong" value="2"><p><a href="#" onclick="pauseAudio();playAudio(2);valueSong('../music/EndOfLine.mp3')">2. End Of Line <!--<input type="radio" name="song" value="../music/EndOfLine.mp3">--> </a></p></div>
-
-    <div id="controls" value="3"><a href="#" onclick="pauseAudio();playAudio(3);valueSong('../music/Derezzed.mp3')"><p>3. Derezzed <!--<input type="radio" name="song" value="../music/Derezzed.mp3">--> </p></a>
+    <div id="menu">
+      <div id="play"><p><a href="#">Play List</a></p></div>
+      <div id="custom" value="1"><p><a href="#" onclick="pauseAudio();playAudio(1);valueSong('../music/TronLegacy.mp3')">1. TRON Legacy  <!--<input type="radio" name="song"  value="../music/TronLegacy.mp3" /> --></a></p></div>
+      <div id="customSong" value="2"><p><a href="#" onclick="pauseAudio();playAudio(2);valueSong('../music/EndOfLine.mp3')">2. End Of Line <!--<input type="radio" name="song" value="../music/EndOfLine.mp3">--> </a></p></div>
+      <div id="controls" value="3"><a href="#" onclick="pauseAudio();playAudio(3);valueSong('../music/Derezzed.mp3')"><p>3. Derezzed <!--<input type="radio" name="song" value="../music/Derezzed.mp3">--> </p></a></div>
+      <div id="controls"><a href="./../index.html"><p>Main Menu</p></a></div>
     </div>
 
+    <script>
+      var x=document.getElementById("TronLegacy");  
+      function playAudio(number) { 
+        if(number == 1) {
+            x = document.getElementById("TronLegacy");
+        } else if(number == 2) {
+            x = document.getElementById("EndOfLine"); 
+        } else if(number == 3) {
+            x = document.getElementById("Derezzed"); 
+        }
 
+        x.play(); 
+      } 
 
-    <div id="controls"><a href="../index.html"><p >Main Menu</p></a></div>
-  </div>
+      function pauseAudio() { 
+        x.pause(); 
+        x.load();
+      } 
 
-music
-
-
-
-
-<script>
-              
-              var x=document.getElementById("TronLegacy"); 
-      
-          
-            function playAudio(number) { 
-              if(number==1){
-                 x = document.getElementById("TronLegacy");
-
-              }else if(number==2){
-                 x = document.getElementById("EndOfLine"); 
-
-              }else if(number==3){
-                 x = document.getElementById("Derezzed"); 
-
-              }
-
-                x.play(); 
-
-            
-            } 
-
-            function pauseAudio() { 
-                x.pause(); 
-                x.load();
-            } 
-
-            function valueSong(path){
-				console.log(path);
-				localStorage.setItem("storageName",path);
-
-            }
-
-
+      function valueSong(path){
+        localStorage.setItem("storageName",path);
+      }
     </script>
-
-
-
-
-  </div>
-</body>
+  </body>
 </html>

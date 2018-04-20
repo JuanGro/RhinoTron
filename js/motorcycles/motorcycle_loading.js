@@ -37,33 +37,24 @@ function randomPosition(moto1,moto2,min_position, max_position,orientation){
         moto1.position.z = 0;
         //moto1.rotation.y= Math.PI;
 
-        moto2.position.x=-moto1.position.x;
-        moto2.position.y=-moto1.position.y;
-        moto2.position.z=0;
-
-        //var ultimaOrientacion=lastOrientation();
-
-        console.log(orientation);
+        moto2.position.x = -moto1.position.x;
+        moto2.position.y = -moto1.position.y;
+        moto2.position.z = 0;
 
         //POSITION MATCH CAMERA CADA VEZ QUE SE PIERDA
-
-        player_1_camera.position.x= moto1.position.x;
+        player_1_camera.position.x = moto1.position.x;
         player_1_camera.position.y = moto1.position.y;
 
-        if(orientation==1){
-            player_1_camera.position.y = moto1.position.y -20 ;
-        }else if(orientation==2){
-            player_1_camera.position.x = moto1.position.x -20;
-        }else if(orientation==3){
+        if(orientation == 1) {
+            player_1_camera.position.y = moto1.position.y - 20;
+        } else if(orientation == 2) {
+            player_1_camera.position.x = moto1.position.x - 20;
+        } else if(orientation == 3) {
             player_1_camera.position.y = moto1.position.y + 20;
-        }else if(orientation==4){
-            player_1_camera.position.x = moto1.position.x +20;
+        } else if(orientation == 4) {
+            player_1_camera.position.x = moto1.position.x + 20;
         }
         
         player_1_camera.position.z = 25;
         player_1_camera.rotation.x = Math.PI / 2;
-
-        
-    
-
 }

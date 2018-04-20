@@ -18,5 +18,5 @@ function buildFloor(environment_size, floor_texture_path) {
 }
 
 /*------------- Configuring the environment ----------------------- */
-var floor_texture_path = '../img/floor.png';
+var floor_texture_path = './../img/floor.png';
 buildFloor(environment_size, floor_texture_path);

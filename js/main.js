@@ -11,7 +11,6 @@ scene.add(ambient_light);
 // Plane size
 var environment_size = 400;
 
-
 var main_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 var player_1_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 var player_2_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -30,28 +29,21 @@ var loader = new THREE.ObjectLoader();
 var orientation = 1;
 var speed = 10;
 
-console.log("paso");
-
-
 // VIDAS Y MARCADORES inicializador
-var lifes=3;
+var lifes = 3;
 
 document.getElementById("Marcador_player1").innerHTML = lifes;
 document.getElementById("Marcador_player2").innerHTML = 3;
-
 
 // Draw scene
 function render() {
     renderer_main_camera.render(scene, main_camera);
     renderer_player_1_camera.render(scene, player_1_camera);
     renderer_player_2_camera.render(scene, player_2_camera);
-
 }
   
 var animate = function(){
     requestAnimationFrame(animate);
-  
-
     render();
 };
 
