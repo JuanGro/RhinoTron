@@ -19,6 +19,7 @@ function removeTails(scene, tails_array) {
   while(tails_array.length > 0) {
     scene.remove(tails_array.pop());
   }
+  tail_player_1 = [];
 }
 
 function initializeScene(player, current_motorcycle, opponent_motorcycle, environment_size, orientation, scene, tail_objects) {
@@ -44,13 +45,8 @@ function collisions(current_motorcycle, opponent_motorcycle, orientation, player
 
     /* Tail collisions */
     if(tail_player_1.includes(
-      current_motorcycle.position.x.toFixed(decimals_to_check).toString().concat(
-      "x",
-      current_motorcycle.position.y.toFixed(decimals_to_check).toString(),
-      "y",
-      current_motorcycle.position.z.toFixed(decimals_to_check).toString(),
-      "z"
-    ))) {
+      buildTailStringPos(current_motorcycle.position.x, current_motorcycle.position.y, current_motorcycle.position.z)
+    )) {
       initializeScene(player,
                       current_motorcycle,
                       opponent_motorcycle,
