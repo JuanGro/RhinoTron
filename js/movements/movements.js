@@ -45,8 +45,6 @@ function continuosMovement(current_motorcycle, opponent_motorcycle, player, play
              current_motorcycle.position.z,
              player_orientation,
              player);
-
-    // render();
 }
 
 function moveCameraToCurrentMotorcycle(player_cam, current_moto, player_orient){
