@@ -26,8 +26,11 @@ var renderer_player_2_camera = new THREE.WebGLRenderer();
 // instantiate a loader
 var loader = new THREE.ObjectLoader();
 
-var speed = 10;
+var speed = 2;
 var decimals_to_check = 0;
+
+var motorcycle_1;
+var motorcycle_2;
 
 var player_1_orientation = 1;
 var player_2_orientation = 1;
@@ -55,8 +58,8 @@ document.getElementById("player_1_scoreboard").innerHTML = player_1_lifes;
 document.getElementById("player_2_scoreboard").innerHTML = player_2_lifes;
 
 window.onload = function() {
-    var motorcycle_1 = scene.getObjectByName("motorcycle_1");
-    var motorcycle_2 = scene.getObjectByName("motorcycle_2");
+    motorcycle_1 = scene.getObjectByName("motorcycle_1");
+    motorcycle_2 = scene.getObjectByName("motorcycle_2");
     randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
     initMotorcycle1(motorcycle_1, motorcycle_2);
     initMotorcycle2(motorcycle_2, motorcycle_1);
@@ -70,6 +73,10 @@ function render() {
 }
   
 var animate = function() {
+    if(motorcycle_1 && motorcycle_2) {
+        continuosMovement(motorcycle_1, motorcycle_2, 'player_1', player_1_orientation, player_1_camera);
+        continuosMovement(motorcycle_2, motorcycle_1, 'player_2', player_2_orientation, player_2_camera);
+    }
     requestAnimationFrame(animate);
     render();
 };
