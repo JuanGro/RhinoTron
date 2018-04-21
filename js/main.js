@@ -71,7 +71,7 @@ function render() {
     renderer_player_1_camera.render(scene, player_1_camera);
     renderer_player_2_camera.render(scene, player_2_camera);
 }
-  
+
 var animate = function() {
     if(motorcycle_1 && motorcycle_2) {
         continuosMovement(motorcycle_1, motorcycle_2, 'player_1', player_1_orientation, player_1_camera);
