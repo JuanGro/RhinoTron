@@ -10,10 +10,10 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
     cube.position.y = motorcycle_position_y;
     cube.position.z = motorcycle_position_z;
     
-    if (orientation_player == 1) cube.position.y -= tail_distance;
-    if (orientation_player == 2) cube.position.x -= tail_distance;
-    if (orientation_player == 3) cube.position.y += tail_distance;
-    if (orientation_player == 4) cube.position.x += tail_distance;
+    // if (orientation_player == 1) cube.position.y -= tail_distance;
+    // if (orientation_player == 2) cube.position.x -= tail_distance;
+    // if (orientation_player == 3) cube.position.y += tail_distance;
+    // if (orientation_player == 4) cube.position.x += tail_distance;
 
     tail_objects.push(cube);
     scene.add(cube);
