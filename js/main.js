@@ -26,7 +26,7 @@ var renderer_player_2_camera = new THREE.WebGLRenderer();
 // instantiate a loader
 var loader = new THREE.ObjectLoader();
 
-var speed = 1;
+var speed = 2;
 var decimals_to_check = 0;
 
 var motorcycle_1;
