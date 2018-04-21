@@ -1,6 +1,6 @@
 // Specify the size to show in the window
 renderer_main_camera.setSize(window.innerWidth, window.innerHeight);
-var container = document.getElementById('main_camera');
+container = document.getElementById('main_camera');
 document.body.appendChild(container);
 container.appendChild(renderer_main_camera.domElement);
 
@@ -15,6 +15,3 @@ window.addEventListener('resize', function() {
 main_camera.position.x = 0;
 main_camera.position.y = 0;
 main_camera.position.z = environment_size / 2;
-
-// create a orbit control over the geometry
-// var controls = new THREE.OrbitControls(main_camera, renderer_main_camera.domElement);
