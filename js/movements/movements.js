@@ -1,10 +1,10 @@
 function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z, orientation_player, player, tail_flag) {
     if (tail_flag == 0) {
         if (orientation_player == 1 || orientation_player == 3) geometry = new THREE.BoxGeometry(tail_width, tail_length, tail_height);
-        if (orientation_player == 2 || orientation_player == 4) geometry = new THREE.BoxGeometry(tail_length, tail_width, tail_height);
+        else if (orientation_player == 2 || orientation_player == 4) geometry = new THREE.BoxGeometry(tail_length, tail_width, tail_height);
 
         if (player == "player_1") material = new THREE.MeshBasicMaterial({color: player_1_color});
-        if (player == "player_2") material = new THREE.MeshBasicMaterial({color: player_2_color});
+        else if (player == "player_2") material = new THREE.MeshBasicMaterial({color: player_2_color});
         cube = new THREE.Mesh(geometry, material);
 
         cube.position.x = motorcycle_position_x;
@@ -18,7 +18,19 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
             buildTailStringPos(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z)
         );
 
+        if (player == "player_1") player_1_tail_object = cube;
+        else if (player == "player_2") player_2_tail_object = cube;
+
         tail_flag++;
+    } else {
+        if (player == "player_1") {
+            if (orientation_player == 1 || orientation_player == 3) player_1_tail_object.scale.y += speed;
+            else if (orientation_player == 2 || orientation_player == 4) player_1_tail_object.scale.x += speed;
+        }
+        else if (player == "player_2") {
+            if (orientation_player == 1 || orientation_player == 3) player_2_tail_object.scale.y += speed;
+            else if (orientation_player == 2 || orientation_player == 4) player_2_tail_object.scale.x += speed;
+        }
     }
     
     return tail_flag;
