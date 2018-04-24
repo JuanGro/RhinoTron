@@ -45,9 +45,8 @@ function collisions(current_motorcycle, opponent_motorcycle, orientation, player
       scene,
       tail_objects
     );
-    tail_flag = 0;
+    return 0;
   }
-
   /* Tail collisions */
   else if(tail_strings.includes(
     buildTailStringPos(current_motorcycle.position.x, current_motorcycle.position.y, current_motorcycle.position.z)
@@ -61,8 +60,8 @@ function collisions(current_motorcycle, opponent_motorcycle, orientation, player
       scene,
       tail_objects
     );
-    tail_flag = 0;
+    return 0;
+  } else {
+    return tail_flag;
   }
-
-  return tail_flag;
 }
