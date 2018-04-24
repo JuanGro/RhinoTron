@@ -15,7 +15,6 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
 
         if (player == "player_1") player_1_tail_object = cube;
         else if (player == "player_2") player_2_tail_object = cube;
-
     } else {
         if(player == "player_1") {
             if(player_orientation == 1) {
@@ -53,6 +52,10 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
             }
         }
     }
+
+    tail_strings.push(
+        buildTailStringPos(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z)
+    );
     tail_flag++;
     
     return tail_flag;

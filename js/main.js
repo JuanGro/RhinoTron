@@ -50,7 +50,7 @@ var player_1_tail_object;
 var player_2_tail_object;
 
 var tail_objects = [];
-var tail_player_1 = [];
+var tail_strings = [];
 
 var player_1_lifes = 3;
 var player_2_lifes = 3;
