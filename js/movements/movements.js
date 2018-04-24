@@ -91,29 +91,29 @@ function continuosMovement(current_motorcycle, opponent_motorcycle, player, play
     );
 }
 
-function moveCameraToCurrentMotorcycle(player_cam, current_moto, player_orient){
-    player_cam.position.x = current_moto.position.x;
-    player_cam.position.y = current_moto.position.y;
+function moveCameraToCurrentMotorcycle(player_camera, current_moto, player_orientation){
+    player_camera.position.x = current_moto.position.x;
+    player_camera.position.y = current_moto.position.y;
 
-    if(player_orient == 1) {
-        player_cam.position.y = current_moto.position.y - camera_remoteness;
-    } else if(player_orient == 2) {
-        player_cam.position.x = current_moto.position.x - camera_remoteness;
-    } else if(player_orient == 3) {
-        player_cam.position.y = current_moto.position.y + camera_remoteness;
-    } else if(player_orient == 4) {
-        player_cam.position.x = current_moto.position.x + camera_remoteness;
+    if(player_orientation == 1) {
+        player_camera.position.y = current_moto.position.y - camera_remoteness;
+    } else if(player_orientation == 2) {
+        player_camera.position.x = current_moto.position.x - camera_remoteness;
+    } else if(player_orientation == 3) {
+        player_camera.position.y = current_moto.position.y + camera_remoteness;
+    } else if(player_orientation == 4) {
+        player_camera.position.x = current_moto.position.x + camera_remoteness;
     }
 }
 
-function changeRotationWithPI(moto, player_cam, keychar) {
+function changeRotationWithPI(moto, player_camera, keychar) {
   if(keychar == 'd' || keychar == 'ArrowRight') {
     moto.rotation.y -= Math.PI / 2;
-    player_cam.rotation.y -= Math.PI / 2;
+    player_camera.rotation.y -= Math.PI / 2;
   }
   else if(keychar == 'a' || keychar == 'ArrowLeft') {
     moto.rotation.y += Math.PI / 2;
-    player_cam.rotation.y += Math.PI / 2;
+    player_camera.rotation.y += Math.PI / 2;
   }
 }
 
