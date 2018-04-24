@@ -28,33 +28,43 @@ function initializeScene(player, current_motorcycle, opponent_motorcycle, enviro
   removeLife(player);
   removeTails(scene, tail_objects);
   randomPosition(current_motorcycle, opponent_motorcycle, 0, environment_size / 4, orientation);
+  player_1_tail_flag = 0;
+  player_2_tail_flag = 0;
 }
 
-function collisions(current_motorcycle, opponent_motorcycle, orientation, player) {
-    /* Wall collisions */
-    if(current_motorcycle.position.x > environment_size / 2 ||
-      current_motorcycle.position.x < -environment_size / 2 ||
-      current_motorcycle.position.y >  environment_size / 2 ||
-      current_motorcycle.position.y < -environment_size / 2 ) {
-      initializeScene(player,
-                      current_motorcycle,
-                      opponent_motorcycle,
-                      environment_size,
-                      orientation,
-                      scene,
-                      tail_objects);
-    }
-
-    /* Tail collisions */
-    if(tail_strings.includes(
-      buildTailStringPos(current_motorcycle.position.x, current_motorcycle.position.y, current_motorcycle.position.z)
-    )) {
-      initializeScene(player,
-                      current_motorcycle,
-                      opponent_motorcycle,
-                      environment_size,
-                      orientation,
-                      scene,
-                      tail_objects);
+function collisions(current_motorcycle, opponent_motorcycle, orientation, player, tail_flag) {
+  /* Wall collisions */
+  if(current_motorcycle.position.x > environment_size / 2 ||
+    current_motorcycle.position.x < -environment_size / 2 ||
+    current_motorcycle.position.y >  environment_size / 2 ||
+    current_motorcycle.position.y < -environment_size / 2 ) {
+    initializeScene(
+      player,
+      current_motorcycle,
+      opponent_motorcycle,
+      environment_size,
+      orientation,
+      scene,
+      tail_objects
+    );
+    tail_flag = 0;
   }
+
+  /* Tail collisions */
+  else if(tail_strings.includes(
+    buildTailStringPos(current_motorcycle.position.x, current_motorcycle.position.y, current_motorcycle.position.z)
+  )) {
+    initializeScene(
+      player,
+      current_motorcycle,
+      opponent_motorcycle,
+      environment_size,
+      orientation,
+      scene,
+      tail_objects
+    );
+    tail_flag = 0;
+  }
+
+  return tail_flag;
 }

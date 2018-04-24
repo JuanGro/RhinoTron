@@ -56,9 +56,6 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
     tail_strings.push(
         buildTailStringPos(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z)
     );
-    tail_flag++;
-    
-    return tail_flag;
 }
 
 function continuosMovement(current_motorcycle, opponent_motorcycle, player, player_orientation, player_camera, player_color, tail_flag) {
@@ -81,7 +78,7 @@ function continuosMovement(current_motorcycle, opponent_motorcycle, player, play
         player_camera.position.x = current_motorcycle.position.x + camera_remoteness;
     }
 
-    collisions(current_motorcycle, opponent_motorcycle, player_orientation, player);
+    tail_flag = collisions(current_motorcycle, opponent_motorcycle, player_orientation, player, tail_flag);
 
     return drawTail(
         current_motorcycle.position.x,
