@@ -15,9 +15,6 @@ var main_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.in
 var player_1_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 var player_2_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-//c1helper = new THREE.CameraHelper( player_1_camera );
-//	scene.add( c1helper );
-
 // display crafted scenes using WebGL
 var renderer_main_camera = new THREE.WebGLRenderer();
 var renderer_player_1_camera = new THREE.WebGLRenderer();

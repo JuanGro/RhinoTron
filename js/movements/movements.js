@@ -1,7 +1,9 @@
 function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z, player, player_orientation, player_color, tail_flag) {
     if(tail_flag == 0) {
         cube = new THREE.Mesh(
+            // Geometry
             new THREE.BoxGeometry(tail_width, tail_length, tail_height),
+            // Material
             new THREE.MeshBasicMaterial({color: player_color})
         );
 
@@ -133,6 +135,7 @@ function initMotorcycle1(current_motorcycle, opponent_motorcycle) {
                 moveCameraToCurrentMotorcycle(player_1_camera, current_motorcycle, player_1_orientation);
                 changeRotationWithPI(current_motorcycle, player_1_camera, 'ArrowRight');
                 break;
+
             case 'ArrowLeft':
                 player_1_orientation--;
                 player_1_tail_flag = 0;
@@ -165,6 +168,7 @@ function initMotorcycle2(current_motorcycle, opponent_motorcycle) {
                 moveCameraToCurrentMotorcycle(player_2_camera, current_motorcycle, player_2_orientation);
                 changeRotationWithPI(current_motorcycle, player_2_camera, 'd');
                 break;
+
             case 'a':
                 player_2_orientation--;
                 player_2_tail_flag = 0;
