@@ -38,9 +38,10 @@ var player_2_orientation = 1;
 var camera_remoteness = 20;
 var camera_position_in_z = 25;
 
-var tail_distance = 7.5;
-var tail_width = 5;
-var tail_length = 10;
+// DO NOT CHANGE!
+var tail_distance = 0;
+var tail_width = 1;
+var tail_length = 1;
 var tail_height = 20;
 
 var player_1_tail_flag = 0;
@@ -79,10 +80,8 @@ function render() {
 
 var animate = function() {
     if(motorcycle_1 && motorcycle_2) {
-        player_1_tail_flag = continuosMovement(motorcycle_1, motorcycle_2, 'player_1', player_1_orientation, player_1_camera, player_1_tail_flag);
-        player_2_tail_flag = continuosMovement(motorcycle_2, motorcycle_1, 'player_2', player_2_orientation, player_2_camera, player_2_tail_flag);
-        // console.log(player_1_tail_flag, player_2_tail_flag);
-        console.log(player_1_tail_object, player_2_tail_object);
+        player_1_tail_flag = continuosMovement(motorcycle_1, motorcycle_2, 'player_1', player_1_orientation, player_1_camera, player_1_color, player_1_tail_flag);
+        player_2_tail_flag = continuosMovement(motorcycle_2, motorcycle_1, 'player_2', player_2_orientation, player_2_camera, player_2_color, player_2_tail_flag);
     }
     requestAnimationFrame(animate);
     render();

@@ -11,7 +11,8 @@ function buildTailStringPos(motorcycle_position_x, motorcycle_position_y, motorc
     "x",
     motorcycle_position_y.toFixed(decimals_to_check).toString(),
     "y",
-    motorcycle_position_z.toFixed(decimals_to_check).toString(),
-    "z");
+    // motorcycle_position_z.toFixed(decimals_to_check).toString(),
+    // "z"
+    );
     return string;
 }

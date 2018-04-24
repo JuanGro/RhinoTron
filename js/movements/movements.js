@@ -1,42 +1,64 @@
-function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z, orientation_player, player, tail_flag) {
-    if (tail_flag == 0) {
-        if (orientation_player == 1 || orientation_player == 3) geometry = new THREE.BoxGeometry(tail_width, tail_length, tail_height);
-        else if (orientation_player == 2 || orientation_player == 4) geometry = new THREE.BoxGeometry(tail_length, tail_width, tail_height);
-
-        if (player == "player_1") material = new THREE.MeshBasicMaterial({color: player_1_color});
-        else if (player == "player_2") material = new THREE.MeshBasicMaterial({color: player_2_color});
-        cube = new THREE.Mesh(geometry, material);
+function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z, player, player_orientation, player_color, tail_flag) {
+    if(tail_flag == 0) {
+        cube = new THREE.Mesh(
+            new THREE.BoxGeometry(tail_width, tail_length, tail_height),
+            new THREE.MeshBasicMaterial({color: player_color})
+        );
 
         cube.position.x = motorcycle_position_x;
         cube.position.y = motorcycle_position_y;
         cube.position.z = motorcycle_position_z;
 
+        // Add to objects list to remove them when someone lost
         tail_objects.push(cube);
         scene.add(cube);
-
-        tail_player_1.push(
-            buildTailStringPos(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z)
-        );
 
         if (player == "player_1") player_1_tail_object = cube;
         else if (player == "player_2") player_2_tail_object = cube;
 
-        tail_flag++;
     } else {
-        if (player == "player_1") {
-            if (orientation_player == 1 || orientation_player == 3) player_1_tail_object.scale.y += speed;
-            else if (orientation_player == 2 || orientation_player == 4) player_1_tail_object.scale.x += speed;
-        }
-        else if (player == "player_2") {
-            if (orientation_player == 1 || orientation_player == 3) player_2_tail_object.scale.y += speed;
-            else if (orientation_player == 2 || orientation_player == 4) player_2_tail_object.scale.x += speed;
+        if(player == "player_1") {
+            if(player_orientation == 1) {
+                player_1_tail_object.position.y = motorcycle_position_y - player_1_tail_object.scale.y / 2;
+                player_1_tail_object.scale.y += speed;
+            }
+            else if(player_1_orientation == 2) {
+                player_1_tail_object.position.x = motorcycle_position_x + player_1_tail_object.scale.x / 2;
+                player_1_tail_object.scale.x -= speed;
+            }
+            else if(player_orientation == 3) {
+                player_1_tail_object.position.y = motorcycle_position_y + player_1_tail_object.scale.y / 2;
+                player_1_tail_object.scale.y += speed;
+            }
+            else if(player_1_orientation == 4) {
+                player_1_tail_object.position.x = motorcycle_position_x + player_1_tail_object.scale.x / 2;
+                player_1_tail_object.scale.x += speed;
+            }
+        } else if(player == "player_2") {
+            if(player_orientation == 1) {
+                player_2_tail_object.position.y = motorcycle_position_y - player_2_tail_object.scale.y / 2;
+                player_2_tail_object.scale.y += speed;
+            }
+            else if(player_2_orientation == 2) {
+                player_2_tail_object.position.x = motorcycle_position_x + player_2_tail_object.scale.x / 2;
+                player_2_tail_object.scale.x -= speed;
+            }
+            else if(player_orientation == 3) {
+                player_2_tail_object.position.y = motorcycle_position_y + player_2_tail_object.scale.y / 2;
+                player_2_tail_object.scale.y += speed;
+            }
+            else if(player_2_orientation == 4) {
+                player_2_tail_object.position.x = motorcycle_position_x + player_2_tail_object.scale.x / 2;
+                player_2_tail_object.scale.x += speed;
+            }
         }
     }
+    tail_flag++;
     
     return tail_flag;
 }
 
-function continuosMovement(current_motorcycle, opponent_motorcycle, player, player_orientation, player_camera, tail_flag) {
+function continuosMovement(current_motorcycle, opponent_motorcycle, player, player_orientation, player_camera, player_color, tail_flag) {
     player_camera.position.x = current_motorcycle.position.x;
     player_camera.position.y = current_motorcycle.position.y - camera_remoteness;
     player_camera.position.z = camera_position_in_z;
@@ -56,14 +78,17 @@ function continuosMovement(current_motorcycle, opponent_motorcycle, player, play
         player_camera.position.x = current_motorcycle.position.x + camera_remoteness;
     }
 
-    // collisions(current_motorcycle, opponent_motorcycle, player_orientation, player);
+    collisions(current_motorcycle, opponent_motorcycle, player_orientation, player);
 
-    return drawTail(current_motorcycle.position.x,
-             current_motorcycle.position.y,
-             current_motorcycle.position.z,
-             player_orientation,
-             player,
-             tail_flag);
+    return drawTail(
+        current_motorcycle.position.x,
+        current_motorcycle.position.y,
+        current_motorcycle.position.z,
+        player,
+        player_orientation,
+        player_color,
+        tail_flag
+    );
 }
 
 function moveCameraToCurrentMotorcycle(player_cam, current_moto, player_orient){
@@ -81,12 +106,12 @@ function moveCameraToCurrentMotorcycle(player_cam, current_moto, player_orient){
     }
 }
 
-function changeRotationWithPI(moto, player_cam, keychar){
-  if(keychar == 'd' || keychar == 'ArrowRight'){
+function changeRotationWithPI(moto, player_cam, keychar) {
+  if(keychar == 'd' || keychar == 'ArrowRight') {
     moto.rotation.y -= Math.PI / 2;
     player_cam.rotation.y -= Math.PI / 2;
   }
-  else if(keychar == 'a' || keychar == 'ArrowLeft'){
+  else if(keychar == 'a' || keychar == 'ArrowLeft') {
     moto.rotation.y += Math.PI / 2;
     player_cam.rotation.y += Math.PI / 2;
   }
