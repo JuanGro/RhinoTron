@@ -6,9 +6,9 @@ function getRandomArbitrary(min, max) {
 }
 
 function buildTailStringPos(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z) {
-    return motorcycle_position_x.toFixed(decimals_to_check).toString().concat(
+    return Math.floor(motorcycle_position_x).toString().concat(
         "x",
-        motorcycle_position_y.toFixed(decimals_to_check).toString(),
+        Math.floor(motorcycle_position_y).toString(),
         "y"
     );
 }
