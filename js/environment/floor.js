@@ -15,11 +15,6 @@ function buildFloor(environment_size, floor_texture_path) {
       })
     );
 
-    /* This is done by default */
-    // mesh.position.x = 0;
-    // mesh.position.y = 0;
-    // mesh.position.z = 0;
-
     scene.add(mesh);
 }
 
