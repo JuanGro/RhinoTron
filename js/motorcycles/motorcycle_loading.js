@@ -44,7 +44,6 @@ function randomPosition(current_motorcycle, opponent_motorcycle, min_position, m
     current_motorcycle.position.x = getRandomArbitrary(min_position, max_position);
     current_motorcycle.position.y = getRandomArbitrary(min_position, max_position);
     current_motorcycle.position.z = 0;
-    //current_motorcycle.rotation.y= Math.PI;
 
     opponent_motorcycle.position.x = -current_motorcycle.position.x;
     opponent_motorcycle.position.y = -current_motorcycle.position.y;
@@ -54,4 +53,4 @@ function randomPosition(current_motorcycle, opponent_motorcycle, min_position, m
     setCamerasPosition(player_2_camera, opponent_motorcycle, orientation);
 }
 
-loadMotorcycles(motorcycle_1_json_path, motorcycle_2_json_path, "motorcycle_1", "motorcycle_2", scene); // Set in a positive location
+loadMotorcycles(motorcycle_1_json_path, motorcycle_2_json_path, "motorcycle_1", "motorcycle_2", scene);
