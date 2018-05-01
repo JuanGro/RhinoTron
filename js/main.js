@@ -25,7 +25,8 @@ var renderer_player_2_camera = new THREE.WebGLRenderer();
 var loader = new THREE.ObjectLoader();
 
 // Speed of the motorcycles
-var speed = 2;
+var player_1_speed = 2;
+var player_2_speed = 2;
 
 // Objects to save the 3D motorcycles
 var motorcycle_1;
@@ -81,6 +82,7 @@ window.onload = function() {
     randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
     initMotorcycle1(motorcycle_1, motorcycle_2);
     initMotorcycle2(motorcycle_2, motorcycle_1);
+    powerUpSpeed('player_1');
 }
 
 // Draw scene
@@ -92,8 +94,9 @@ function render() {
 
 var animate = function() {
     if(motorcycle_1 && motorcycle_2) {
-        player_1_tail_flag = continuosMovement(motorcycle_1, motorcycle_2, 'player_1', player_1_orientation, player_1_camera, player_1_color, player_1_tail_flag);
-        player_2_tail_flag = continuosMovement(motorcycle_2, motorcycle_1, 'player_2', player_2_orientation, player_2_camera, player_2_color, player_2_tail_flag);
+        player_1_tail_flag = continuosMovement(motorcycle_1, motorcycle_2, 'player_1', player_1_orientation, player_1_camera, player_1_color, player_1_tail_flag, player_1_speed);
+        player_2_tail_flag = continuosMovement(motorcycle_2, motorcycle_1, 'player_2', player_2_orientation, player_2_camera, player_2_color, player_2_tail_flag, player_1_speed);
+        console.log(player_1_speed);
     }
     requestAnimationFrame(animate);
     render();

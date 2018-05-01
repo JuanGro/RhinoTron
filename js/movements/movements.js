@@ -21,36 +21,36 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
         if(player == "player_1") {
             if(player_orientation == 1) {
                 player_1_tail_object.position.y = motorcycle_position_y - player_1_tail_object.scale.y / 2;
-                player_1_tail_object.scale.y += speed;
+                player_1_tail_object.scale.y += player_1_speed;
             }
             else if(player_1_orientation == 2) {
                 player_1_tail_object.position.x = motorcycle_position_x + player_1_tail_object.scale.x / 2;
-                player_1_tail_object.scale.x -= speed;
+                player_1_tail_object.scale.x -= player_1_speed;
             }
             else if(player_orientation == 3) {
                 player_1_tail_object.position.y = motorcycle_position_y + player_1_tail_object.scale.y / 2;
-                player_1_tail_object.scale.y += speed;
+                player_1_tail_object.scale.y += player_1_speed;
             }
             else if(player_1_orientation == 4) {
                 player_1_tail_object.position.x = motorcycle_position_x + player_1_tail_object.scale.x / 2;
-                player_1_tail_object.scale.x += speed;
+                player_1_tail_object.scale.x += player_1_speed;
             }
         } else if(player == "player_2") {
             if(player_orientation == 1) {
                 player_2_tail_object.position.y = motorcycle_position_y - player_2_tail_object.scale.y / 2;
-                player_2_tail_object.scale.y += speed;
+                player_2_tail_object.scale.y += player_2_speed;
             }
             else if(player_2_orientation == 2) {
                 player_2_tail_object.position.x = motorcycle_position_x + player_2_tail_object.scale.x / 2;
-                player_2_tail_object.scale.x -= speed;
+                player_2_tail_object.scale.x -= player_2_speed;
             }
             else if(player_orientation == 3) {
                 player_2_tail_object.position.y = motorcycle_position_y + player_2_tail_object.scale.y / 2;
-                player_2_tail_object.scale.y += speed;
+                player_2_tail_object.scale.y += player_2_speed;
             }
             else if(player_2_orientation == 4) {
                 player_2_tail_object.position.x = motorcycle_position_x + player_2_tail_object.scale.x / 2;
-                player_2_tail_object.scale.x += speed;
+                player_2_tail_object.scale.x += player_2_speed;
             }
         }
     }
@@ -60,23 +60,23 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
     );
 }
 
-function continuosMovement(current_motorcycle, opponent_motorcycle, player, player_orientation, player_camera, player_color, tail_flag) {
+function continuosMovement(current_motorcycle, opponent_motorcycle, player, player_orientation, player_camera, player_color, tail_flag, player_speed) {
     player_camera.position.x = current_motorcycle.position.x;
     player_camera.position.y = current_motorcycle.position.y - camera_remoteness;
     player_camera.position.z = camera_position_in_z;
     player_camera.rotation.x = Math.PI / 2;
 
     if(player_orientation == 1) {
-        current_motorcycle.position.y += speed;
+        current_motorcycle.position.y += player_speed;
         player_camera.position.y = current_motorcycle.position.y - camera_remoteness;
     } else if(player_orientation == 2) {
-        current_motorcycle.position.x += speed;
+        current_motorcycle.position.x += player_speed;
         player_camera.position.x = current_motorcycle.position.x - camera_remoteness;
     } else if(player_orientation == 3) {
-        current_motorcycle.position. y -= speed;
+        current_motorcycle.position. y -= player_speed;
         player_camera.position.y = current_motorcycle.position.y + camera_remoteness;
     } else if(player_orientation == 4) {
-        current_motorcycle.position.x -= speed;
+        current_motorcycle.position.x -= player_speed;
         player_camera.position.x = current_motorcycle.position.x + camera_remoteness;
     }
 

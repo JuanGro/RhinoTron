@@ -1,0 +1,70 @@
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+
+@font-face {
+  font-family: tron;
+  src: url('./../fonts/Tr2n.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url('../img/menu6.gif');
+  background-size: cover;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 400px;
+  margin-left: -200px;
+  font: 300 30px/1 tron, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  animation: 30s credits linear infinite;
+}
+
+.movie {
+  margin-bottom: 50px;
+  font-size: 60px;
+}
+
+.title {
+  margin-bottom: 50px;
+  font-size: 50px;
+}
+
+.job {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+.name {
+  margin-bottom: 50px;
+  font-size: 40px;
+}
+
+.back h3{
+  margin: 20px;
+  font-family: tron;
+  color: white !important;
+  text-decoration: none;
+}
+
+@keyframes credits {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -500%;
+  }
+}
