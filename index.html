@@ -9,18 +9,36 @@
   </head>
 
   <body>
-    <audio autoplay loop>
+
+
+
+    <audio autoplay loop id="song">
       <source src="./music/The-Son-of-Flynn.mp3" type="audio/mpeg">
     </audio>
 
+
+
+
+    <audio id="select">
+    <source src="music/select.wav" type="audio/mpeg">
+    </audio>
+
+
     <div id="menu">
       <!--<div id="left"></div>-->
-      <div id="play"><p><a href="pages/game.html">PLAY</a></p></div>
-      <div id="custom"><p><a href="#">CUSTOM MOTORCYCLE</a></p></div>
-      <div id="customSong"><p><a href="pages/song.html">CUSTOM SONG</a></p></div>
-      <div id="controls"><p>CONTROLS</p></div>
-      <div id="credits"><p>CREDITS</p></div>
+      <div id="play" ><p><a href="pages/game.html" onmouseover="select()">PLAY</a></p></div>
+
+      <div id="custom"><p><a href="#" onmouseover="select()">CUSTOM MOTORCYCLE</a></p></div>
+      <div id="customSong"><p><a href="pages/song.html" onmouseover="select()">CUSTOM SONG</a></p></div>
+      <div id="controls"><p><a onmouseover="select()">CONTROLS</a></p></div>
+      <div id="credits"><p><a href="pages/credits.html" onmouseover="select()" >CREDITS</a></p></div>
       <!--<div id="right"></div>-->
     </div>
+
+    <script type="text/javascript" src="js/environment/soundEffects.js"></script>
+
+    
+
   </body>
-</html>
+ 
+ </html>
