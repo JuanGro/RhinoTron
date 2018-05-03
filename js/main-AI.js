@@ -76,10 +76,14 @@ var player_1_color = 0xff0000;
 var player_2_color = 0x7CFC00;
 
 window.onload = function() {
-    motorcycle_1 = scene.getObjectByName("motorcycle_1");
-    motorcycle_2 = scene.getObjectByName("motorcycle_2");
-    randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
-    initMotorcycle1(motorcycle_1, motorcycle_2);
+    while(!motorcycle_1 || !motorcycle_2) {
+        motorcycle_1 = scene.getObjectByName("motorcycle_1");
+        motorcycle_2 = scene.getObjectByName("motorcycle_2");
+        if (motorcycle_1 && motorcycle_2) {
+            randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
+            initMotorcycle1(motorcycle_1, motorcycle_2);
+        }
+    }
 }
 
 // Draw scene
