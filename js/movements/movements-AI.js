@@ -153,7 +153,6 @@ function initMotorcycle1(current_motorcycle, opponent_motorcycle) {
 }
 
 function moveMotorcycle2(current_motorcycle) {
-    console.log(isThereAWall(current_motorcycle, player_2_orientation));
     if(isThereAWall(current_motorcycle, player_2_orientation)) {
         player_2_orientation++;
         player_2_tail_flag = 0;
@@ -175,17 +174,4 @@ function moveMotorcycle2(current_motorcycle) {
         moveCameraToCurrentMotorcycle(player_2_camera, current_motorcycle, player_2_orientation);
         changeRotationWithPI(current_motorcycle, player_2_camera, 'd');
     }
-
-        // if (Math.random() >= 0.5) {
-        // } else {
-        //     console.log("JA");
-        //     player_2_orientation--;
-        //     player_2_tail_flag = 0;
-    
-        //     if(player_2_orientation < 1) {
-        //         player_2_orientation = 4;
-        //     }
-        //     moveCameraToCurrentMotorcycle(player_2_camera, current_motorcycle, player_2_orientation);
-        //     changeRotationWithPI(current_motorcycle, player_2_camera, 'a');
-        // }
 }
