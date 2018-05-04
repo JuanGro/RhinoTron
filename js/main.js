@@ -22,7 +22,8 @@ var renderer_player_1_camera = new THREE.WebGLRenderer();
 var renderer_player_2_camera = new THREE.WebGLRenderer();
 
 // instantiate a loader
-var loader = new THREE.ObjectLoader();
+var motorcycle_1_loader = new THREE.ObjectLoader();
+var motorcycle_2_loader = new THREE.ObjectLoader();
 
 // Speed of the motorcycles
 var speed = 2;
@@ -76,15 +77,11 @@ var player_1_color = 0xff0000;
 var player_2_color = 0x7CFC00;
 
 window.onload = function() {
-    while(!motorcycle_1 || !motorcycle_2) {
-        motorcycle_1 = scene.getObjectByName("motorcycle_1");
-        motorcycle_2 = scene.getObjectByName("motorcycle_2");
-        if (motorcycle_1 && motorcycle_2) {
-            randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
-            initMotorcycle1(motorcycle_1, motorcycle_2);
-            initMotorcycle2(motorcycle_2, motorcycle_1);
-        }
-    }
+    motorcycle_1 = scene.getObjectByName("motorcycle_1");
+    motorcycle_2 = scene.getObjectByName("motorcycle_2");
+    randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
+    initMotorcycle1(motorcycle_1, motorcycle_2);
+    initMotorcycle2(motorcycle_2, motorcycle_1);
 }
 
 // Draw scene

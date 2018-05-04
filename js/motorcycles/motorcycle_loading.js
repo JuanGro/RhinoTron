@@ -1,11 +1,11 @@
 function loadMotorcycles(motorcycle_1_json_path, motorcycle_2_json_path, motorcycle_1_name, motorcycle_2_name, scene) {
-    buildMoto(motorcycle_1_json_path, motorcycle_1_name, scene); // Set in a positive location
-    buildMoto(motorcycle_2_json_path, motorcycle_2_name, scene); // Set in a negative location
+    buildMoto(motorcycle_1_json_path, motorcycle_1_name, scene, motorcycle_1_loader, 1); // Set in a positive location
+    buildMoto(motorcycle_2_json_path, motorcycle_2_name, scene, motorcycle_2_loader, 2); // Set in a negative location
 }
 
-function buildMoto(motorcycle_json_path, motorcycle_name, scene) {
+function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_loader, motorcycle_number) {
     // load a resource
-    loader.load(
+    motorcycle_loader.load(
         // resource URL
         motorcycle_json_path,
         // called when resource is loaded
@@ -20,6 +20,13 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene) {
             motorcycle.name = motorcycle_name;
             // Add motorcycle to the environment
             scene.add(motorcycle);
+
+            if (motorcycle_number == 2) {
+                motorcycle_1 = scene.getObjectByName("motorcycle_1");
+                motorcycle_2 = scene.getObjectByName("motorcycle_2");
+                randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
+                initMotorcycle1(motorcycle_1, motorcycle_2);
+            }
         },
         // called when loading is in progresses
         function(xhr) {
