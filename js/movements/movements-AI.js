@@ -15,19 +15,18 @@ function turnRight(current_motorcycle) {
 }
 
 function moveMotorcycle2(current_motorcycle) {
-    if (isThereAWall(current_motorcycle, player_2_orientation) || isThereATail(current_motorcycle, player_2_orientation)) {
+    if (isThereAWall(current_motorcycle, player_2_orientation, speed) || isThereATail(current_motorcycle, player_2_orientation, speed)) {
         if (Math.random() >= 0.5) {
             // Turn right
             if (player_2_orientation == 4) next_orientation = 1;
             else next_orientation = player_2_orientation + 1;
-            if (isThereATail(current_motorcycle, next_orientation) || isThereAWall(current_motorcycle, next_orientation)) turnLeft(current_motorcycle);
+            if (isThereANearCollision(current_motorcycle, player_2_orientation, speed)) turnLeft(current_motorcycle);
             else turnRight(current_motorcycle);
         } else {
             // Turn left
             if (player_2_orientation == 1) next_orientation = 4;
             else next_orientation = player_2_orientation - 1;
-
-            if (isThereATail(current_motorcycle, next_orientation) || isThereAWall(current_motorcycle, next_orientation)) turnRight(current_motorcycle);
+            if (isThereANearCollision(current_motorcycle, player_2_orientation, speed)) turnRight(current_motorcycle);
             else turnLeft(current_motorcycle);
         }
     }
