@@ -22,7 +22,8 @@ var renderer_player_1_camera = new THREE.WebGLRenderer();
 var renderer_player_2_camera = new THREE.WebGLRenderer();
 
 // instantiate a loader
-var loader = new THREE.ObjectLoader();
+var motorcycle_1_loader = new THREE.ObjectLoader();
+var motorcycle_2_loader = new THREE.ObjectLoader();
 
 // Speed of the motorcycles
 var speed = 2;
@@ -75,32 +76,11 @@ var motorcycle_2_json_path = '../models/classic-1982-tron-light-cycle-green.json
 var player_1_color = 0xff0000;
 var player_2_color = 0x7CFC00;
 
-window.onload = function() {
-    while(!motorcycle_1 || !motorcycle_2) {
-        motorcycle_1 = scene.getObjectByName("motorcycle_1");
-        motorcycle_2 = scene.getObjectByName("motorcycle_2");
-        if (motorcycle_1 && motorcycle_2) {
-            randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
-            initMotorcycle1(motorcycle_1, motorcycle_2);
-            initMotorcycle2(motorcycle_2, motorcycle_1);
-        }
-    }
-}
-
 // Draw scene
 function render() {
     renderer_main_camera.render(scene, main_camera);
     renderer_player_1_camera.render(scene, player_1_camera);
     renderer_player_2_camera.render(scene, player_2_camera);
 }
-
-var animate = function() {
-    if(motorcycle_1 && motorcycle_2) {
-        player_1_tail_flag = continuosMovement(motorcycle_1, motorcycle_2, 'player_1', player_1_orientation, player_1_camera, player_1_color, player_1_tail_flag);
-        player_2_tail_flag = continuosMovement(motorcycle_2, motorcycle_1, 'player_2', player_2_orientation, player_2_camera, player_2_color, player_2_tail_flag);
-    }
-    requestAnimationFrame(animate);
-    render();
-};
 
 animate();
