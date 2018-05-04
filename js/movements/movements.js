@@ -16,7 +16,7 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
         scene.add(cube);
 
         if (player == "player_1") player_1_tail_object = cube;
-        else if (player == "player_2") player_2_tail_object = cube;
+        else player_2_tail_object = cube;
     } else {
         if (player == "player_1") {
             if (player_orientation == 1) {
@@ -35,7 +35,7 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
                 player_1_tail_object.position.x = motorcycle_position_x + player_1_tail_object.scale.x / 2;
                 player_1_tail_object.scale.x += speed;
             }
-        } else if (player == "player_2") {
+        } else {
             if (player_orientation == 1) {
                 player_2_tail_object.position.y = motorcycle_position_y - player_2_tail_object.scale.y / 2;
                 player_2_tail_object.scale.y += speed;
