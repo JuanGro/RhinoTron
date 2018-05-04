@@ -14,8 +14,6 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
             motorcycle.scale.set(15, 10, 10);
             // Rotation to place it
             motorcycle.rotation.x = Math.PI / 2;
-            motorcycle.rotation.y = 0;
-            motorcycle.rotation.z = 0;
             // Name for the motorcycle
             motorcycle.name = motorcycle_name;
             // Add motorcycle to the environment
