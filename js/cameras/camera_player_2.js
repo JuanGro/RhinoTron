@@ -12,7 +12,5 @@ window.addEventListener('resize', function() {
 });
 
 // inital position of player_2_camera to can resize window
-player_2_camera.position.x = 0;
-player_2_camera.position.y = 0;
 player_2_camera.position.z = 10;
 player_2_camera.rotation.x = Math.PI / 2;
