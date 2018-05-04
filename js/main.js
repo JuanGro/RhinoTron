@@ -82,3 +82,5 @@ function render() {
     renderer_player_1_camera.render(scene, player_1_camera);
     renderer_player_2_camera.render(scene, player_2_camera);
 }
+
+animate();
