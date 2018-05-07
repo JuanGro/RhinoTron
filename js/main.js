@@ -65,8 +65,15 @@ var tail_strings = [];
 // Lifes
 var player_1_lifes = 3;
 var player_2_lifes = 3;
-document.getElementById("player_1_scoreboard").innerHTML = player_1_lifes;
-document.getElementById("player_2_scoreboard").innerHTML = player_2_lifes;
+
+var player_1_scoreboard = document.getElementById("player_1_scoreboard");
+var player_2_scoreboard = document.getElementById("player_2_scoreboard");
+
+player_1_scoreboard.innerHTML = player_1_lifes;
+player_2_scoreboard.innerHTML = player_2_lifes;
+
+player_1_scoreboard.style.visibility = "visible";
+player_2_scoreboard.style.visibility = "visible";
 
 // Location of the 3D models
 var motorcycle_1_json_path = '../models/classic-1982-tron-light-cycle-red.json';
