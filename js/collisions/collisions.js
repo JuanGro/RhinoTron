@@ -1,20 +1,31 @@
 function removeLife(player) {
-  if (player == "player_1") player_1_lifes--;
-  else player_2_lifes--;
+  if (player == "player_1") {
+    player_1_lifes--;
+    changeColorMarker(player_1_scoreboard, player_1_lifes);
+  } else {
+    player_2_lifes--;
+    changeColorMarker(player_2_scoreboard, player_2_lifes);
+  }
 
   if (player_1_lifes < 0 || player_2_lifes < 0) window.location.replace("./../index.html");
   else {
-    document.getElementById("player_1_scoreboard").innerHTML = player_1_lifes;
-    document.getElementById("player_2_scoreboard").innerHTML = player_2_lifes;
+    player_1_scoreboard.innerHTML = player_1_lifes;
+    player_2_scoreboard.innerHTML = player_2_lifes;
   }
 }
 
+function changeColorMarker(idPlayer, lifes){
+    if (lifes == 2) idPlayer.style.color = "yellow";
+    else if (lifes == 1) idPlayer.style.color = "red";
+    else if (lifes == 0) idPlayer.style.color = "Maroon";
+}
+
 function removeTailObjects(scene, tail_objects) {
-  while(tail_objects.length > 0) scene.remove(tail_objects.pop());
+  while (tail_objects.length > 0) scene.remove(tail_objects.pop());
 }
 
 function removeTailStrings(tail_strings) {
-  while(tail_strings.length > 0) tail_strings.pop();
+  while (tail_strings.length > 0) tail_strings.pop();
 }
 
 function initializeScene(player, current_motorcycle, opponent_motorcycle, environment_size, orientation, scene, tail_objects) {

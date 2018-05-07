@@ -16,16 +16,27 @@ body {
 #song-page {
   background-image: url('../img/menu10.gif');
   background-position: 100% 0%;
+
+}
+
+#gameover-page {
+  background-image: url('../img/gameOver.gif');
+  background-position: 50% 40%;
+}
+
+#credits-page {
+  background-image: url('../img/credits.gif');
+  background-position: 50% 40%;
 }
 
 #menu > div {
   margin-top: 75px;
-  color: #18CAE6;
+  color: #2F717F;
   font-family: tron;
 }
 
 /* Option in menu */
-#play, #custom, #play-vs-agent, #credits,#customSong {
+#play, #custom, #play-vs-agent, #credits, #customSong, #controls-over {
   cursor: pointer;
   font-family: shadows into light;
   font-size: 50px;
@@ -35,20 +46,20 @@ body {
 }
 
 /* Add styles when user pass mouse on links */
-#play:hover, #custom:hover, #credits:hover, #play-vs-agent:hover,#customSong:hover {
+#play:hover, #custom:hover, #credits:hover, #play-vs-agent:hover, #customSong:hover, #controls-over:hover {
   color: white;
-  -webkit-transform: rotate(-2deg);
-  transform: rotate(-2deg);
+  -webkit-transform: rotate(-3deg);
+  transform: rotate(-3deg);
 }
 
 /* Remove style colors after visit links */
 a:link, a:visited {
-  color: #45d9f4;
+  color: #2F717F;/*#45d9f4   original*/
   text-decoration: none;
 }
 
 a:hover {
-  color: white;
+  color: #45d9f4;/*  white original*/
   text-decoration: none;
 }
 
@@ -101,3 +112,27 @@ a:hover {
 #player_2_scoreboard {
   right: 50px;
 }
+
+
+/* controles game over*/
+
+#controls-over {
+  bottom: 10px;
+  right: 210px;
+  width: 400px;
+}
+
+
+/* controles credits*/
+
+#controls-credits {
+  bottom: 20px;
+  right: 20px;
+  width: 400px;
+}
+
+#video { 
+  padding-left: 500px;
+}
+
+
