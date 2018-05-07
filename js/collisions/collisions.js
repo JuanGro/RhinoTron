@@ -18,18 +18,18 @@ function removeLife(player) {
   }
 }
 
-function changeColorMarker(idplayer,lifes){
-    if(lifes == 2) idplayer.style.color = "yellow";
-    else if(lifes == 1) idplayer.style.color = "red";
-    else if(lifes == 0) idplayer.style.color = "Maroon";
+function changeColorMarker(idPlayer,lifes){
+    if (lifes == 2) idPlayer.style.color = "yellow";
+    else if (lifes == 1) idPlayer.style.color = "red";
+    else if (lifes == 0) idPlayer.style.color = "Maroon";
 }
 
 function removeTailObjects(scene, tail_objects) {
-  while(tail_objects.length > 0) scene.remove(tail_objects.pop());
+  while (tail_objects.length > 0) scene.remove(tail_objects.pop());
 }
 
 function removeTailStrings(tail_strings) {
-  while(tail_strings.length > 0) tail_strings.pop();
+  while (tail_strings.length > 0) tail_strings.pop();
 }
 
 function initializeScene(player, current_motorcycle, opponent_motorcycle, environment_size, orientation, scene, tail_objects) {
