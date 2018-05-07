@@ -1,30 +1,35 @@
 function removeLife(player) {
 
-  var playerColor;
+  // var playerColor;
 
-  if(player == "player_1") {
-    player_1_lifes--;
+  // if(player == "player_1") {
+  //   player_1_lifes--;
 
-    // PARA CAMBIAR COLOR DEL MARCADOR
-    player1=document.getElementById("player_1_scoreboard");
-    player1.style.visibility = "visible";
-    changeColorMarker(player1,player_1_lifes);
-  }
+  //   // PARA CAMBIAR COLOR DEL MARCADOR
+  //   player1=document.getElementById("player_1_scoreboard");
+  //   player1.style.visibility = "visible";
+  //   changeColorMarker(player1,player_1_lifes);
+  // }
 
-  if(player == "player_2") {
-    player_2_lifes--;
-    //document.getElementById("player_2_scoreboard");
+  // if(player == "player_2") {
+  //   player_2_lifes--;
+  //   //document.getElementById("player_2_scoreboard");
 
-    player2=document.getElementById("player_2_scoreboard");
-    player2.style.visibility = "visible";
-    changeColorMarker(player2,player_2_lifes);
+  //   player2=document.getElementById("player_2_scoreboard");
+  //   player2.style.visibility = "visible";
+  //   changeColorMarker(player2,player_2_lifes);
     
-  }
+  // }
 
 
-  if (player_1_lifes < 0 || player_2_lifes < 0) {
-    window.location.replace("./../pages/gameOver.html");
-  } else {
+  // if (player_1_lifes < 0 || player_2_lifes < 0) {
+  //   window.location.replace("./../pages/gameOver.html");
+  // } else {
+  if (player == "player_1") player_1_lifes--;
+  else player_2_lifes--;
+
+  if (player_1_lifes < 0 || player_2_lifes < 0) window.location.replace("./../index.html");
+  else {
     document.getElementById("player_1_scoreboard").innerHTML = player_1_lifes;
     document.getElementById("player_2_scoreboard").innerHTML = player_2_lifes;
 
@@ -33,25 +38,26 @@ function removeLife(player) {
 }
 
 
-function changeColorMarker(idplayer,lifes){
 
-    if(lifes==2){
+// function changeColorMarker(idplayer,lifes){
 
-      idplayer.style.color="yellow";
+//     if(lifes==2){
 
-    }else if(lifes==1){
+//       idplayer.style.color="yellow";
 
-      idplayer.style.color="red";
+//     }else if(lifes==1){
 
-    }else if(lifes==0){
+//       idplayer.style.color="red";
 
-        idplayer.style.color="Maroon";
+//     }else if(lifes==0){
+
+//         idplayer.style.color="Maroon";
 
       
-    }
+//     }
 
 
-}
+// }
 
 
 
@@ -96,44 +102,60 @@ for(var i=900; i < 1000000; i=i+900)
 
 
 
-function removeTails(scene, tails_array) {
-  while(tails_array.length > 0) {
-    scene.remove(tails_array.pop());
-  }
-  tail_player_1 = [];
+// function removeTails(scene, tails_array) {
+//   while(tails_array.length > 0) {
+//     scene.remove(tails_array.pop());
+//   }
+//   tail_player_1 = [];
+function removeTailObjects(scene, tail_objects) {
+  while(tail_objects.length > 0) scene.remove(tail_objects.pop());
+}
+
+function removeTailStrings(tail_strings) {
+  while(tail_strings.length > 0) tail_strings.pop();
 }
 
 function initializeScene(player, current_motorcycle, opponent_motorcycle, environment_size, orientation, scene, tail_objects) {
   removeLife(player);
-  removeTails(scene, tail_objects);
+  removeTailObjects(scene, tail_objects);
+  removeTailStrings(tail_strings);
   randomPosition(current_motorcycle, opponent_motorcycle, 0, environment_size / 4, orientation);
+  player_1_tail_flag = 0;
+  player_2_tail_flag = 0;
 }
 
-function collisions(current_motorcycle, opponent_motorcycle, orientation, player) {
-    /* Wall collisions */
-    if(current_motorcycle.position.x > environment_size / 2 ||
-      current_motorcycle.position.x < -environment_size / 2 ||
-      current_motorcycle.position.y >  environment_size / 2 ||
-      current_motorcycle.position.y < -environment_size / 2 ) {
-      initializeScene(player,
-                      current_motorcycle,
-                      opponent_motorcycle,
-                      environment_size,
-                      orientation,
-                      scene,
-                      tail_objects);
-    }
-
-    /* Tail collisions */
-    if(tail_player_1.includes(
-      buildTailStringPos(current_motorcycle.position.x, current_motorcycle.position.y, current_motorcycle.position.z)
-    )) {
-      initializeScene(player,
-                      current_motorcycle,
-                      opponent_motorcycle,
-                      environment_size,
-                      orientation,
-                      scene,
-                      tail_objects);
+function collisions(current_motorcycle, opponent_motorcycle, orientation, player, tail_flag) {
+  /* Wall collisions */
+  if (current_motorcycle.position.x > environment_size / 2 ||
+    current_motorcycle.position.x < -environment_size / 2 ||
+    current_motorcycle.position.y >  environment_size / 2 ||
+    current_motorcycle.position.y < -environment_size / 2 ) {
+    initializeScene(
+      player,
+      current_motorcycle,
+      opponent_motorcycle,
+      environment_size,
+      orientation,
+      scene,
+      tail_objects
+    );
+    return 0;
+  }
+  /* Tail collisions */
+  else if (tail_strings.includes(
+    buildTailStringPos(current_motorcycle.position.x, current_motorcycle.position.y, current_motorcycle.position.z)
+  )) {
+    initializeScene(
+      player,
+      current_motorcycle,
+      opponent_motorcycle,
+      environment_size,
+      orientation,
+      scene,
+      tail_objects
+    );
+    return 0;
+  } else {
+    return tail_flag;
   }
 }
