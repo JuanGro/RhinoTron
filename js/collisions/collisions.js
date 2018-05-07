@@ -20,8 +20,8 @@ function removeLife(player) {
 
 function changeColorMarker(idplayer,lifes){
     if(lifes == 2) idplayer.style.color = "yellow";
-    else if(lifes==1) idplayer.style.color = "red";
-    else if(lifes==0) idplayer.style.color = "Maroon";
+    else if(lifes == 1) idplayer.style.color = "red";
+    else if(lifes == 0) idplayer.style.color = "Maroon";
 }
 
 function removeTailObjects(scene, tail_objects) {
