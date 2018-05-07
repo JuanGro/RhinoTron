@@ -9,26 +9,32 @@
   </head>
 
   <body id="song-page">
+
     <audio id="TronLegacy" >
     <source src="../music/TronLegacy.mp3" value="aa" type="audio/mpeg">
     </audio>
+
     <audio id="EndOfLine">
     <source src="../music/EndOfLine.mp3" type="audio/mpeg">
     </audio>
+
     <audio id="Derezzed">
     <source src="../music/Derezzed.mp3" type="audio/mpeg">
     </audio>
 
+    <audio id="select">
+    <source src="../music/select.wav" type="audio/mpeg">
+    </audio>
+
     <div id="menu">
       <div id="play"><p><a href="#">Play List</a></p></div>
-      <div id="customSong" value="1"><p><a href="#" onclick="pauseAudio();playAudio(1);valueSong('../music/TronLegacy.mp3')">1. TRON Legacy  <!--<input type="radio" name="song"  value="../music/TronLegacy.mp3" /> --></a></p></div>
-      <div id="customSong" value="2"><p><a href="#" onclick="pauseAudio();playAudio(2);valueSong('../music/EndOfLine.mp3')">2. End Of Line <!--<input type="radio" name="song" value="../music/EndOfLine.mp3">--> </a></p></div>
-      <div id="customSong" value="3"><a href="#" onclick="pauseAudio();playAudio(3);valueSong('../music/Derezzed.mp3')"><p>3. Derezzed <!--<input type="radio" name="song" value="../music/Derezzed.mp3">--> </p></a></div>
-      <div id="customSong"><a href="./../index.html"><p>Main Menu</p></a></div>
-    </div>
-
+      <div id="customSong" value="1"><p><a href="#" onmouseover="select()" onclick="pauseAudio();playAudio(1);valueSong('../music/TronLegacy.mp3')">1. TRON Legacy  <!--<input type="radio" name="song"  value="../music/TronLegacy.mp3" /> --></a></p></div>
+      <div id="customSong" value="2"><p><a href="#" onmouseover="select()"  onclick="pauseAudio();playAudio(2);valueSong('../music/EndOfLine.mp3')">2. End Of Line <!--<input type="radio" name="song" value="../music/EndOfLine.mp3">--> </a></p></div>
+      <div id="customSong" value="3"><a href="#" onmouseover="select()"  onclick="pauseAudio();playAudio(3);valueSong('../music/Derezzed.mp3')"><p>3. Derezzed <!--<input type="radio" name="song" value="../music/Derezzed.mp3">--> </p></a></div>
+      <div id="customSong"><a href="./../index.html" onmouseover="select()" ><p>Main Menu</p></a></div>
     <script>
       var x=document.getElementById("TronLegacy");  
+
       function playAudio(number) { 
         if(number == 1) {
             x = document.getElementById("TronLegacy");
@@ -37,6 +43,7 @@
         } else if(number == 3) {
             x = document.getElementById("Derezzed"); 
         }
+        x.volume=0.13;
 
         x.play(); 
       } 
@@ -49,6 +56,18 @@
       function valueSong(path){
         localStorage.setItem("storageName",path);
       }
+
+    var sound=document.getElementById("select"); 
+    sound.volume=1;
+
+    function select(){
+
+      sound.play();
+    }
+
+
     </script>
+
+  
   </body>
 </html>
