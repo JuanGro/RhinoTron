@@ -1,5 +1,4 @@
 function removeLife(player) {
-
   if (player == "player_1") {
     player_1_lifes--;
     player = document.getElementById("player_1_scoreboard");
