@@ -1,112 +1,30 @@
 function removeLife(player) {
 
-  // var playerColor;
-
-  // if(player == "player_1") {
-  //   player_1_lifes--;
-
-  //   // PARA CAMBIAR COLOR DEL MARCADOR
-  //   player1=document.getElementById("player_1_scoreboard");
-  //   player1.style.visibility = "visible";
-  //   changeColorMarker(player1,player_1_lifes);
-  // }
-
-  // if(player == "player_2") {
-  //   player_2_lifes--;
-  //   //document.getElementById("player_2_scoreboard");
-
-  //   player2=document.getElementById("player_2_scoreboard");
-  //   player2.style.visibility = "visible";
-  //   changeColorMarker(player2,player_2_lifes);
-    
-  // }
-
-
-  // if (player_1_lifes < 0 || player_2_lifes < 0) {
-  //   window.location.replace("./../pages/gameOver.html");
-  // } else {
-  if (player == "player_1") player_1_lifes--;
-  else player_2_lifes--;
+  if (player == "player_1") {
+    player_1_lifes--;
+    player = document.getElementById("player_1_scoreboard");
+    player.style.visibility = "visible";
+    changeColorMarker(player, player_1_lifes);
+  } else {
+    player_2_lifes--;
+    player = document.getElementById("player_1_scoreboard");
+    player.style.visibility = "visible";
+    changeColorMarker(player, player_2_lifes);
+  }
 
   if (player_1_lifes < 0 || player_2_lifes < 0) window.location.replace("./../index.html");
   else {
     document.getElementById("player_1_scoreboard").innerHTML = player_1_lifes;
     document.getElementById("player_2_scoreboard").innerHTML = player_2_lifes;
-
-
   }
 }
 
-
-
-// function changeColorMarker(idplayer,lifes){
-
-//     if(lifes==2){
-
-//       idplayer.style.color="yellow";
-
-//     }else if(lifes==1){
-
-//       idplayer.style.color="red";
-
-//     }else if(lifes==0){
-
-//         idplayer.style.color="Maroon";
-
-      
-//     }
-
-
-// }
-
-
-
-
-
-
-
-/*
-<div id="blink1" class="highlight">New item!</div>
-<script type="text/javascript">
-<!--
-// blink "on" state
-function show()
-{
-  if (document.getElementById)
-  document.getElementById("blink1").style.visibility = "visible";
+function changeColorMarker(idplayer,lifes){
+    if(lifes == 2) idplayer.style.color = "yellow";
+    else if(lifes==1) idplayer.style.color = "red";
+    else if(lifes==0) idplayer.style.color = "Maroon";
 }
-// blink "off" state
-function hide()
-{
-  if (document.getElementById)
-  document.getElementById("blink1").style.visibility = "hidden";
-}
-// toggle "on" and "off" states every 450 ms to achieve a blink effect
-// end after 4500 ms (less than five seconds)
-for(var i=900; i < 1000000; i=i+900)
-{
-  setTimeout("hide()",i);
-  setTimeout("show()",i+450);
-}
--->
-</script>
 
- */
-
-
-
-
-
-
-
-
-
-
-// function removeTails(scene, tails_array) {
-//   while(tails_array.length > 0) {
-//     scene.remove(tails_array.pop());
-//   }
-//   tail_player_1 = [];
 function removeTailObjects(scene, tail_objects) {
   while(tail_objects.length > 0) scene.remove(tail_objects.pop());
 }
