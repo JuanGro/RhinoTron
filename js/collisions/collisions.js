@@ -7,7 +7,7 @@ function removeLife(player) {
     changeColorMarker(player_2_scoreboard, player_2_lifes);
   }
 
-  if (player_1_lifes < 0 || player_2_lifes < 0) window.location.replace("./../index.html");
+  if (player_1_lifes < 0 || player_2_lifes < 0) window.location.replace("./gameOver.html");
   else {
     player_1_scoreboard.innerHTML = player_1_lifes;
     player_2_scoreboard.innerHTML = player_2_lifes;
