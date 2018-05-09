@@ -76,8 +76,8 @@ player_1_scoreboard.style.visibility = "visible";
 player_2_scoreboard.style.visibility = "visible";
 
 // Location of the 3D models
-var motorcycle_1_json_path = motos.moto1.path;
-var motorcycle_2_json_path = motos.moto2.path;
+var motorcycle_1_json_path = path1;
+var motorcycle_2_json_path = path2;
 
 // Color for the tails
 var player_1_color = color1;

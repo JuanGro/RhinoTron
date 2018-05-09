@@ -2,7 +2,7 @@
 renderer_player_1_camera.setSize(window.innerWidth / 5, window.innerHeight / 5);
 container_2 = document.getElementById('player_1_camera');
 document.body.appendChild(container_2);
-container_2.style.borderColor = motos.moto1.color;
+container_2.style.borderColor = color1;
 container_2.appendChild(renderer_player_1_camera.domElement);
 
 // detect when window resize

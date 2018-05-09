@@ -1,7 +1,7 @@
 // Specify the size to show in the window
 renderer_player_2_camera.setSize(window.innerWidth / 5, window.innerHeight / 5);
 container_3 = document.getElementById('player_2_camera');
-container_3.style.borderColor = motos.moto2.color;
+container_3.style.borderColor = color2;
 document.body.appendChild(container_3);
 container_3.appendChild(renderer_player_2_camera.domElement);
 
