@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../styles/motorcycle.css">
+  <title> RhinoTron | Custom Motorcycle </title>
+</head>
+<body>
+  <audio autoplay loop>
+    <source id="selectedSong"  src="../music/TronLegacy.mp3"   type="audio/mpeg">
+  </audio>
+  <script>
+    var pathSong=localStorage.getItem("storageName");
+    var defaultSong = document.getElementById('selectedSong');
+    defaultSong.src=pathSong;
+  </script>
+
+  <div class="container">
+    <div class="headers">
+      <div id="backmenu"><a href="../index.html"><h1> Back to Menu </h1></a></div>
+      <div id="play"><a href="./game.html">PLAY</a></div>
+    </div>
+    <div id="title"><p>Choose your color</p></div>
+  </div>
+
+  <div class="container" id="selection">
+    <div class="sides">
+      <div class="title"> Motorcycle 1 </div>
+      <div class="moto" id="motorcycle1"></div>
+      <div class="colors">
+        <button class="button black" onclick="changeColor(motorcycle1, 'black')">Black</button>
+        <button class="button blue"  onclick="changeColor(motorcycle1, 'blue')">Blue</button>
+        <button class="button green" onclick="changeColor(motorcycle1, 'green')">Green</button>
+        <button class="button pink"  onclick="changeColor(motorcycle1, 'pink')">Pink</button>
+        <button class="button red"   onclick="changeColor(motorcycle1, 'red')">Red</button>
+      </div>
+    </div>
+    <div class="sides">
+      <div class="title"> Motorcycle 2 </div>
+      <div class="moto" id="motorcycle2"></div>
+      <div class="colors">
+        <button class="button black" onclick="changeColor(motorcycle2, 'black')">Black</button>
+        <button class="button blue"  onclick="changeColor(motorcycle2, 'blue')">Blue</button>
+        <button class="button green" onclick="changeColor(motorcycle2, 'green')">Green</button>
+        <button class="button pink"  onclick="changeColor(motorcycle2, 'pink')">Pink</button>
+        <button class="button red"   onclick="changeColor(motorcycle2, 'red')">Red</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../threejs/build/three.js"></script>
+  <script type="text/javascript" src="../threejs/examples/js/controls/OrbitControls.js"></script>
+  <script type="text/javascript" src="../js/colors.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
+
+  <!--<script type="text/javascript" src="../js/motorcycles/custom-motorcycles.js"></script>-->
+</body>
+</html>

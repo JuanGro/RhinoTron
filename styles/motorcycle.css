@@ -1,0 +1,193 @@
+@font-face {
+  font-family: tron;
+  src: url('./../fonts/Tr2n.ttf');
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  background-image: url('../img/menu8.gif');
+  background-position: 100% 0%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.headers {
+  width: 100%;
+}
+
+.headers > div{
+  display: inline-block;
+}
+
+#backmenu {
+  color: #18CAE6;
+  font-family: tron;
+  width: 260px;
+}
+
+#play {
+  color: #18CAE6;
+  float: right;
+  font-family: tron;
+  padding-top: 20px;
+  padding-right: 10px;
+  width: 150px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-size: 45px;
+  text-align: right;
+}
+
+/* Remove style colors after visit links */
+a:link, a:visited {
+  color: #45d9f4;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#title {
+  color: #18CAE6;
+  font-family: tron;
+  font-size: 50px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+}
+
+#title p {
+  position: relative;
+}
+
+#backmenu:hover {
+  color: white;
+  -webkit-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+#backmenu {
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#play:hover {
+  color: white;
+  -webkit-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+/*=========================== Motorcycles Selection ==========================*/
+#selection {
+  color: white;
+  font-size: 20px;
+  height: 500px;
+  margin: 2px 10px;
+  width: 98%;
+}
+
+#selection > .sides {
+  display: inline-block;
+  height: 99%;
+  margin: 2px;
+  padding: 2px;
+  width: 49%;
+}
+
+#selection > .sides > .moto {
+  height: 80%;
+  margin: 10px;
+  background: url('../img/motorcycle.png');
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/*
+  FILTERS FOR EACH COLOR
+  hue-rotate(0deg) - blue
+  hue-rotate(120deg) - pink
+  hue-rotate(180deg) - red
+  hue-rotate(300deg) - green
+  brightness(50%) grayscale(100%) - black
+*/
+
+#selection > .sides > .colors {
+  height: 10%;
+  margin: 2px;
+  padding: 2px;
+}
+
+#selection > .sides > .title {
+  text-align: center;
+  color: #18CAE6;
+  font-family: tron;
+  font-size: 24px;
+}
+
+/*================================ Buttons ===================================*/
+.button {
+  border: none;
+  color: #18CAE6;
+  font-family: tron;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin-bottom: 4px;
+  margin-left: 12px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.red {
+  background-color: #911717;
+}
+
+.blue {
+  background-color: #208ab1;
+}
+
+.green {
+  background-color: #3fc865;
+}
+
+.pink {
+  background-color: #d643d9;
+}
+
+.black {
+  background-color: #121313;
+}
+
+/*hovers*/
+.red:hover {
+  background-color: #c43e2b;
+}
+
+.blue:hover {
+  background-color: #61bbdd;
+}
+
+.green:hover {
+  background-color: #5ed494;
+}
+
+.pink:hover {
+  background-color: #b979c3;
+}
+
+.black:hover {
+  background-color: #4f4d52;
+}

@@ -76,12 +76,12 @@ player_1_scoreboard.style.visibility = "visible";
 player_2_scoreboard.style.visibility = "visible";
 
 // Location of the 3D models
-var motorcycle_1_json_path = '../models/classic-1982-tron-light-cycle-red.json';
-var motorcycle_2_json_path = '../models/classic-1982-tron-light-cycle-green.json';
+var motorcycle_1_json_path = motos.moto1.path;
+var motorcycle_2_json_path = motos.moto2.path;
 
 // Color for the tails
-var player_1_color = 0xff0000;
-var player_2_color = 0x7CFC00;
+var player_1_color = motos.moto1.color;;
+var player_2_color = motos.moto2.color;;
 
 // Draw scene
 function render() {
