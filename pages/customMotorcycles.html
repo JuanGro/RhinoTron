@@ -16,11 +16,11 @@
     var defaultSong = document.getElementById('selectedSong');
     defaultSong.src=pathSong;
   </script>
-
+  <script type="text/javascript" src="../js/colors.js"></script>
   <div class="container">
     <div class="headers">
       <div id="backmenu"><a href="../index.html"><h1> Back to Menu </h1></a></div>
-      <div id="play"><a href="./game.html">PLAY</a></div>
+      <div id="play"><a href="./game.html" onclick="selectedColor(this, 1, motorcycles, motorcycles, motorcycles, motorcycles)">PLAY</a></div>
     </div>
     <div id="title"><p>Choose your color</p></div>
   </div>
@@ -49,11 +49,12 @@
       </div>
     </div>
   </div>
-
+  <script>
+  var moto1 = document.getElementById("motorcycle1");
+  var moto2 = document.getElementById("motorcycle2");
+  </script>
   <script type="text/javascript" src="../threejs/build/three.js"></script>
   <script type="text/javascript" src="../threejs/examples/js/controls/OrbitControls.js"></script>
-  <script type="text/javascript" src="../js/colors.js"></script>
-  <script type="text/javascript" src="../js/main.js"></script>
 
   <!--<script type="text/javascript" src="../js/motorcycles/custom-motorcycles.js"></script>-->
 </body>

@@ -80,8 +80,8 @@ var motorcycle_1_json_path = motos.moto1.path;
 var motorcycle_2_json_path = motos.moto2.path;
 
 // Color for the tails
-var player_1_color = motos.moto1.color;;
-var player_2_color = motos.moto2.color;;
+var player_1_color = color1;
+var player_2_color = color2;
 
 // Draw scene
 function render() {
