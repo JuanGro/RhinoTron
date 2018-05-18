@@ -18,7 +18,7 @@ function isThereAWall(current_motorcycle, orientation, speed) {
     }
 }
 
-function isThereATail(current_motorcycle, orientation, speed) {
+function isThereATail(current_motorcycle, orientation, speed, tail_strings) {
     // 1 up
     if (orientation == 1) {
         if (tail_strings.includes(buildTailStringPos(current_motorcycle.position.x, current_motorcycle.position.y + speed, current_motorcycle.position.z))) return true;
@@ -38,12 +38,12 @@ function isThereATail(current_motorcycle, orientation, speed) {
     }
 }
 
-function isThereANearCollision(current_motorcycle, orientation, speed) {
+function isThereANearCollision(current_motorcycle, orientation, speed, tail_strings) {
     if (
         isThereAWall(current_motorcycle, next_orientation, speed) ||
-        isThereATail(current_motorcycle, next_orientation, speed) ||
-        isThereATail(current_motorcycle, next_orientation, speed * 2) ||
-        isThereATail(current_motorcycle, next_orientation, speed * 3)
+        isThereATail(current_motorcycle, next_orientation, speed, tail_strings) ||
+        isThereATail(current_motorcycle, next_orientation, speed * 2, tail_strings) ||
+        isThereATail(current_motorcycle, next_orientation, speed * 3, tail_strings)
     ) return true;
     else return false;
 }
