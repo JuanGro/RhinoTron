@@ -11,6 +11,16 @@ scene.add(ambient_light);
 // Plane size
 var environment_size = 400;
 
+/*------------- Configuring the environment ----------------------- */
+buildFloor(environment_size, floor_texture_path = './../img/floor.png');
+buildLimits(environment_size, wall_texture_path = './../img/wall.png');
+
+// Blinker
+for (i = 900; i < 1000000; i = i + 900) {
+    setTimeout("hide()", i);
+    setTimeout("show()", i + 450);
+}
+
 // Cameras
 var main_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 var player_1_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);

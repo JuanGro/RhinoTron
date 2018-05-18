@@ -65,6 +65,3 @@ function buildLimits(environment_size, wall_texture_path) {
       wall_texture_path
     );
 }
-
-/*------------- Configuring the environment ----------------------- */
-buildLimits(environment_size, wall_texture_path = './../img/wall.png');

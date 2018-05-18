@@ -17,6 +17,3 @@ function buildFloor(environment_size, floor_texture_path) {
 
     scene.add(mesh);
 }
-
-/*------------- Configuring the environment ----------------------- */
-buildFloor(environment_size, floor_texture_path = './../img/floor.png');
