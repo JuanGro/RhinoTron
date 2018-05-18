@@ -21,6 +21,10 @@ var renderer_main_camera = new THREE.WebGLRenderer();
 var renderer_player_1_camera = new THREE.WebGLRenderer();
 var renderer_player_2_camera = new THREE.WebGLRenderer();
 
+startMainCamera(renderer_main_camera, main_camera, environment_size);
+startPlayerCamera(renderer_player_1_camera, player_1_camera, 'player_1_camera');
+startPlayerCamera(renderer_player_2_camera, player_2_camera, 'player_2_camera');
+
 // instantiate a loader
 var motorcycle_1_loader = new THREE.ObjectLoader();
 var motorcycle_2_loader = new THREE.ObjectLoader();
