@@ -23,7 +23,7 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
                 motorcycle_1 = scene.getObjectByName("motorcycle_1");
                 motorcycle_2 = scene.getObjectByName("motorcycle_2");
                 randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
-                initMotorcycle1(motorcycle_1, motorcycle_2);
+                initMotorcycle1(motorcycle_1);
             }
         },
         // called when loading is in progresses

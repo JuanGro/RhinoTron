@@ -114,7 +114,7 @@ function changeRotationWithPI(moto, player_camera, keychar) {
   }
 }
 
-function initMotorcycle1(current_motorcycle, opponent_motorcycle) {
+function initMotorcycle1(current_motorcycle) {
     //LINEA IMPORTANTE PARA OBTENER EVENTO DEL TECLADO, ESTA TIENE QUE ESTAR AL INICIO DE TODOS LOS DOCUMENTOS, ES UN LISTENER
     document.body.addEventListener('keydown', keyPressed);
 
@@ -143,7 +143,7 @@ function initMotorcycle1(current_motorcycle, opponent_motorcycle) {
     }
 }
 
-function initMotorcycle2(current_motorcycle, opponent_motorcycle) {
+function initMotorcycle2(current_motorcycle) {
     //LINEA IMPORTANTE PARA OBTENER EVENTO DEL TECLADO, ESTA TIENE QUE ESTAR AL INICIO DE TODOS LOS DOCUMENTOS, ES UN LISTENER
     document.body.addEventListener('keydown', keyPressed);
 
