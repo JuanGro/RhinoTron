@@ -14,10 +14,10 @@ function removeLife(player) {
   }
 }
 
-function changeColorMarker(idPlayer, lifes){
-    if (lifes == 2) idPlayer.style.color = "yellow";
-    else if (lifes == 1) idPlayer.style.color = "red";
-    else if (lifes == 0) idPlayer.style.color = "Maroon";
+function changeColorMarker(scoreboard, lifes) {
+    if (lifes == 2) scoreboard.style.color = "yellow";
+    else if (lifes == 1) scoreboard.style.color = "red";
+    else if (lifes == 0) scoreboard.style.color = "Maroon";
 }
 
 function removeTailObjects(scene, tail_objects) {

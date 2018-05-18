@@ -14,6 +14,5 @@ function buildFloor(environment_size, floor_texture_path) {
         })
       })
     );
-
     scene.add(mesh);
 }
