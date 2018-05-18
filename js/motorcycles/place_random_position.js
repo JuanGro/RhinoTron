@@ -4,7 +4,4 @@ function randomPosition(current_motorcycle, opponent_motorcycle, min_position, m
 
     opponent_motorcycle.position.x = -current_motorcycle.position.x;
     opponent_motorcycle.position.y = -current_motorcycle.position.y;
-
-    setCamerasPosition(player_1_camera, current_motorcycle, orientation);
-    setCamerasPosition(player_2_camera, opponent_motorcycle, orientation);
 }
