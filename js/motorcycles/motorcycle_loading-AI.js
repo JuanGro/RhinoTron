@@ -17,12 +17,12 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
             if (motorcycle_number == 1) {
                 motorcycle_1 = scene.getObjectByName(motorcycle_name);
                 randomPosition(motorcycle_1, 0, environment_size / 4);
-                setCamerasPosition(player_camera, motorcycle_1, player_orientation);
+                setCamerasPosition(player_camera, motorcycle_1);
                 initMotorcycle1(motorcycle_1);
             } else {
                 motorcycle_2 = scene.getObjectByName(motorcycle_name);
                 randomPosition(motorcycle_2, -environment_size / 4, 0);
-                setCamerasPosition(player_camera, motorcycle_2, player_orientation);
+                setCamerasPosition(player_camera, motorcycle_2);
             }
         },
         // called when loading is in progresses

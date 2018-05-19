@@ -11,7 +11,7 @@ scene.add(ambient_light);
 // Plane size
 var environment_size = 400;
 
-/*------------- Configuring the environment ----------------------- */
+// Configuring the environment
 buildFloor(environment_size, floor_texture_path = './../img/floor.png');
 buildLimits(environment_size, wall_texture_path = './../img/wall.png');
 
@@ -28,7 +28,7 @@ var renderer_main_camera = new THREE.WebGLRenderer();
 var renderer_player_1_camera = new THREE.WebGLRenderer();
 var renderer_player_2_camera = new THREE.WebGLRenderer();
 
-startMainCamera(renderer_main_camera, main_camera, environment_size);
+startMainCamera(renderer_main_camera, main_camera, environment_size, 'main_camera');
 startPlayerCamera(renderer_player_1_camera, player_1_camera, 'player_1_camera');
 startPlayerCamera(renderer_player_2_camera, player_2_camera, 'player_2_camera');
 
