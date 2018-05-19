@@ -38,7 +38,7 @@ function isThereATail(current_motorcycle, orientation, speed, tail_strings) {
     }
 }
 
-function isThereANearCollision(current_motorcycle, orientation, speed, tail_strings) {
+function isThereANearCollision(current_motorcycle, orientation, next_orientation, speed, tail_strings) {
     if (
         isThereAWall(current_motorcycle, next_orientation, speed) ||
         isThereATail(current_motorcycle, next_orientation, speed, tail_strings) ||

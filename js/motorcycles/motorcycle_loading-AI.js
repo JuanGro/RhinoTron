@@ -36,7 +36,7 @@ function buildMoto(
         },
         // called when loading has errors
         function(error) {
-            console.log('An error happened');
+            console.log('An error happened when the motorcycle was loading');
         }
     );
 }
