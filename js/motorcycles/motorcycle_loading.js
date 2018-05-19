@@ -1,8 +1,3 @@
-function loadMotorcycles(motorcycle_1_json_path, motorcycle_2_json_path, motorcycle_1_name, motorcycle_2_name, scene) {
-    buildMoto(motorcycle_1_json_path, motorcycle_1_name, scene, motorcycle_1_loader, 1); // Set in a positive location
-    buildMoto(motorcycle_2_json_path, motorcycle_2_name, scene, motorcycle_2_loader, 2); // Set in a negative location
-}
-
 function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_loader, motorcycle_number) {
     // load a resource
     motorcycle_loader.load(
@@ -19,12 +14,16 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
             // Add motorcycle to the environment
             scene.add(motorcycle);
 
-            if (motorcycle_number == 2) {
+            if (motorcycle_number == 1) {
                 motorcycle_1 = scene.getObjectByName("motorcycle_1");
+                randomPosition(motorcycle_1, 0, environment_size / 4);
+                setCamerasPosition(player_1_camera, motorcycle_1, player_1_orientation);
+                initMotorcycle1(motorcycle_1);
+            } else {
                 motorcycle_2 = scene.getObjectByName("motorcycle_2");
-                randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
-                initMotorcycle1(motorcycle_1, motorcycle_2);
-                initMotorcycle2(motorcycle_2, motorcycle_1);
+                randomPosition(motorcycle_2, -environment_size / 4, 0);
+                setCamerasPosition(player_2_camera, motorcycle_2, player_1_orientation);
+                initMotorcycle2(motorcycle_2);
             }
         },
         // called when loading is in progresses
@@ -38,4 +37,5 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
     );
 }
 
-loadMotorcycles(motorcycle_1_json_path, motorcycle_2_json_path, "motorcycle_1", "motorcycle_2", scene);
+buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader, 1); // Set in a positive location
+buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader, 2); // Set in a negative location
