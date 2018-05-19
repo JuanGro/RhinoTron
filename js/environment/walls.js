@@ -1,7 +1,15 @@
 /**
  * Function to build a single wall given the dimensions for it and the position to place it
  */
-function buildWall(x_position, y_position, z_position, width_wall, height_wall, depth_wall, wall_texture_path) {
+function buildWall(
+  x_position,
+  y_position,
+  z_position,
+  width_wall,
+  height_wall,
+  depth_wall,
+  wall_texture_path
+) {
     mesh = new THREE.Mesh(
       // Geometry
       new THREE.BoxGeometry(width_wall, height_wall, depth_wall),
