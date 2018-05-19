@@ -14,25 +14,12 @@ function removeLife(player) {
   }
 }
 
-function changeColorMarker(idPlayer, lifes){
-    if (lifes == 2) idPlayer.style.color = "yellow";
-    else if (lifes == 1) idPlayer.style.color = "red";
-    else if (lifes == 0) idPlayer.style.color = "Maroon";
-}
-
-function removeTailObjects(scene, tail_objects) {
-  while (tail_objects.length > 0) scene.remove(tail_objects.pop());
-}
-
-function removeTailStrings(tail_strings) {
-  while (tail_strings.length > 0) tail_strings.pop();
-}
-
 function initializeScene(player, current_motorcycle, opponent_motorcycle, environment_size, orientation, scene, tail_objects) {
   removeLife(player);
   removeTailObjects(scene, tail_objects);
   removeTailStrings(tail_strings);
-  randomPosition(current_motorcycle, opponent_motorcycle, 0, environment_size / 4, orientation);
+  randomPosition(current_motorcycle, 0, environment_size / 4);
+  randomPosition(opponent_motorcycle, -environment_size / 4, 0);
   player_1_tail_flag = 0;
   player_2_tail_flag = 0;
 }

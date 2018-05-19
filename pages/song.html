@@ -9,7 +9,6 @@
   </head>
 
   <body id="song-page">
-
     <audio id="TronLegacy" >
     <source src="../music/TronLegacy.mp3" value="aa" type="audio/mpeg">
     </audio>
@@ -31,9 +30,10 @@
       <div id="customSong" value="1"><p><a href="#" onmouseover="select()" onclick="pauseAudio();playAudio(1);valueSong('../music/TronLegacy.mp3')">1. TRON Legacy  <!--<input type="radio" name="song"  value="../music/TronLegacy.mp3" /> --></a></p></div>
       <div id="customSong" value="2"><p><a href="#" onmouseover="select()"  onclick="pauseAudio();playAudio(2);valueSong('../music/EndOfLine.mp3')">2. End Of Line <!--<input type="radio" name="song" value="../music/EndOfLine.mp3">--> </a></p></div>
       <div id="customSong" value="3"><a href="#" onmouseover="select()"  onclick="pauseAudio();playAudio(3);valueSong('../music/Derezzed.mp3')"><p>3. Derezzed <!--<input type="radio" name="song" value="../music/Derezzed.mp3">--> </p></a></div>
-      <div id="customSong"><a href="./../index.html" onmouseover="select()" ><p>Main Menu</p></a></div>
+      <div id="customSong"><a href="./../index.html" onmouseover="select()"><p>Main Menu</p></a>
+      </div>
     <script>
-      var x=document.getElementById("TronLegacy");  
+      var x = document.getElementById("TronLegacy");  
 
       function playAudio(number) { 
         if(number == 1) {
@@ -43,8 +43,7 @@
         } else if(number == 3) {
             x = document.getElementById("Derezzed"); 
         }
-        x.volume=0.13;
-
+        x.volume = 0.13;
         x.play(); 
       } 
 
@@ -57,17 +56,12 @@
         localStorage.setItem("storageName",path);
       }
 
-    var sound=document.getElementById("select"); 
-    sound.volume=1;
+      var sound=document.getElementById("select"); 
+      sound.volume = 1;
 
-    function select(){
-
-      sound.play();
-    }
-
-
+      function select() {
+        sound.play();
+      }
     </script>
-
-  
   </body>
 </html>

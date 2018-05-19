@@ -11,6 +11,13 @@ scene.add(ambient_light);
 // Plane size
 var environment_size = 400;
 
+/*------------- Configuring the environment ----------------------- */
+buildFloor(environment_size, floor_texture_path = './../img/floor.png');
+buildLimits(environment_size, wall_texture_path = './../img/wall.png');
+
+// Blinker
+blinker();
+
 // Cameras
 var main_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
 var player_1_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -20,6 +27,10 @@ var player_2_camera = new THREE.PerspectiveCamera(100, window.innerWidth / windo
 var renderer_main_camera = new THREE.WebGLRenderer();
 var renderer_player_1_camera = new THREE.WebGLRenderer();
 var renderer_player_2_camera = new THREE.WebGLRenderer();
+
+startMainCamera(renderer_main_camera, main_camera, environment_size);
+startPlayerCamera(renderer_player_1_camera, player_1_camera, 'player_1_camera');
+startPlayerCamera(renderer_player_2_camera, player_2_camera, 'player_2_camera');
 
 // instantiate a loader
 var motorcycle_1_loader = new THREE.ObjectLoader();
