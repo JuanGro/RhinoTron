@@ -1,16 +1,15 @@
 function removeLife(player) {
-  if (player == "player_1") {
+  if (player == 1) {
     player_1_lifes--;
     changeColorMarker(player_1_scoreboard, player_1_lifes);
   } else {
     player_2_lifes--;
     changeColorMarker(player_2_scoreboard, player_2_lifes);
   }
-
   if (player_1_lifes < 0 || player_2_lifes < 0) window.location.replace("./../index.html");
   else {
-    player_1_scoreboard.innerHTML = player_1_lifes;
-    player_2_scoreboard.innerHTML = player_2_lifes;
+    if (player == 1) player_1_scoreboard.innerHTML = player_1_lifes;
+    else player_2_scoreboard.innerHTML = player_2_lifes;
   }
 }
 

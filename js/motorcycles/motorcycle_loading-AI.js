@@ -33,10 +33,6 @@ function buildMoto(
                 randomPosition(motorcycle_2, -environment_size / 4, 0);
                 setCamerasPosition(player_camera, motorcycle_2);
             }
-        },
-        // called when loading has errors
-        function(error) {
-            console.log('An error happened when the motorcycle was loading');
         }
     );
 }

@@ -25,10 +25,6 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
                 setCamerasPosition(player_camera, motorcycle_2);
                 initMotorcycle2(motorcycle_2);
             }
-        },
-        // called when loading has errors
-        function(error) {
-            console.log('An error happened when the motorcycle was loading');
         }
     );
 }
