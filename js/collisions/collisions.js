@@ -18,7 +18,8 @@ function initializeScene(player, current_motorcycle, opponent_motorcycle, enviro
   removeLife(player);
   removeTailObjects(scene, tail_objects);
   removeTailStrings(tail_strings);
-  randomPosition(current_motorcycle, opponent_motorcycle, 0, environment_size / 4, orientation);
+  randomPosition(current_motorcycle, 0, environment_size / 4);
+  randomPosition(opponent_motorcycle, -environment_size / 4, 0);
   player_1_tail_flag = 0;
   player_2_tail_flag = 0;
 }

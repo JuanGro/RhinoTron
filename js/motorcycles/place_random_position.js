@@ -1,7 +1,4 @@
-function randomPosition(current_motorcycle, opponent_motorcycle, min_position, max_position) {
-    current_motorcycle.position.x = getRandomArbitrary(min_position, max_position);
-    current_motorcycle.position.y = getRandomArbitrary(min_position, max_position);
-
-    opponent_motorcycle.position.x = -current_motorcycle.position.x;
-    opponent_motorcycle.position.y = -current_motorcycle.position.y;
+function randomPosition(current_motorcycle, min_position, max_position) {
+    current_motorcycle.position.x = Math.floor(getRandomArbitrary(min_position, max_position) / 10) * 10;
+    current_motorcycle.position.y = 0;
 }
