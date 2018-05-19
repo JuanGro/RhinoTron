@@ -5,7 +5,11 @@ function getRandomArbitrary(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
 
-function buildTailStringPos(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z) {
+function buildTailStringPos(
+    motorcycle_position_x,
+    motorcycle_position_y,
+    motorcycle_position_z
+) {
     decimals_to_check = 0;
     return motorcycle_position_x.toFixed(decimals_to_check).toString().concat(
         "x",
