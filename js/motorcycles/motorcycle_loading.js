@@ -36,6 +36,3 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
         }
     );
 }
-
-buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader, 1, environment_size, player_1_camera, player_1_orientation); // Set in a positive location
-buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader, 2, environment_size, player_2_camera, player_2_orientation); // Set in a negative location
