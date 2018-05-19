@@ -1,4 +1,4 @@
-function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_loader, motorcycle_number) {
+function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_loader, motorcycle_number, environment_size, player_camera, player_orientation) {
     // load a resource
     motorcycle_loader.load(
         // resource URL
@@ -15,14 +15,14 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
             scene.add(motorcycle);
 
             if (motorcycle_number == 1) {
-                motorcycle_1 = scene.getObjectByName("motorcycle_1");
+                motorcycle_1 = scene.getObjectByName(motorcycle_name);
                 randomPosition(motorcycle_1, 0, environment_size / 4);
-                setCamerasPosition(player_1_camera, motorcycle_1, player_1_orientation);
+                setCamerasPosition(player_camera, motorcycle_1, player_orientation);
                 initMotorcycle1(motorcycle_1);
             } else {
-                motorcycle_2 = scene.getObjectByName("motorcycle_2");
+                motorcycle_2 = scene.getObjectByName(motorcycle_name);
                 randomPosition(motorcycle_2, -environment_size / 4, 0);
-                setCamerasPosition(player_2_camera, motorcycle_2, player_1_orientation);
+                setCamerasPosition(player_camera, motorcycle_2, player_orientation);
             }
         },
         // called when loading is in progresses
@@ -36,5 +36,5 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
     );
 }
 
-buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader, 1); // Set in a positive location
-buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader, 2); // Set in a negative location
+buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader, 1, environment_size, player_1_camera, player_1_orientation); // Set in a positive location
+buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader, 2, environment_size, player_2_camera, player_2_orientation); // Set in a negative location
