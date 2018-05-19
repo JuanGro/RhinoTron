@@ -4,7 +4,6 @@ function startPlayerCamera(renderer, player_camera, color, id_camera) {
   container = document.getElementById(id_camera);
   console.log(color);
   container.style.borderColor = color;
-  container.style.visibility = "visible";
   document.body.appendChild(container);
   container.appendChild(renderer.domElement);
 

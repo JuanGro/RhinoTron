@@ -92,6 +92,8 @@ var player_2_scoreboard = document.getElementById("player_2_scoreboard");
 
 player_1_scoreboard.innerHTML = player_1_lifes;
 player_2_scoreboard.innerHTML = player_2_lifes;
+player_1_scoreboard.style.borderColor = player_1_color_rgb;
+player_2_scoreboard.style.borderColor = player_2_color_rgb;
 
 player_1_scoreboard.style.visibility = "visible";
 player_2_scoreboard.style.visibility = "visible";
