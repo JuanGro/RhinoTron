@@ -26,13 +26,9 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
                 initMotorcycle2(motorcycle_2);
             }
         },
-        // called when loading is in progresses
-        function(xhr) {
-            console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-        },
         // called when loading has errors
         function(error) {
-            console.log('An error happened');
+            console.log('An error happened when the motorcycle was loading');
         }
     );
 }

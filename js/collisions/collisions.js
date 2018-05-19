@@ -34,10 +34,12 @@ function initializeScene(
 
 function collisions(current_motorcycle, opponent_motorcycle, orientation, player, tail_flag) {
   /* Wall collisions */
-  if (current_motorcycle.position.x > environment_size / 2 ||
+  if (
+    current_motorcycle.position.x > environment_size / 2 ||
     current_motorcycle.position.x < -environment_size / 2 ||
     current_motorcycle.position.y >  environment_size / 2 ||
-    current_motorcycle.position.y < -environment_size / 2 ) {
+    current_motorcycle.position.y < -environment_size / 2
+  ) {
     initializeScene(
       player,
       current_motorcycle,
