@@ -17,7 +17,7 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
             if (motorcycle_number == 2) {
                 motorcycle_1 = scene.getObjectByName("motorcycle_1");
                 motorcycle_2 = scene.getObjectByName("motorcycle_2");
-                randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4, player_1_orientation);
+                randomPosition(motorcycle_1, motorcycle_2, 0, environment_size / 4);
                 setCamerasPosition(player_1_camera, motorcycle_1, player_1_orientation);
                 setCamerasPosition(player_2_camera, motorcycle_2, player_1_orientation);
                 initMotorcycle1(motorcycle_1);
