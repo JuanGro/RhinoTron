@@ -94,6 +94,10 @@ var motorcycle_2_json_path = '../models/classic-1982-tron-light-cycle-green.json
 var player_1_color = 0xff0000;
 var player_2_color = 0x7CFC00;
 
+// Build motos
+buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader, 1, environment_size, player_1_camera, player_1_orientation);
+buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader, 2, environment_size, player_2_camera, player_2_orientation);
+
 // Draw scene
 function render() {
     renderer_main_camera.render(scene, main_camera);
