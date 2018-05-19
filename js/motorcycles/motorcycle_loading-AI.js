@@ -1,8 +1,3 @@
-function loadMotorcycles(motorcycle_1_json_path, motorcycle_2_json_path, motorcycle_1_name, motorcycle_2_name, scene) {
-    buildMoto(motorcycle_1_json_path, motorcycle_1_name, scene, motorcycle_1_loader, 1); // Set in a positive location
-    buildMoto(motorcycle_2_json_path, motorcycle_2_name, scene, motorcycle_2_loader, 2); // Set in a negative location
-}
-
 function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_loader, motorcycle_number) {
     // load a resource
     motorcycle_loader.load(
@@ -39,4 +34,5 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
     );
 }
 
-loadMotorcycles(motorcycle_1_json_path, motorcycle_2_json_path, "motorcycle_1", "motorcycle_2", scene);
+buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader, 1); // Set in a positive location
+buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader, 2); // Set in a negative location
