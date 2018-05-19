@@ -1,4 +1,13 @@
-function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_loader, motorcycle_number, environment_size, player_camera, player_orientation) {
+function buildMoto(
+    motorcycle_json_path,
+    motorcycle_name,
+    scene,
+    motorcycle_loader,
+    motorcycle_number,
+    environment_size,
+    player_camera,
+    player_orientation
+) {
     // load a resource
     motorcycle_loader.load(
         // resource URL
@@ -25,14 +34,6 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
                 setCamerasPosition(player_camera, motorcycle_2, player_orientation);
                 initMotorcycle2(motorcycle_2);
             }
-        },
-        // called when loading is in progresses
-        function(xhr) {
-            console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-        },
-        // called when loading has errors
-        function(error) {
-            console.log('An error happened');
         }
     );
 }
