@@ -15,10 +15,10 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
         tail_objects.push(cube);
         scene.add(cube);
 
-        if (player == "player_1") player_1_tail_object = cube;
+        if (player == 1) player_1_tail_object = cube;
         else player_2_tail_object = cube;
     } else {
-        if (player == "player_1") {
+        if (player == 1) {
             if (player_orientation == 1) {
                 player_1_tail_object.position.y = motorcycle_position_y - player_1_tail_object.scale.y / 2;
                 player_1_tail_object.scale.y += speed;
@@ -115,7 +115,6 @@ function changeRotationWithPI(moto, player_camera, keychar) {
 }
 
 function initMotorcycle1(current_motorcycle) {
-    //LINEA IMPORTANTE PARA OBTENER EVENTO DEL TECLADO, ESTA TIENE QUE ESTAR AL INICIO DE TODOS LOS DOCUMENTOS, ES UN LISTENER
     document.body.addEventListener('keydown', keyPressed);
 
     function keyPressed(keyboardEvent) {
@@ -144,7 +143,6 @@ function initMotorcycle1(current_motorcycle) {
 }
 
 function initMotorcycle2(current_motorcycle) {
-    //LINEA IMPORTANTE PARA OBTENER EVENTO DEL TECLADO, ESTA TIENE QUE ESTAR AL INICIO DE TODOS LOS DOCUMENTOS, ES UN LISTENER
     document.body.addEventListener('keydown', keyPressed);
 
     function keyPressed(keyboardEvent) {

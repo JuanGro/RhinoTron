@@ -20,13 +20,13 @@ function moveMotorcycle2(current_motorcycle) {
             // Turn right
             if (player_2_orientation == 4) next_orientation = 1;
             else next_orientation = player_2_orientation + 1;
-            if (isThereANearCollision(current_motorcycle, player_2_orientation, speed, tail_strings)) turnLeft(current_motorcycle);
+            if (isThereANearCollision(current_motorcycle, player_2_orientation, next_orientation, speed, tail_strings)) turnLeft(current_motorcycle);
             else turnRight(current_motorcycle);
         } else {
             // Turn left
             if (player_2_orientation == 1) next_orientation = 4;
             else next_orientation = player_2_orientation - 1;
-            if (isThereANearCollision(current_motorcycle, player_2_orientation, speed, tail_strings)) turnRight(current_motorcycle);
+            if (isThereANearCollision(current_motorcycle, player_2_orientation, next_orientation, speed, tail_strings)) turnRight(current_motorcycle);
             else turnLeft(current_motorcycle);
         }
     }

@@ -1,13 +1,13 @@
-function startPlayerCamera(renderer_player_camera, player_camera, id_camera) {
+function startPlayerCamera(renderer, player_camera, id_camera) {
   // Specify the size to show in the window
-  renderer_player_camera.setSize(window.innerWidth / 5, window.innerHeight / 5);
+  renderer.setSize(window.innerWidth / 5, window.innerHeight / 5);
   container = document.getElementById(id_camera);
   document.body.appendChild(container);
-  container.appendChild(renderer_player_camera.domElement);
+  container.appendChild(renderer.domElement);
 
   // detect when window resize
   window.addEventListener('resize', function() {
-    renderer_player_camera.setSize(window.innerWidth / 5, window.innerHeight / 5);
+    renderer.setSize(window.innerWidth / 5, window.innerHeight / 5);
     player_camera.aspect = window.innerWidth / window.innerHeight;
     player_camera.updateProjectionMatrix();
   });

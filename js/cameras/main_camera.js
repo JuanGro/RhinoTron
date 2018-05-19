@@ -1,7 +1,7 @@
-function startMainCamera(renderer, camera, environment_size) {
+function startMainCamera(renderer, camera, environment_size, id_camera) {
   // Specify the size to show in the window
   renderer.setSize(window.innerWidth, window.innerHeight);
-  container = document.getElementById('main_camera');
+  container = document.getElementById(id_camera);
   document.body.appendChild(container);
   container.appendChild(renderer.domElement);
 
