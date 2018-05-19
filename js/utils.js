@@ -18,13 +18,19 @@ function buildTailStringPos(
     );
 }
 
-function changeColorMarker(scoreboard, lifes) {
+function changeColorMarker(
+    scoreboard,
+    lifes
+) {
     if (lifes == 2) scoreboard.style.color = "yellow";
     else if (lifes == 1) scoreboard.style.color = "red";
     else if (lifes == 0) scoreboard.style.color = "Maroon";
 }
 
-function removeTailObjects(scene, tail_objects) {
+function removeTailObjects(
+    scene,
+    tail_objects
+) {
   while (tail_objects.length > 0) scene.remove(tail_objects.pop());
 }
 

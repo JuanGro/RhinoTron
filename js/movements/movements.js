@@ -1,4 +1,12 @@
-function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z, player, player_orientation, player_color, tail_flag) {
+function drawTail(
+    motorcycle_position_x,
+    motorcycle_position_y,
+    motorcycle_position_z,
+    player,
+    player_orientation,
+    player_color,
+    tail_flag
+) {
     if (tail_flag == 0) {
         cube = new THREE.Mesh(
             // Geometry
@@ -6,7 +14,6 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
             // Material
             new THREE.MeshBasicMaterial({color: player_color})
         );
-
         cube.position.x = motorcycle_position_x;
         cube.position.y = motorcycle_position_y;
         cube.position.z = motorcycle_position_z;
@@ -56,11 +63,23 @@ function drawTail(motorcycle_position_x, motorcycle_position_y, motorcycle_posit
     }
 
     tail_strings.push(
-        buildTailStringPos(motorcycle_position_x, motorcycle_position_y, motorcycle_position_z)
+        buildTailStringPos(
+            motorcycle_position_x,
+            motorcycle_position_y,
+            motorcycle_position_z
+        )
     );
 }
 
-function continuosMovement(current_motorcycle, opponent_motorcycle, player, player_orientation, player_camera, player_color, tail_flag) {
+function continuosMovement(
+    current_motorcycle,
+    opponent_motorcycle,
+    player,
+    player_orientation,
+    player_camera,
+    player_color,
+    tail_flag
+) {
     player_camera.position.x = current_motorcycle.position.x;
     player_camera.position.y = current_motorcycle.position.y - camera_remoteness;
     player_camera.position.z = camera_position_in_z;
@@ -80,7 +99,13 @@ function continuosMovement(current_motorcycle, opponent_motorcycle, player, play
         player_camera.position.x = current_motorcycle.position.x + camera_remoteness;
     }
 
-    tail_flag = collisions(current_motorcycle, opponent_motorcycle, player_orientation, player, tail_flag);
+    tail_flag = collisions(
+        current_motorcycle,
+        opponent_motorcycle,
+        player_orientation,
+        player,
+        tail_flag
+    );
 
     return drawTail(
         current_motorcycle.position.x,
@@ -93,7 +118,11 @@ function continuosMovement(current_motorcycle, opponent_motorcycle, player, play
     );
 }
 
-function moveCameraToCurrentMotorcycle(player_camera, current_moto, player_orientation){
+function moveCameraToCurrentMotorcycle(
+    player_camera,
+    current_moto,
+    player_orientation
+) {
     player_camera.position.x = current_moto.position.x;
     player_camera.position.y = current_moto.position.y;
 
@@ -103,7 +132,11 @@ function moveCameraToCurrentMotorcycle(player_camera, current_moto, player_orien
     else if (player_orientation == 4) player_camera.position.x = current_moto.position.x + camera_remoteness;
 }
 
-function changeRotationWithPI(moto, player_camera, keychar) {
+function changeRotationWithPI(
+    moto,
+    player_camera,
+    keychar
+) {
   if (keychar == 'd' || keychar == 'ArrowRight') {
     moto.rotation.y -= Math.PI / 2;
     player_camera.rotation.y -= Math.PI / 2;
@@ -115,7 +148,6 @@ function changeRotationWithPI(moto, player_camera, keychar) {
 }
 
 function initMotorcycle1(current_motorcycle) {
-    //LINEA IMPORTANTE PARA OBTENER EVENTO DEL TECLADO, ESTA TIENE QUE ESTAR AL INICIO DE TODOS LOS DOCUMENTOS, ES UN LISTENER
     document.body.addEventListener('keydown', keyPressed);
 
     function keyPressed(keyboardEvent) {
@@ -144,7 +176,6 @@ function initMotorcycle1(current_motorcycle) {
 }
 
 function initMotorcycle2(current_motorcycle) {
-    //LINEA IMPORTANTE PARA OBTENER EVENTO DEL TECLADO, ESTA TIENE QUE ESTAR AL INICIO DE TODOS LOS DOCUMENTOS, ES UN LISTENER
     document.body.addEventListener('keydown', keyPressed);
 
     function keyPressed(keyboardEvent) {

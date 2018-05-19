@@ -7,7 +7,10 @@ function removeLife(player) {
     changeColorMarker(player_2_scoreboard, player_2_lifes);
   }
 
-  if (player_1_lifes < 0 || player_2_lifes < 0) window.location.replace("./../index.html");
+  if (
+    player_1_lifes < 0 ||
+    player_2_lifes < 0
+  ) window.location.replace("./../index.html");
   else {
     player_1_scoreboard.innerHTML = player_1_lifes;
     player_2_scoreboard.innerHTML = player_2_lifes;
@@ -19,7 +22,6 @@ function initializeScene(
   current_motorcycle,
   opponent_motorcycle,
   environment_size,
-  orientation,
   scene,
   tail_objects
 ) {
@@ -32,7 +34,12 @@ function initializeScene(
   player_2_tail_flag = 0;
 }
 
-function collisions(current_motorcycle, opponent_motorcycle, orientation, player, tail_flag) {
+function collisions(
+  current_motorcycle,
+  opponent_motorcycle,
+  player,
+  tail_flag
+) {
   /* Wall collisions */
   if (current_motorcycle.position.x > environment_size / 2 ||
     current_motorcycle.position.x < -environment_size / 2 ||
@@ -43,7 +50,6 @@ function collisions(current_motorcycle, opponent_motorcycle, orientation, player
       current_motorcycle,
       opponent_motorcycle,
       environment_size,
-      orientation,
       scene,
       tail_objects
     );
@@ -62,7 +68,6 @@ function collisions(current_motorcycle, opponent_motorcycle, orientation, player
       current_motorcycle,
       opponent_motorcycle,
       environment_size,
-      orientation,
       scene,
       tail_objects
     );

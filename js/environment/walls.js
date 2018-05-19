@@ -12,14 +12,21 @@ function buildWall(
 ) {
     mesh = new THREE.Mesh(
       // Geometry
-      new THREE.BoxGeometry(width_wall, height_wall, depth_wall),
+      new THREE.BoxGeometry(
+        width_wall,
+        height_wall,
+        depth_wall
+      ),
       // Material
       new THREE.MeshLambertMaterial({
-        map: new THREE.TextureLoader().load(wall_texture_path, function (texture) {
-          texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-          texture.offset.set(0, 0);
-          texture.repeat.set(10, 10); // repeat image ten times to cover the 1000px
-        })
+        map: new THREE.TextureLoader().load(
+          wall_texture_path, 
+          function(texture) {
+            texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+            texture.offset.set(0, 0);
+            texture.repeat.set(10, 10);
+          }
+        )
       })
     );
     mesh.position.x = x_position;
@@ -31,7 +38,10 @@ function buildWall(
 /**
  * Function to build all the limits given the size of the plane
  */
-function buildLimits(environment_size, wall_texture_path) {
+function buildLimits(
+  environment_size,
+  wall_texture_path
+) {
     // Left
     buildWall(
       x_position = -environment_size / 2,
