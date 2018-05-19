@@ -11,6 +11,16 @@ scene.add(ambient_light);
 // Plane size
 var environment_size = 400;
 
+// Location of the 3D models
+var motorcycle_1_json_path = '../models/classic-1982-tron-light-cycle-red.json';
+var motorcycle_2_json_path = '../models/classic-1982-tron-light-cycle-green.json';
+
+// Color for the tails
+var player_1_color_hex = 0xff0000;
+var player_2_color_hex = 0x7CFC00;
+var player_1_color_rgb = 'rgb(255, 0, 0)';
+var player_2_color_rgb = 'rgb(49, 233, 12)';
+
 // Configuring the environment
 buildFloor(environment_size, floor_texture_path = './../img/floor.png');
 buildLimits(environment_size, wall_texture_path = './../img/wall.png');
@@ -29,8 +39,8 @@ var renderer_player_1_camera = new THREE.WebGLRenderer();
 var renderer_player_2_camera = new THREE.WebGLRenderer();
 
 startMainCamera(renderer_main_camera, main_camera, environment_size, 'main_camera');
-startPlayerCamera(renderer_player_1_camera, player_1_camera, 'player_1_camera');
-startPlayerCamera(renderer_player_2_camera, player_2_camera, 'player_2_camera');
+startPlayerCamera(renderer_player_1_camera, player_1_camera, player_1_color_rgb, 'player_1_camera');
+startPlayerCamera(renderer_player_2_camera, player_2_camera, player_2_color_rgb, 'player_2_camera');
 
 // instantiate a loader
 var motorcycle_1_loader = new THREE.ObjectLoader();
@@ -85,14 +95,6 @@ player_2_scoreboard.innerHTML = player_2_lifes;
 
 player_1_scoreboard.style.visibility = "visible";
 player_2_scoreboard.style.visibility = "visible";
-
-// Location of the 3D models
-var motorcycle_1_json_path = '../models/classic-1982-tron-light-cycle-red.json';
-var motorcycle_2_json_path = '../models/classic-1982-tron-light-cycle-green.json';
-
-// Color for the tails
-var player_1_color = 0xff0000;
-var player_2_color = 0x7CFC00;
 
 // Build motos
 buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader, 1, environment_size, player_1_camera, player_1_orientation);

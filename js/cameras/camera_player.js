@@ -1,7 +1,10 @@
-function startPlayerCamera(renderer, player_camera, id_camera) {
+function startPlayerCamera(renderer, player_camera, color, id_camera) {
   // Specify the size to show in the window
   renderer.setSize(window.innerWidth / 5, window.innerHeight / 5);
   container = document.getElementById(id_camera);
+  console.log(color);
+  container.style.borderColor = color;
+  container.style.visibility = "visible";
   document.body.appendChild(container);
   container.appendChild(renderer.domElement);
 
