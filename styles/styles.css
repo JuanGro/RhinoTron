@@ -19,12 +19,6 @@ body {
 #song-page {
   background-image: url('../img/menu10.gif');
   background-position: 100% 0%;
-
-}
-
-#gameover-page {
-  background-image: url('../img/gameOver.gif');
-  background-position: 50% 40%;
 }
 
 #credits-page {
@@ -32,10 +26,17 @@ body {
   background-position: 50% 40%;
 }
 
-#video {
+#video, #gif {
   display: block;
   margin: 0 auto;
+}
+
+#video {
   width: 75%;
+}
+
+#video {
+  width: 50%;
 }
 
 #menu > div {
