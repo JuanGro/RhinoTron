@@ -47,7 +47,6 @@ body {
 /* Option in menu */
 #option {
   cursor: pointer;
-  font-family: shadows into light;
   font-size: 50px;
   text-align: center;
   -webkit-transition: 0.5s;
@@ -56,7 +55,6 @@ body {
 
 /* Add styles when user pass mouse on links */
 #option:hover {
-  color: white;
   -webkit-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
@@ -72,19 +70,22 @@ a:hover {
   text-decoration: none;
 }
 
-#player_1_camera, #player_2_camera {
+#player_1_camera, #player_2_camera, #player_1_scoreboard, #player_2_scoreboard {
   border-style: double;
   border-width: 10px;
   border-color: #0174DF;
   position: absolute;
+}
+
+#player_1_camera, #player_2_camera {
   bottom: 0;
 }
 
-#player_1_camera {
+#player_1_camera, #player_1_scoreboard {
   left: 0;
 }
 
-#player_2_camera {
+#player_2_camera, #player_2_scoreboard {
   right: 0;
 }
 
@@ -92,24 +93,10 @@ a:hover {
   font-family: tron;
   color: #0174DF;
   background: black;
+  text-align: center;
+
   width: 150px;
-
-  border-style: double;
-  border-width: 10px;
-  border-color: #0174DF;
-  position: absolute;
-
   font-size: 150px;
   padding-left: 10px;
   padding-right: 10px;
-
-  text-align: center;
-}
-
-#player_1_scoreboard {
-  left: 0;
-}
-
-#player_2_scoreboard {
-  right: 0;
 }
