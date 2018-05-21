@@ -15,9 +15,8 @@ function buildTailStringPos(motorcycle_position_x, motorcycle_position_y, motorc
 }
 
 function changeColorMarker(scoreboard, lifes) {
-    if (lifes == 2) scoreboard.style.color = "yellow";
-    else if (lifes == 1) scoreboard.style.color = "red";
-    else if (lifes == 0) scoreboard.style.color = "Maroon";
+    if (lifes == 1) scoreboard.style.color = "yellow";
+    else if (lifes == 0) scoreboard.style.color = "red";
 }
 
 function removeTailObjects(scene, tail_objects) {
