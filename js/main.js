@@ -8,6 +8,9 @@ var scene = new THREE.Scene();
 var ambient_light = new THREE.AmbientLight(0x207c99, 4);
 scene.add(ambient_light);
 
+// Play the default song or load the selected one
+playSelectedSong();
+
 // Plane size
 var environment_size = 400;
 

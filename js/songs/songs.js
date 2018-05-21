@@ -17,8 +17,15 @@ function pauseSong() {
         song.pause(); 
         song.load();
     }
-} 
+}
 
 function valueSong(path) {
     localStorage.setItem("music_path", path);
+}
+
+function playSelectedSong() {
+    if (localStorage.getItem("music_path")) {
+        song = document.getElementById("song");
+        song.src = localStorage.getItem("music_path");
+    }
 }
