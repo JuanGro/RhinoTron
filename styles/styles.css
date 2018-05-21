@@ -90,17 +90,14 @@ a:hover {
 
 #player_1_scoreboard, #player_2_scoreboard {
   font-family: tron;
-  color: #18CAE6;
-  background: #000000;
-  width: 120px;
-
-  position: absolute;
-  bottom: 300px;
-  z-index: 99;
+  color: #0174DF;
+  background: black;
+  width: 150px;
 
   border-style: double;
   border-width: 10px;
   border-color: #0174DF;
+  position: absolute;
 
   font-size: 150px;
   padding-left: 10px;
@@ -110,9 +107,9 @@ a:hover {
 }
 
 #player_1_scoreboard {
-  left: 50px;
+  left: 0;
 }
 
 #player_2_scoreboard {
-  right: 50px;
+  right: 0;
 }
