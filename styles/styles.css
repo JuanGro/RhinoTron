@@ -45,7 +45,7 @@ body {
 }
 
 /* Option in menu */
-#play, #custom, #play-vs-agent, #credits, #customSong, #controls-over {
+#option {
   cursor: pointer;
   font-family: shadows into light;
   font-size: 50px;
@@ -55,7 +55,7 @@ body {
 }
 
 /* Add styles when user pass mouse on links */
-#play:hover, #custom:hover, #credits:hover, #play-vs-agent:hover, #customSong:hover, #controls-over:hover {
+#option:hover {
   color: white;
   -webkit-transform: rotate(-3deg);
   transform: rotate(-3deg);
