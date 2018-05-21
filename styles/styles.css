@@ -29,6 +29,12 @@ body {
   background-position: 50% 40%;
 }
 
+#video {
+  display: block;
+  margin: 0 auto;
+  width: 75%;
+}
+
 #menu > div {
   margin-top: 75px;
   color: #2F717F;
@@ -63,17 +69,12 @@ a:hover {
   text-decoration: none;
 }
 
-#main_camera {
-  z-index: -1;
-}
-
 #player_1_camera, #player_2_camera {
   border-style: double;
   border-width: 10px;
   border-color: #0174DF;
   position: absolute;
   bottom: 0;
-  z-index: 99;
 }
 
 #player_1_camera {
@@ -112,23 +113,3 @@ a:hover {
 #player_2_scoreboard {
   right: 50px;
 }
-
-/* controles game over*/
-#controls-over {
-  bottom: 10px;
-  right: 210px;
-  width: 400px;
-}
-
-/* controles credits*/
-#controls-credits {
-  bottom: 20px;
-  right: 20px;
-  width: 400px;
-}
-
-#video { 
-  padding-left: 500px;
-}
-
-
