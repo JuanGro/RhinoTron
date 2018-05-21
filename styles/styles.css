@@ -26,6 +26,11 @@ body {
   background-position: 50% 40%;
 }
 
+#gameover-page {
+  background-image: url('../img/menu8.gif');
+  background-position: 50% 40%;
+}
+
 #video, #gif {
   display: block;
   margin: 0 auto;
