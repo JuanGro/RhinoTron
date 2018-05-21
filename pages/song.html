@@ -9,16 +9,18 @@
   </head>
 
   <body id="song-page">
+    <script src="./../js/songs/songs.js"></script>
+
     <audio id="TronLegacy">
-      <source src="../music/TronLegacy.mp3" type="audio/mpeg">
+      <source src="./../music/TronLegacy.mp3" type="audio/mpeg">
     </audio>
 
     <audio id="EndOfLine">
-      <source src="../music/EndOfLine.mp3" type="audio/mpeg">
+      <source src="./../music/EndOfLine.mp3" type="audio/mpeg">
     </audio>
 
     <audio id="Derezzed">
-      <source src="../music/Derezzed.mp3" type="audio/mpeg">
+      <source src="./../music/Derezzed.mp3" type="audio/mpeg">
     </audio>
 
     <audio id="select">
@@ -26,12 +28,29 @@
     </audio>
 
     <div id="menu">
-      <div id="play"><p><a href="#">Play List</a></p></div>
-      <div id="customSong" value="1"><p><a href="#" onmouseover="playSelectSound(select)" onclick="pauseAudio();playAudio(1);valueSong('../music/TronLegacy.mp3')">1. TRON Legacy  <!--<input type="radio" name="song"  value="../music/TronLegacy.mp3" /> --></a></p></div>
-      <div id="customSong" value="2"><p><a href="#" onmouseover="playSelectSound(select)"  onclick="pauseAudio();playAudio(2);valueSong('../music/EndOfLine.mp3')">2. End Of Line <!--<input type="radio" name="song" value="../music/EndOfLine.mp3">--> </a></p></div>
-      <div id="customSong" value="3"><a href="#" onmouseover="playSelectSound(select)"  onclick="pauseAudio();playAudio(3);valueSong('../music/Derezzed.mp3')"><p>3. Derezzed <!--<input type="radio" name="song" value="../music/Derezzed.mp3">--> </p></a></div>
-      <div id="customSong"><a href="./../index.html" onmouseover="playSelectSound(select)"><p>Main Menu</p></a>
+      <div id="play"><a href="#"><p>Play List</p></a></div>
+      <div id="customSong" value="1">
+        <a href="#" onmouseover="play(select, 'sound')"
+                    onclick="pauseSong(); play(TronLegacy, 'song'); valueSong('../music/TronLegacy.mp3')">
+          <p>1. TRON Legacy</p>
+        </a>
       </div>
-    <script src="./../js/songs/songs.js"></script>
+      <div id="customSong" value="2">
+        <a href="#" onmouseover="play(select, 'sound')"  
+                    onclick="pauseSong(); play(EndOfLine, 'song'); valueSong('../music/EndOfLine.mp3')">
+          <p>2. End Of Line</p>
+        </a>
+      </div>
+      <div id="customSong" value="3">
+        <a href="#" onmouseover="play(select, 'sound')"
+                    onclick="pauseSong(); play(Derezzed, 'song'); valueSong('../music/Derezzed.mp3')">
+          <p>3. Derezzed</p>
+        </a>
+      </div>
+      <div id="customSong">
+        <a href="./../index.html" onmouseover="play(select, 'sound')">
+          <p>Main Menu</p>
+        </a>
+      </div>
   </body>
 </html>
