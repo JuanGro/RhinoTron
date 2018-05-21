@@ -8,8 +8,11 @@
 
 body {
   background-color: black;
-  background-image: url('../img/menu1.gif');
   background-size: cover;
+}
+
+#index-page {
+  background-image: url('../img/menu1.gif');
   background-position: 50% 40%;
 }
 
