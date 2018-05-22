@@ -1,5 +1,5 @@
 // Add FPS monitor
-(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
+// (function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);requestAnimationFrame(function loop(){stats.update();requestAnimationFrame(loop)});};script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';document.head.appendChild(script);})()
 
 // Creating scene and cameras
 var scene = new THREE.Scene();
@@ -20,12 +20,19 @@ var environment_size = 400;
 // Location of the 3D models
 var motorcycle_1_json_path = '../models/classic-1982-tron-light-cycle-red.json';
 var motorcycle_2_json_path = '../models/classic-1982-tron-light-cycle-green.json';
+if (getFromLocalStorage('motorcycle_1_json_path')) motorcycle_1_json_path = getFromLocalStorage('motorcycle_1_json_path');
+if (getFromLocalStorage('motorcycle_2_json_path')) motorcycle_2_json_path = getFromLocalStorage('motorcycle_2_json_path');
 
 // Color for the tails
 var player_1_color_hex = 0xff0000;
 var player_2_color_hex = 0x7CFC00;
+if (getFromLocalStorage('player_1_color_hex')) player_1_color_hex = Number(getFromLocalStorage('player_1_color_hex'));
+if (getFromLocalStorage('player_2_color_hex')) player_2_color_hex = Number(getFromLocalStorage('player_2_color_hex'));
+
 var player_1_color_rgb = 'rgb(255, 0, 0)';
 var player_2_color_rgb = 'rgb(49, 233, 12)';
+if (getFromLocalStorage('player_1_color_rgb')) player_1_color_rgb = getFromLocalStorage('player_1_color_rgb');
+if (getFromLocalStorage('player_2_color_rgb')) player_2_color_rgb = getFromLocalStorage('player_2_color_rgb');
 
 // Configuring the environment
 buildFloor(environment_size, floor_texture_path = './../img/floor.png');
