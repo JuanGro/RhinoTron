@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./../styles/styles.css">
+    <title>RhinoTron | Game Over</title>
+  </head>
+
+  <body id="gameover-page">
+    <audio autoplay loop id="song">
+      <source src="./../music/end.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="select">
+        <source src="./../music/select.wav" type="audio/mpeg">
+      </audio>
+
+    <script type="text/javascript" src="./../js/utils.js"></script>
+    <script type="text/javascript" src="./../js/songs/songs.js"></script>
+
+    <div id="menu">
+      <div id="winner">
+        <a href="#"><p>Game over</p></a>
+      </div>
+
+      <img src="./../img/daft.gif" id="gif"> 
+
+      <div id="option">
+        <a onclick="retry()" onmouseover="play(select, 'sound')"><p>Retry</p></a>
+      </div>
+
+      <div id="option"><a href="./../index.html" onmouseover="play(select, 'sound')">
+        <p>Main Menu</p></a>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./../js/game-over/game_over.js"></script>
+  </body>
+</html>

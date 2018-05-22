@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./../styles/styles.css">
-    <title>RhinoTron | Song`s</title>
+    <title>RhinoTron | Songs</title>
   </head>
 
   <body id="song-page">
@@ -28,26 +28,32 @@
     </audio>
 
     <div id="menu">
-      <div id="play"><a href="#"><p>Play List</p></a></div>
-      <div id="customSong" value="1">
-        <a href="#" onmouseover="play(select, 'sound')"
-                    onclick="pauseSong(); play(TronLegacy, 'song'); valueSong('../music/TronLegacy.mp3')">
+      <div id="option">
+        <a href="#"><p>Play List</p></a>
+      </div>
+
+      <div id="option" value="1">
+        <a onmouseover="play(select, 'sound')"
+            onclick="pauseSong(); play(TronLegacy, 'song'); valueSong('../music/TronLegacy.mp3')">
           <p>1. TRON Legacy</p>
         </a>
       </div>
-      <div id="customSong" value="2">
+
+      <div id="option" value="2">
         <a href="#" onmouseover="play(select, 'sound')"  
                     onclick="pauseSong(); play(EndOfLine, 'song'); valueSong('../music/EndOfLine.mp3')">
           <p>2. End Of Line</p>
         </a>
       </div>
-      <div id="customSong" value="3">
+
+      <div id="option" value="3">
         <a href="#" onmouseover="play(select, 'sound')"
                     onclick="pauseSong(); play(Derezzed, 'song'); valueSong('../music/Derezzed.mp3')">
           <p>3. Derezzed</p>
         </a>
       </div>
-      <div id="customSong">
+
+      <div id="option">
         <a href="./../index.html" onmouseover="play(select, 'sound')">
           <p>Main Menu</p>
         </a>

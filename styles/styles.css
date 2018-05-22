@@ -8,25 +8,36 @@
 
 body {
   background-color: black;
-  background-image: url('../img/menu1.gif');
   background-size: cover;
+}
+
+#index-page {
+  background-image: url('../img/menu1.gif');
   background-position: 50% 40%;
 }
 
 #song-page {
   background-image: url('../img/menu10.gif');
   background-position: 100% 0%;
-
-}
-
-#gameover-page {
-  background-image: url('../img/gameOver.gif');
-  background-position: 50% 40%;
 }
 
 #credits-page {
   background-image: url('../img/credits.gif');
   background-position: 50% 40%;
+}
+
+#gameover-page {
+  background-image: url('../img/menu8.gif');
+  background-position: 50% 40%;
+}
+
+#video, #gif {
+  display: block;
+  margin: 0 auto;
+}
+
+#video {
+  width: 75%;
 }
 
 #menu > div {
@@ -36,9 +47,8 @@ body {
 }
 
 /* Option in menu */
-#play, #custom, #play-vs-agent, #credits, #customSong, #controls-over {
+#option, #winner {
   cursor: pointer;
-  font-family: shadows into light;
   font-size: 50px;
   text-align: center;
   -webkit-transition: 0.5s;
@@ -46,8 +56,7 @@ body {
 }
 
 /* Add styles when user pass mouse on links */
-#play:hover, #custom:hover, #credits:hover, #play-vs-agent:hover, #customSong:hover, #controls-over:hover {
-  color: white;
+#option:hover {
   -webkit-transform: rotate(-3deg);
   transform: rotate(-3deg);
 }
@@ -63,72 +72,33 @@ a:hover {
   text-decoration: none;
 }
 
-#main_camera {
-  z-index: -1;
-}
-
-#player_1_camera, #player_2_camera {
+#player_1_camera, #player_2_camera, #player_1_scoreboard, #player_2_scoreboard {
   border-style: double;
   border-width: 10px;
   border-color: #0174DF;
   position: absolute;
-  bottom: 0;
-  z-index: 99;
 }
 
-#player_1_camera {
+#player_1_camera, #player_2_camera {
+  bottom: 0;
+}
+
+#player_1_camera, #player_1_scoreboard {
   left: 0;
 }
 
-#player_2_camera {
+#player_2_camera, #player_2_scoreboard {
   right: 0;
 }
 
 #player_1_scoreboard, #player_2_scoreboard {
   font-family: tron;
-  color: #18CAE6;
-  background: #000000;
-  width: 120px;
+  color: #0174DF;
+  background: black;
+  text-align: center;
 
-  position: absolute;
-  bottom: 300px;
-  z-index: 99;
-
-  border-style: double;
-  border-width: 10px;
-  border-color: #0174DF;
-
+  width: 150px;
   font-size: 150px;
   padding-left: 10px;
   padding-right: 10px;
-
-  text-align: center;
 }
-
-#player_1_scoreboard {
-  left: 50px;
-}
-
-#player_2_scoreboard {
-  right: 50px;
-}
-
-/* controles game over*/
-#controls-over {
-  bottom: 10px;
-  right: 210px;
-  width: 400px;
-}
-
-/* controles credits*/
-#controls-credits {
-  bottom: 20px;
-  right: 20px;
-  width: 400px;
-}
-
-#video { 
-  padding-left: 500px;
-}
-
-
