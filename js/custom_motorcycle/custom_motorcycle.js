@@ -22,14 +22,10 @@ var player_2_color_rgb = 'rgb(49, 233, 12)';
 buildFloor(environment_size, floor_texture_path = './../img/floor.png');
 buildLimits(environment_size, wall_texture_path = './../img/wall.png');
 
-var player_1_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
-var player_2_camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+var camera_customization = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+var renderer_player_customization = new THREE.WebGLRenderer();
 
-var renderer_player_1_camera = new THREE.WebGLRenderer();
-var renderer_player_2_camera = new THREE.WebGLRenderer();
-
-startPlayerCamera(renderer_player_1_camera, player_1_camera, player_1_color_rgb, 'player_1_camera');
-startPlayerCamera(renderer_player_2_camera, player_2_camera, player_2_color_rgb, 'player_2_camera');
+startCamera(renderer_player_customization, camera_customization, 'camera_customization');
 
 // instantiate a loader
 var motorcycle_1_loader = new THREE.ObjectLoader();
@@ -50,13 +46,12 @@ var camera_remoteness = 20;
 var camera_position_in_z = 25;
 
 // Build motos
-buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader, 1, environment_size, player_1_camera, player_1_orientation);
-buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader, 2, environment_size, player_2_camera, player_2_orientation);
+buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader, 1, environment_size, camera_customization, player_1_orientation);
+buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader, 2, environment_size, camera_customization, player_2_orientation);
 
 // Draw scene
 function render() {
-    renderer_player_1_camera.render(scene, player_1_camera);
-    renderer_player_2_camera.render(scene, player_2_camera);
+    renderer_player_customization.render(scene, camera_customization);
 }
 
 function animate() {

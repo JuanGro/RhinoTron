@@ -41,6 +41,10 @@ body {
   margin: 0 auto;
 }
 
+#camera_customization {
+  text-align: center;
+}
+
 #video {
   width: 75%;
 }
@@ -81,6 +85,9 @@ a:hover {
   border-style: double;
   border-width: 10px;
   border-color: #0174DF;
+}
+
+#player_1_camera, #player_2_camera, #player_1_scoreboard, #player_2_scoreboard {
   position: absolute;
 }
 
