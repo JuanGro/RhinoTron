@@ -13,6 +13,14 @@
       <source src="./../music/end.mp3" type="audio/mpeg">
     </audio>
 
+    <audio id="select">
+        <source src="./../music/select.wav" type="audio/mpeg">
+      </audio>
+
+    <script type="text/javascript" src="./../js/utils.js"></script>
+    <script type="text/javascript" src="./../js/game-over/game_over.js"></script>
+    <script type="text/javascript" src="./../js/songs/songs.js"></script>
+
     <div id="menu">
       <div id="option">
         <a href="#"><p>Game over</p></a>
@@ -21,7 +29,7 @@
       <img src="./../img/daft.gif" id="gif"> 
 
       <div id="option">
-        <a href="game.html" onmouseover="play(select, 'sound')"><p>Retry</p></a>
+        <a onclick="retry()" onmouseover="play(select, 'sound')"><p>Retry</p></a>
       </div>
 
       <div id="option"><a href="./../index.html" onmouseover="play(select, 'sound')">

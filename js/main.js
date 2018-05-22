@@ -11,6 +11,9 @@ scene.add(ambient_light);
 // Play the default song or load the selected one
 playSelectedSong();
 
+// Mode game saved to localstorage, the method is in the animate files
+saveModeGame();
+
 // Plane size
 var environment_size = 400;
 

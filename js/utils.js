@@ -26,3 +26,7 @@ function removeTailObjects(scene, tail_objects) {
 function removeTailStrings(tail_strings) {
   while (tail_strings.length > 0) tail_strings.pop();
 }
+
+function getFromLocalStorage(item) {
+    return localStorage.getItem(item);
+}

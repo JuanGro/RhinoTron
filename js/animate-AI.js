@@ -6,4 +6,8 @@ function animate() {
     }
     requestAnimationFrame(animate);
     render();
-};
+}
+
+function saveModeGame() {
+    localStorage.setItem("mode_game", "AI");
+}
