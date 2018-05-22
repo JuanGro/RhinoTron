@@ -93,7 +93,7 @@ function continuosMovement(current_motorcycle, opponent_motorcycle, player, play
     );
 }
 
-function moveCameraToCurrentMotorcycle(player_camera, current_moto, player_orientation){
+function moveCameraToCurrentMotorcycle(player_camera, current_moto, player_orientation) {
     player_camera.position.x = current_moto.position.x;
     player_camera.position.y = current_moto.position.y;
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./../styles/styles.css">
+    <title>RhinoTron | Custom motorcycle</title>
+  </head>
+
+  <body id="custom-motorcycle-page">
+    <audio autoplay loop id="song">
+        <source src="./../music/end.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="select">
+      <source src="./../music/select.wav" type="audio/mpeg">
+    </audio>
+
+    <div id="menu">
+      <div id="option">
+        <a><p>Motorcycle customization</p></a>
+      </div>
+
+      <div id="camera_customization"></div>
+
+      <div id="option-left">
+        <a onclick="getNewColors(1, 'red')"><p>Red</p></a>
+        <a onclick="getNewColors(1, 'blue')"><p>Blue</p></a>
+        <a onclick="getNewColors(1, 'green')"><p>Green</p></a>
+        <a onclick="getNewColors(1, 'pink')"><p>Pink</p></a>
+      </div>
+
+      <div id="option-right">
+        <a onclick="getNewColors(2, 'red')"><p>Red</p></a>
+        <a onclick="getNewColors(2, 'blue')"><p>Blue</p></a>
+        <a onclick="getNewColors(2, 'green')"><p>Green</p></a>
+        <a onclick="getNewColors(2, 'pink')"><p>Pink</p></a>
+      </div>
+
+      <div id="option">
+        <a href="./../index.html"  onmouseover="play(select, 'sound')"><p>Main Menu</p></a>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./../threejs/build/three.js"></script>
+    <script type="text/javascript" src="./../threejs/examples/js/loaders/OBJLoader.js"></script>
+    <!-- ENVIRONMENT -->
+    <script type="text/javascript" src="./../js/environment/floor.js"></script>
+    <script type="text/javascript" src="./../js/environment/walls.js"></script>
+    <!-- CAMERAS -->
+    <script type="text/javascript" src="./../js/cameras/camera_customization.js"></script>
+    <script type="text/javascript" src="./../js/cameras/upload_camera_players.js"></script>
+    <!-- GENERAL METHODS -->
+    <script type="text/javascript" src="./../js/utils.js"></script>
+    <!-- MOTORCYCLE -->
+    <script type="text/javascript" src="./../js/motorcycles/place_random_position.js"></script>
+    <script type="text/javascript" src="./../js/custom_motorcycle/build_motorcycle.js"></script>
+    <!-- MOVEMENTS -->
+    <script type="text/javascript" src="./../js/movements/movements.js"></script>
+    <!-- SONGS -->
+    <script type="text/javascript" src="./../js/songs/songs.js"></script>
+    <!-- COLORS -->
+    <script type="text/javascript" src="./../js/custom_motorcycle/colors.js"></script>
+    <!-- MAIN -->
+    <script src="./../js/custom_motorcycle/custom_motorcycle.js"></script>
+  </body>
+</html>

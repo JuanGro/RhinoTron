@@ -26,6 +26,11 @@ body {
   background-position: 50% 40%;
 }
 
+#custom-motorcycle-page {
+  background-image: url('../img/menu8.gif');
+  background-position: 50% 40%;
+}
+
 #gameover-page {
   background-image: url('../img/menu8.gif');
   background-position: 50% 40%;
@@ -34,6 +39,10 @@ body {
 #video, #gif {
   display: block;
   margin: 0 auto;
+}
+
+#camera_customization {
+  text-align: center;
 }
 
 #video {
@@ -47,12 +56,24 @@ body {
 }
 
 /* Option in menu */
-#option, #winner {
+#option, #winner, #option-left, #option-right {
   cursor: pointer;
   font-size: 50px;
   text-align: center;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+#option-left {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+}
+
+#option-right {
+  position: absolute;
+  right: 10%;
+  top: 10%;
 }
 
 /* Add styles when user pass mouse on links */
@@ -76,6 +97,9 @@ a:hover {
   border-style: double;
   border-width: 10px;
   border-color: #0174DF;
+}
+
+#player_1_camera, #player_2_camera, #player_1_scoreboard, #player_2_scoreboard {
   position: absolute;
 }
 

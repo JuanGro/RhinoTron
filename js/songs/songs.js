@@ -3,7 +3,7 @@ var song, sound;
 function play(divId, typeSound) {
     if (typeSound == 'song') {
         song = document.getElementById(divId.id);
-        song.volume = 1;
+        song.volume = 0.13;
         song.play();
     } else {
         sound = document.getElementById(divId.id);
