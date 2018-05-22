@@ -12,6 +12,7 @@ function startCamera(renderer, player_camera, id_camera) {
   });
 
   // inital position of player_camera to can resize window
-  player_camera.position.z = environment_size / 2;
+  player_camera.position.z = 10;
+  player_camera.position.y = -40;
   player_camera.rotation.x = Math.PI / 2;
 }

@@ -39,15 +39,9 @@ var motorcycle_2;
 var player_1_orientation = 1;
 var player_2_orientation = 1;
 
-// Distance to follow the motorcycles
-var camera_remoteness = 20;
-
-// Distance to set the camera that is following the motorcycle
-var camera_position_in_z = 25;
-
 // Build motos
-buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader, 1, environment_size, camera_customization, player_1_orientation);
-buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader, 2, environment_size, camera_customization, player_2_orientation);
+buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader);
+buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader);
 
 // Draw scene
 function render() {

@@ -1,0 +1,18 @@
+function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_loader) {
+    // load a resource
+    motorcycle_loader.load(
+        // resource URL
+        motorcycle_json_path,
+        // called when resource is loaded
+        function(motorcycle) {
+            // Size of the motorcycle
+            motorcycle.scale.set(15, 10, 10);
+            // Rotation to place it
+            motorcycle.rotation.x = Math.PI / 2;
+            // Name for the motorcycle
+            motorcycle.name = motorcycle_name;
+            // Add motorcycle to the environment
+            scene.add(motorcycle);
+        }
+    );
+}
