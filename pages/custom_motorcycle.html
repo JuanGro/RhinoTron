@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./../styles/styles.css">
+    <title>RhinoTron | Custom motorcycle</title>
+  </head>
+
+  <body id="custom-motorcycle-page">
+    <script src="./../js/songs/songs.js"></script>
+    <script src="./../js/custom_motorcycle/custom_motorcycle.js"></script>
+
+    <audio autoplay loop id="song">
+        <source src="./../music/end.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="select">
+      <source src="./../music/select.wav" type="audio/mpeg">
+    </audio>
+
+    <div id="menu">
+      <div id="option">
+        <a href="./../index.html"  onmouseover="play(select, 'sound')"><p>Main Menu</p></a>
+      </div>
+    </div>
+  </body>
+</html>
