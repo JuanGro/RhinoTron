@@ -23,12 +23,18 @@ function getNewColors(player, color) {
     results = changeColor(color);
     if (player == 1) {
         motorcycle_1_json_path = results[0];
+        saveInLocalStorage("motorcycle_1_json_path", results[0]);
         player_1_color_hex = results[1];
+        saveInLocalStorage("player_1_color_hex", results[1]);
         player_1_color_rgb = results[2];
+        saveInLocalStorage("player_1_color_rgb", results[2]);
     } else {
         motorcycle_2_json_path = results[0];
+        saveInLocalStorage("motorcycle_2_json_path", results[0]);
         player_2_color_hex = results[1];
+        saveInLocalStorage("player_2_color_hex", results[1]);
         player_2_color_rgb = results[2];
+        saveInLocalStorage("player_2_color_rgb", results[2]);
     }
     // Remove current motos
     removeMotorcycleObjects(scene, motorcycle_list);
