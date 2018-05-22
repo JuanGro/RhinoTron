@@ -8,7 +8,7 @@
     <title> RhinoTron | Main Menu</title>
   </head>
 
-  <body>
+  <body id="index-page">
     <audio autoplay loop id="song">
       <source src="./music/The-Son-of-Flynn.mp3" type="audio/mpeg">
     </audio>
@@ -18,19 +18,23 @@
     </audio>
 
     <div id="menu">
-      <div id="play">
+      <div id="option">
         <a href="pages/game.html" onmouseover="play(select, 'sound')"><p>PLAY</p></a>
       </div>
-      <div id="play-vs-agent">
+
+      <div id="option">
         <a href="pages/game-AI.html" onmouseover="play(select, 'sound')"><p>PLAY VS AGENT</p></a>
       </div>
-      <div id="custom">
+
+      <div id="option">
         <a href="#" onmouseover="play(select, 'sound')"><p>CUSTOM MOTORCYCLE</p></a>
       </div>
-      <div id="customSong">
+
+      <div id="option">
         <a href="pages/song.html" onmouseover="play(select, 'sound')"><p>CUSTOM SONG</p></a>
       </div>
-      <div id="credits">
+
+      <div id="option">
         <a href="pages/credits.html" onmouseover="play(select, 'sound')"><p>CREDITS</p></a>
       </div>
     </div>

@@ -24,8 +24,8 @@ function valueSong(path) {
 }
 
 function playSelectedSong() {
-    if (localStorage.getItem("music_path")) {
+    if (getFromLocalStorage("music_path")) {
         song = document.getElementById("song");
-        song.src = localStorage.getItem("music_path");
+        song.src = getFromLocalStorage("music_path");
     }
 }
