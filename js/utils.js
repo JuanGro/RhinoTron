@@ -19,12 +19,16 @@ function changeColorMarker(scoreboard, lifes) {
     else if (lifes == 0) scoreboard.style.color = "red";
 }
 
+function removeMotorcycleObjects(scene, motorcycle_list) {
+    while (motorcycle_list.length > 0) scene.remove(motorcycle_list.pop());
+}
+
 function removeTailObjects(scene, tail_objects) {
-  while (tail_objects.length > 0) scene.remove(tail_objects.pop());
+    while (tail_objects.length > 0) scene.remove(tail_objects.pop());
 }
 
 function removeTailStrings(tail_strings) {
-  while (tail_strings.length > 0) tail_strings.pop();
+    while (tail_strings.length > 0) tail_strings.pop();
 }
 
 function getFromLocalStorage(path) {

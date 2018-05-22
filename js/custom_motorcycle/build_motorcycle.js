@@ -16,9 +16,11 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
 
             if (motorcycle_number == 1) {
                 motorcycle_1 = scene.getObjectByName("motorcycle_1");
+                motorcycle_list.push(motorcycle_1);
                 motorcycle_1.position.x -= 40;
             } else {
                 motorcycle_2 = scene.getObjectByName("motorcycle_2");
+                motorcycle_list.push(motorcycle_2);
                 motorcycle_2.position.x += 40;
             }
         }

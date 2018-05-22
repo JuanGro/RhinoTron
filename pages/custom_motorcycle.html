@@ -19,24 +19,24 @@
 
     <div id="menu">
       <div id="option">
-        <a href="#"><p>Motorcycle customization</p></a>
+        <a><p>Motorcycle customization</p></a>
       </div>
 
       <div id="camera_customization"></div>
 
       <div id="option-left">
-        <a href="#"><p>Red</p></a>
-        <a href="#"><p>Blue</p></a>
-        <a href="#"><p>Green</p></a>
-        <a href="#"><p>Pink</p></a>
+        <a onclick="getNewColors(1, 'red')"><p>Red</p></a>
+        <a onclick="getNewColors(1, 'blue')"><p>Blue</p></a>
+        <a onclick="getNewColors(1, 'green')"><p>Green</p></a>
+        <a onclick="getNewColors(1, 'pink')"><p>Pink</p></a>
       </div>
 
       <div id="option-right">
-          <a href="#"><p>Red</p></a>
-          <a href="#"><p>Blue</p></a>
-          <a href="#"><p>Green</p></a>
-          <a href="#"><p>Pink</p></a>
-        </div>
+        <a onclick="getNewColors(2, 'red')"><p>Red</p></a>
+        <a onclick="getNewColors(2, 'blue')"><p>Blue</p></a>
+        <a onclick="getNewColors(2, 'green')"><p>Green</p></a>
+        <a onclick="getNewColors(2, 'pink')"><p>Pink</p></a>
+      </div>
 
       <div id="option">
         <a href="./../index.html"  onmouseover="play(select, 'sound')"><p>Main Menu</p></a>
@@ -59,7 +59,9 @@
     <!-- MOVEMENTS -->
     <script type="text/javascript" src="./../js/movements/movements.js"></script>
     <!-- SONGS -->
-    <script src="./../js/songs/songs.js"></script>
+    <script type="text/javascript" src="./../js/songs/songs.js"></script>
+    <!-- COLORS -->
+    <script type="text/javascript" src="./../js/custom_motorcycle/colors.js"></script>
     <!-- MAIN -->
     <script src="./../js/custom_motorcycle/custom_motorcycle.js"></script>
   </body>
