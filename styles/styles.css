@@ -47,7 +47,7 @@ body {
 }
 
 /* Option in menu */
-#option {
+#option, #winner {
   cursor: pointer;
   font-size: 50px;
   text-align: center;

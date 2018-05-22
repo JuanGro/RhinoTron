@@ -8,5 +8,5 @@ function animate() {
 }
 
 function saveModeGame() {
-    localStorage.setItem("mode_game", "Multiplayer");
+    saveInLocalStorage("mode_game", "Multiplayer");
 }

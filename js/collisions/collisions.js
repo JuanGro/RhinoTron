@@ -6,7 +6,11 @@ function removeLife(player) {
     player_2_lifes--;
     changeColorMarker(player_2_scoreboard, player_2_lifes);
   }
-  if (player_1_lifes < 0 || player_2_lifes < 0) window.location.replace("./../pages/game-over.html");
+  if (player_1_lifes < 0 || player_2_lifes < 0) {
+    if (player_1_lifes < 0) saveWinner("Player 2");
+    else saveWinner("Player 1");
+    window.location.replace("./../pages/game-over.html");
+  }
   else {
     if (player == 1) player_1_scoreboard.innerHTML = player_1_lifes;
     else player_2_scoreboard.innerHTML = player_2_lifes;

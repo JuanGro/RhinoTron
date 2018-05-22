@@ -27,6 +27,19 @@ function removeTailStrings(tail_strings) {
   while (tail_strings.length > 0) tail_strings.pop();
 }
 
-function getFromLocalStorage(item) {
-    return localStorage.getItem(item);
+function getFromLocalStorage(path) {
+    return localStorage.getItem(path);
+}
+
+function saveInLocalStorage(path, item) {
+    localStorage.setItem(path, item);
+}
+
+function saveWinner(winner) {
+    if (getFromLocalStorage("mode_game") == "AI") {
+        if (winner == "Player 2") winner = "AI";
+        saveInLocalStorage("winner", winner);
+    } else {
+        saveInLocalStorage("winner", winner);
+    }
 }

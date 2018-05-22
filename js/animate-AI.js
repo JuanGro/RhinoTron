@@ -9,5 +9,5 @@ function animate() {
 }
 
 function saveModeGame() {
-    localStorage.setItem("mode_game", "AI");
+    saveInLocalStorage("mode_game", "AI");
 }
