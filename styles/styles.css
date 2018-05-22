@@ -27,8 +27,8 @@ body {
 }
 
 #custom-motorcycle-page {
-  background-image: url('../img/menu2.gif');
-  background-size: 10%;
+  background-image: url('../img/menu8.gif');
+  background-position: 50% 40%;
 }
 
 #gameover-page {
@@ -56,12 +56,24 @@ body {
 }
 
 /* Option in menu */
-#option, #winner {
+#option, #winner, #option-left, #option-right {
   cursor: pointer;
   font-size: 50px;
   text-align: center;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+#option-left {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+}
+
+#option-right {
+  position: absolute;
+  right: 10%;
+  top: 10%;
 }
 
 /* Add styles when user pass mouse on links */
