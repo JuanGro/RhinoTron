@@ -1,4 +1,4 @@
-function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_loader) {
+function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_loader, motorcycle_number) {
     // load a resource
     motorcycle_loader.load(
         // resource URL
@@ -13,6 +13,14 @@ function buildMoto(motorcycle_json_path, motorcycle_name, scene, motorcycle_load
             motorcycle.name = motorcycle_name;
             // Add motorcycle to the environment
             scene.add(motorcycle);
+
+            if (motorcycle_number == 1) {
+                motorcycle_1 = scene.getObjectByName("motorcycle_1");
+                motorcycle_1.position.x -= 40;
+            } else {
+                motorcycle_2 = scene.getObjectByName("motorcycle_2");
+                motorcycle_2.position.x += 40;
+            }
         }
     );
 }

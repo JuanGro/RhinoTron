@@ -40,8 +40,8 @@ var player_1_orientation = 1;
 var player_2_orientation = 1;
 
 // Build motos
-buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader);
-buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader);
+buildMoto(motorcycle_1_json_path, "motorcycle_1", scene, motorcycle_1_loader, 1);
+buildMoto(motorcycle_2_json_path, "motorcycle_2", scene, motorcycle_2_loader, 2);
 
 // Draw scene
 function render() {
